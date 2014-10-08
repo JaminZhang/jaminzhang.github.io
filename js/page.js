@@ -2,8 +2,7 @@ $(function () {
     $(".article a").attr("target", "_blank");
     $(".brand-title,.brand-tagline,nav").remove();
     $(".headerpic img").css("width", "100px")
-    $(".headerpic").append('<div class="grcode"><i class="fa fa-qrcode"></i>手机扫描</div>');
-    $('#toc').toc({'container': '.article', 'selectors': 'h1,h2,h3', prefix: 'top'});
+    $('#toc').toc({'container': '.article', 'selectors': 'title,h1,h2,h3,h4', prefix: 'top'});//weiyi.theme.modifys: table of content at left sidebar
     $('.article').each(function (i) {
         $(this).find('img').each(function () {
             if ($(this).parent().hasClass('fancybox')) return;

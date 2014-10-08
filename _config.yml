@@ -1,22 +1,84 @@
-#production_url是sitemap.txt生成的url,方便百度谷歌收录
-production_url: http://liyouhai.com
 #
-# Jekyll Settings
+# weiyi.theme.modify 配置_config.yml
+# 其中定义的变量，可以通过site引用，
+# 比如，/_layouts/blog.html中 {{ site.favicon }} 引用网站图标，
+# 所有硬编码全部通过这种方式引用，如blog.html, post.html, rss.html, tags.md, categories.md, etc. 
+# 部分变量由Jekyll解析，比如 markdown.
 #
-#rdiscount解析器对于嵌入html javascript代码,为文章增加特定效果兼容较好
-markdown: rdiscount
-rdiscount:
-  extensions: [  "autolink", ]
-markdown_ext:  markdown,mkd,mkdn,md
+
+
+title:              Site Title
+description:        Describe your website here.
+disqus_shortname: 
+url:                http://li2.me
+
+# url_tags必须和tags.md中的permalink定义相同，这样定义的原因是不希望permalink中包含文件类型后缀。
+# 或者tags.md中不定义permalink，这里直接引用tags.md的在目录中的绝对地址。
+# 其它几个url也需要遵循这个原则。
+# 
+url_tags:           /tags/
+url_categories:     /categories/
+url_timeline:       /timeline/
+url_rss:            /rss/
+url_about:          /about/
+
+production_url:     http://li2.me           # production_url是sitemap生成的url,方便百度谷歌收录.
+favicon:            /images/favicon.ico
+# back_to_top:      /images/back_to_top.png # JekyllPure.css不能引用{{site.}}???
+
+
+# Owner/Author information
+author:
+  name:             Your Name
+  avatar:           /images/avatar.png
+  email:            you@email.com
+  # Social networking links used in footer. Update and remove as you like.
+  github:           
+  weibo:            
+  douban: 
+  
+  
+# Background image to be tiled on all pages
+background: 
+
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+relative_permalinks: false
+
+
+# Amount of post to show on home page
+paginate: 5
+
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Asia/Shanghai
+future:      true
+          
+
+# weiyi.theme.modify markdown设置
+# redcarpet extensions 含义参考 https://github.com/vmg/redcarpet
+# 选择它的主要原因是，支持```language```语法，用来标记代码块，不需要缩进4个空格。
+# 另外还支持脚注、文本高亮、删除线等扩展的markdown语法，
+# 需要加入extensions列表才能开启或关闭相应功能。
+# 
+# 表格语法需要特别注意 :-: 中间若有空格，可能不会解析。
+# no_intra_emphasis: do not parse emphasis inside of words 不解析单词间的下划线
+#
+# 其它可选的markdown: rdiscount, kramdown, 
+#
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "quote", "highlight", "tables", "footnotes"]
 highlighter: pygments
-permalink: /:categories/:title.html
-paginate: 7
-paginate_path: "page/:num"
-exclude: [ "README.md",".idea",".iml",".name",".Node"]
-encoding: "utf-8"
-#在发布文章时使用一个未来的日期
-future: true
-#产生相关页面的索引
-lsi:      false
-#禁用定制插件
-safe:     false
+    
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:   
+google_verify:      
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:         
+
+
+include: []
+exclude: ["README.md"]

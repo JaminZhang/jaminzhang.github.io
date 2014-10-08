@@ -314,7 +314,7 @@ a.pagination-item:hover {
     width: 50px;
     height: 65px;
     display: inline-block;
-    background: url(/img/top.png) no-repeat;
+    background: url(/images/back_to_top.png) no-repeat;     //weiyi.theme.modify 修改小火箭图片的路径
     outline: none;
 }
 

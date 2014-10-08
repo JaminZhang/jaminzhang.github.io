@@ -9,26 +9,32 @@ layout: blog
 
     <h2 class="post-title">{{ page.title }}</h2>
 
-    <p class="post-meta">By {{ page.date | date: "%m" }}月{{ page.date | date: "%d" }}日  {{ page.date | date: "%Y" }}  <a
-            class="post-categorybut " href="/type/#{{ post.categories  }}">{{ page.categories  }}</a><a
-            class="post-category " href="/tag/#{{ page.tags | first }}"> {{ page.tags | first }}</a><a
-            class="post-category " href="/tag/#{{ page.tags[1] }}">  {{ page.tags[1] }}</a>
+    <p class="post-meta">By {{ page.date | date: "%m" }}月{{ page.date | date: "%d" }}日  {{ page.date | date: "%Y" }}
+        <!-- weiyi.theme.modify todo 修复tag枚举错误
+            用<span>标签代替<a>标签，否则当post没有tags时格式乱掉，原因不明。
+            <a class="post-category " {% for tag in page.tags %}<a href="/tags/#{{ tag }}" title="Pages tagged {{ tag }}" class="post-category">{{ tag }}</a>{% unless forloop.last %}{% endunless %}{% endfor %} </a>
+        -->
+        <a class="post-categorybut" href="/categories/#{{ page.categories }}">{{ page.categories }}</a>
+        <span class="post-category">{% for tag in page.tags %}<a href="/tags/#{{ tag }}" title="Pages tagged {{ tag }}" class="post-category">{{ tag }}</a>{% unless forloop.last %}{% endunless %}{% endfor %}</span>            
     </p>
 </header>
 <div class="article pure-u-22-24">
     {{ content }}
 </div>
     <div class="pure-g pagination">
-        {% if page.previous %}
-        <a class="pure-u-1-2 pagination-item " href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }} "><p> <i class="fa fa-mail-reply"></i>&nbsp;{{ page.previous.title }}</p></a>
-        {% else %}
-        <span class="pure-u-1-2 pagination-item "><p>上一篇&nbsp;<i class="fa fa-chain-broken"></i></p></span>
-        {% endif %}
+        
         {% if page.next %}
-        <a class="pure-u-1-2 pagination-item " href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}"><p>{{ page.next.title }}&nbsp;<i class="fa fa-mail-forward"></i></p></a>
+            <a class="pure-u-1-2 pagination-item " href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}"><p>{{ page.next.title }}&nbsp;<i class="fa fa-mail-reply"></i></p></a>
         {% else %}
-        <span class="pure-u-1-2 pagination-item "><p>下一篇&nbsp;<i class="fa fa-chain-broken"></i></p></span>
+            <span class="pure-u-1-2 pagination-item "><p>上一篇&nbsp;<i class="fa fa-chain-broken"></i></p></span>
         {% endif %}
+
+        {% if page.previous %}
+            <a class="pure-u-1-2 pagination-item " href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }} "><p> <i class="fa fa-mail-forward"></i>&nbsp;{{ page.previous.title }}</p></a>
+        {% else %}
+            <span class="pure-u-1-2 pagination-item "><p>下一篇&nbsp;<i class="fa fa-chain-broken"></i></p></span>
+        {% endif %}
+
     </div>
     <link href="/css/code.css" rel="stylesheet">
     <link href="/css/min/fancybox.css" rel="stylesheet">
@@ -43,7 +49,3 @@ layout: blog
     {% if  page.duoshuo != false %}
     {% include duoshuo.html %}
     {% endif %}
-
-
-
-

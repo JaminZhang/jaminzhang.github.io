@@ -321,7 +321,7 @@ a.pagination-item:hover {
     width: 50px;
     height: 65px;
     display: inline-block;
-    background: url(/img/top.png) no-repeat;
+    background: url({{site.back_to_top}}) no-repeat;
     outline: none;
 }
 
