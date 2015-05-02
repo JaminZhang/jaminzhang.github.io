@@ -38,7 +38,10 @@ HTML也是目前主流电子书格式所用的标记语言。无论是 EPUB, mob
 
 ## References:
 [献给写作者的 Markdown 新手指南](http://www.jianshu.com/p/q81RER)
+
 [为什么作家应该用 Markdown 保存自己的文稿](http://www.jianshu.com/p/qqGjLN)
+
 [Markdown写作浅谈](http://www.jianshu.com/p/PpDNMG)
+
 [Markdown项目官网](http://daringfireball.net/projects/markdown/)
 
