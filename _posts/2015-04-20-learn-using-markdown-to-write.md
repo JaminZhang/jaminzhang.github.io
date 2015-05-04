@@ -4,8 +4,8 @@ title: 学习使用Markdown来写作
 description: "学习使用Markdown来写作"
 category: Markdown
 avatarimg: 
-tags : [Markdown GitHub]
-duoshuo: false
+tags: [Markdown,GitHub]
+duoshuo: true
 ---
 
 首先我这里说的**写作**，并不是狭义上的作家的**写作**，而是指所有编写文字内容的活动，对于技术人员来说，主要就是编写技术文档了，当然还可以包括各种读书学习笔记。
