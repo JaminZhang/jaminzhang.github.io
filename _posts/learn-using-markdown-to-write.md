@@ -4,7 +4,7 @@ title: 学习使用Markdown来写作
 description: "学习使用Markdown来写作"
 category: Markdown
 avatarimg: 
-tags : [Markdown]
+tags : [Markdown GitHub]
 duoshuo: false
 ---
 
