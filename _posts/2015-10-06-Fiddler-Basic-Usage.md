@@ -29,7 +29,7 @@ Fiddler作为客户端和服务器之间的代理服务器。
 
 Fiddler的2种代理模式
 
-流模式（streaming）：可实时把服务器数据返回给客户端。优点：更接近于浏览器本身真实的行为。
+流模式（streaming）：可实时把服务器数据返回给客户端。优点：更接近于浏览器本身真实的行为。  
 缓冲模式（buffering）：HTTP请求的所有数据在服务器端都准备好之后，才把数据返回给客户端。优点：可以控制最后的服务器响应。
 
 ## 1.3 常见使用场景
@@ -70,33 +70,33 @@ MSDN搜索框
 
 ## 2.2 状态栏操作
 
-控制台：help命令
-Capturing按钮：控制Fiddler是否进行捕获工作
-过滤会话来源
-记录当前展示的会话数量
-显示选中的会话URL
+控制台：help命令  
+Capturing按钮：控制Fiddler是否进行捕获工作  
+过滤会话来源  
+记录当前展示的会话数量  
+显示选中的会话URL  
 
 ## 2.3 监控面板的使用
 
 监控面板是Fiddler的最核心的功能之一，显示HTTP的会话。
 
-Result:HTTP状态码
-Protocol:协议
-Host:主机
-ServerIP:服务器IP
-URL
+Result:HTTP状态码  
+Protocol:协议  
+Host:主机  
+ServerIP:服务器IP  
+URL  
 
 监控面板右侧Tabs
 
 分为上下2部分，上部分为HTTP请求相关信息，下部分为HTTP响应相关信息。
 
-数据统计（Statics): RTT往返时间 Show Chart
-对请求进行解包（Inspectors）:
+数据统计（Statics): RTT往返时间 Show Chart  
+对请求进行解包（Inspectors）:  
 Heraders
-文件代理（AutoResponder）: 线上bug文件本地测试
-前后端接口连调（Composer）: 和服务器接口进行调试
-日志（Log）
-网站性能分析的时间线（Timeline）
+文件代理（AutoResponder）: 线上bug文件本地测试  
+前后端接口连调（Composer）: 和服务器接口进行调试  
+日志（Log）  
+网站性能分析的时间线（Timeline）  
 
 # 3 Fiddler常用功能
 
