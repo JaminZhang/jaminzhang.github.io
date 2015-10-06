@@ -16,12 +16,12 @@ duoshuo: true
 
 主要功能（详见官网）：
 
-Web Debugging
-Performance Testing
-HTTP/HTTPS Traffic Recording
-Web Session Manipulation
-Security Testing
-Customizing Fiddler
+Web Debugging  
+Performance Testing  
+HTTP/HTTPS Traffic Recording  
+Web Session Manipulation  
+Security Testing  
+Customizing Fiddler  
 
 ## 1.2 工作原理
 
@@ -50,23 +50,23 @@ Fiddler会提供请求的实际图，清晰明了网站需要优化的地方。
 
 ## 2.1 工具条常用功能
 
-备注按钮(Set Comments) 
-回放按钮（Replay）快捷键R 
-清空监控面板按钮（Remove） 
-调试Debug按钮（Go）结合状态栏断点图标指示 
-模式切换按钮（Stream）默认为缓冲模式 
-解码请求按钮（Decode） 
-保持会话按钮（Keep sessions） 
-过滤请求按钮（Any Process） 
-查找按钮（Find） 
-保存会话按钮（Save） 
-保存截图按钮 
-计时器按钮 
-快速启动浏览器按钮（Browse） 
-清除缓存按钮（Clear Cache） 
-编码、解码按钮（TextWizard） 
-分离面板按钮（Tearoff） 
-MSDN搜索框 
+备注按钮(Set Comments)  
+回放按钮（Replay）快捷键R  
+清空监控面板按钮（Remove）  
+调试Debug按钮（Go）结合状态栏断点图标指示  
+模式切换按钮（Stream）默认为缓冲模式  
+解码请求按钮（Decode）  
+保持会话按钮（Keep sessions）  
+过滤请求按钮（Any Process）  
+查找按钮（Find）  
+保存会话按钮（Save）  
+保存截图按钮  
+计时器按钮  
+快速启动浏览器按钮（Browse）  
+清除缓存按钮（Clear Cache）  
+编码、解码按钮（TextWizard）  
+分离面板按钮（Tearoff）  
+MSDN搜索框  
 
 ## 2.2 状态栏操作
 
@@ -128,4 +128,5 @@ Willow 还有限速功能
 # References
 [Fiddler官网](http://www.telerik.com/fiddler)  
 [Fiddler工具使用 imooc.com](http://www.imooc.com/learn/37) 
+[强大的Http监控工具Fidder简单介绍](http://www.jianshu.com/p/cfc5ca7a8457)
 
