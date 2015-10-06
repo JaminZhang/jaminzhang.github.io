@@ -1,5 +1,3 @@
-Fiddler工具基本使用
-
 ---
 layout: post
 title: Fiddler工具基本使用
@@ -173,6 +171,6 @@ Traffic Differ
 Willow 还有限速功能
 
 # References
-[Fiddler官网](http://www.telerik.com/fiddler) 
+[Fiddler官网](http://www.telerik.com/fiddler)  
 [Fiddler工具使用 imooc.com](http://www.imooc.com/learn/37) 
 
