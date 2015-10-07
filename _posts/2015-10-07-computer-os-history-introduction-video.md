@@ -18,7 +18,7 @@ duoshuo: true
 
 总之，值得一看。
 
-References:  
+**References:**    
 [计算机、操作系统发展历史介绍视频-第二、三章](http://www.osstep.com/course/7)  
 [《穿越计算机的迷雾》](https://book.douban.com/subject/5432475/)
 
