@@ -23,7 +23,7 @@ duoshuo: true
 
 我不得不感叹，第一个想出这种用法的人真是变态啊，算是奇技淫巧，对bash shell的掌握很深入了。
 
-**Refercences: **  
+**Refercences:**  
 [交互式shell和非交互式shell](http://blog.csdn.net/trochiluses/article/details/13767669)  
 [Reverse Shell Cheat Sheet](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)  
 [REVERSE SHELL WITH BASH](http://www.gnucitizen.org/blog/reverse-shell-with-bash/)  
