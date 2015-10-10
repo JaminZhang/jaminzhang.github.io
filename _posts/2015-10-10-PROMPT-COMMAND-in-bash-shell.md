@@ -4,7 +4,7 @@ title: Bash Shell中的PROMPT_COMMAND
 description: "Bash Shell中的PROMPT_COMMAND"
 category: Shell
 avatarimg:
-tags: [Linux, Bash]
+tags: [Linux, Shell, Bash]
 duoshuo: true
 ---
 
