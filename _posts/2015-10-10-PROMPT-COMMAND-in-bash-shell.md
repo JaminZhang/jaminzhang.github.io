@@ -9,7 +9,7 @@ duoshuo: true
 ---
 
 今天查看了一个系统初始化的Shell脚本，其中有一段命令是配置记录bash命令日志的，如下：  
-> LOGIN_IP=$(who am i | awk '{print $NF}')
+> LOGIN_IP=$(who am i | awk '{print $NF}')  
 > export PROMPT_COMMAND='{ msg=$(history 1 | { read x y; echo $y; });echo $(date +"%Y-%m-%d %H:%M:%S") [$(whoami)@$SSH_USER$LOGIN_IP `pwd` ]" $msg" >> /var/log/.history; }'
 
 其中的PROMPT_COMMAND是bash的环境变量，这个变量的中内容是作为一个普通的bash命令执行的，而且执行时间是在bash显示prompt之前。
@@ -26,7 +26,7 @@ bash会最先记录下这个命令：history 1 | { read x y; echo $y; }？接着
 
 
 
-**References: **  
+**References:**  
 [PROMPT_COMMAND](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x264.html)  
 [通过syslog远程发送bash 命令日志](http://0cx.cc/tag/bash-history/)  
 
