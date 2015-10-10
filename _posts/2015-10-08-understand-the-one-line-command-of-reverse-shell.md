@@ -4,7 +4,7 @@ title: 单行反弹Shell命令的理解
 description: "单行反弹Shell命令的理解"
 category: Shell
 avatarimg:
-tags: [Linux, Shell, Security]
+tags: [Security, Linux, Shell, Bash]
 duoshuo: true
 ---
 
