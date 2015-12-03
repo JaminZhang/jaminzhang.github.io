@@ -28,6 +28,6 @@ provides       Find what package provides the given value
 [Linux库文件编写·入门](http://www.cnblogs.com/lcw/p/3169285.html)  
 [Linux程序编译链接动态库版本的问题](http://littlewhite.us/archives/301)  
 [Linux下动态库及版本号控制](http://blog.csdn.net/alspwx/article/details/36655645)  
-[如何查看某个文件在哪个软件包中？](http://www.linuxsong.org/2010/09/find-which-rpm/)  
+[Linux下如何查看某个文件在哪个软件包中？](http://www.linuxsong.org/2010/09/find-which-rpm/)  
 
 
