@@ -9,7 +9,8 @@ duoshuo: true
 ---
 
 # 引言
-问大家怎么修改Linux的主机名时？大家一般都会知道使用hostname来进行临时修改，而在永久修改则要在/etc/sysconfig/network中进行HOSTNAME的修改，然后重启才能生效（此为CentOS 6.X系统下）。
+问大家怎么修改Linux的主机名时？  
+大家一般都会知道使用hostname来进行临时修改，而在永久修改则要在/etc/sysconfig/network中进行HOSTNAME的修改，然后重启才能生效（此为CentOS 6.X系统下）。
 上面的回答确实没错，我们知其然了，但我这几天突然多想了下，为什么会是这样？大概搜索了一些资料，其所以然并不简单。 
 
 # 1.1 hostname命令临时修改主机名
@@ -62,4 +63,10 @@ fi
 
 
 # 总结
-任何概念或操作不仅仅要知其然，要深入理解，就得知其所以然。简单的事情深入理解下去往往并不简单。
+任何概念或操作不仅仅要知其然，要深入理解，就得知其所以然。简单的事情深入理解下去往往并不简单。 
+
+# Ref:
+[深入理解Linux修改hostname](http://www.cnblogs.com/kerrycode/p/3595724.html) 
+[如何在CentOS或RHEL 7上修改主机名](https://linux.cn/article-3937-1.html)
+
+
