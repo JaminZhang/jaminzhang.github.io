@@ -45,10 +45,10 @@ fi
 # 1.3 hostname与/etc/hosts的关系
 一般来说hostname并不是从/etc/hosts中获取的，在1.2中说的从/ect/sysconfig/network中获取的，但是在/etc/rc.d/rc.sysinit中，有如下逻辑判断，当hostname为localhost后localhost.localdomain时，将会使用接口IP地址对应的hostname来重新设置系统的hostname。
 <pre>
-# In theory there should be no more than one network interface active
-# this early in the boot process -- the one we're booting from.
-# Use the network address to set the hostname of the client.  This
-# must be done even if we have local storage.
+\# In theory there should be no more than one network interface active
+\# this early in the boot process -- the one we're booting from.
+\# Use the network address to set the hostname of the client.  This
+\# must be done even if we have local storage.
 ipaddr=
 if [ "$HOSTNAME" = "localhost" -o "$HOSTNAME" = "localhost.localdomain" ]; then
         ipaddr=$(ip addr show to 0.0.0.0/0 scope global | awk '/[[:space:]]inet / { print gensub("/.*","","g",$2) }')
@@ -65,8 +65,8 @@ fi
 # 总结
 任何概念或操作不仅仅要知其然，要深入理解，就得知其所以然。简单的事情深入理解下去往往并不简单。 
 
-# Ref:
-[深入理解Linux修改hostname](http://www.cnblogs.com/kerrycode/p/3595724.html) 
+# Ref
+[深入理解Linux修改hostname](http://www.cnblogs.com/kerrycode/p/3595724.html)  
 [如何在CentOS或RHEL 7上修改主机名](https://linux.cn/article-3937-1.html)
 
 
