@@ -7,6 +7,7 @@ avatarimg:
 tags: [Linux, Git]
 duoshuo: true
 ---
+
 # 引言
 昨天开始重新学习Git的基础知识，很久时间不用了，就容易忘记。 
 
@@ -25,11 +26,11 @@ fatal: HTTP request failed
 
 # 解决方法
 从上面知道原因了，就可以知道解决方法了。下面提供2个。
-1、手动安装一个新版本的git
+## 1、手动安装一个新版本的git
 这个看起来够直接，但其实也不是那么简单，一般默认源都是安装git 1.7.1，我有些懒，不想找提供比这个版本更高的yum源或者从源码安装，这个方法暂时没用。  
 从上面的描述也可以看出，CentOS还是作为服务器使用吧，个人使用不太方便。
 
-2、在git repo link中添加username用户名字段
+## 2、在git repo link中添加username用户名字段
 先删除掉远程库，然后添加username用户名字段到git repo link中，再重新添加远程库，  
 然后git push，发现不需要输入用户名了，直接提示输入密码，输入正确的密码后就可以进行push了。
 <pre>
