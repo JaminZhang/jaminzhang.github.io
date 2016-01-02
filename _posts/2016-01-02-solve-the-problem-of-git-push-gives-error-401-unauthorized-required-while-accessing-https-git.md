@@ -31,7 +31,7 @@ fatal: HTTP request failed
 从上面的描述也可以看出，CentOS还是作为服务器使用吧，个人使用不太方便。
 
 ## 2、在git repo link中添加username用户名字段
-先删除掉远程库，然后添加username用户名字段到git repo link中，再重新添加远程库，  
+先删除掉远程库，然后添加username用户名字段（https://[用户名字段]@）到git repo link中，再重新添加远程库，  
 然后git push，发现不需要输入用户名了，直接提示输入密码，输入正确的密码后就可以进行push了。
 <pre>
 [root@Aliyun-BJ-01 tutorial]# git remote rm origin
