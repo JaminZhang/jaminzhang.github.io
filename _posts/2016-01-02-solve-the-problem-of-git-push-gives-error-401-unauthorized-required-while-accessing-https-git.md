@@ -7,17 +7,17 @@ avatarimg:
 tags: [Linux, Git]
 duoshuo: true
 ---
-
 # 引言
 昨天开始重新学习Git的基础知识，很久时间不用了，就容易忘记。 
 
 # 错误提示
 当执行git push命令时，提示"401 Unauthorized while accessing https"，如下：
->
+<pre>
 [root@Aliyun-BJ-01 tutorial]# git push
 error: The requested URL returned error: 401 Unauthorized while accessing https://jaminzhang.backlogtool.com/git/JAMIN_GIT/tutorial.git/info/refs
 
 fatal: HTTP request failed
+</pre>
 
 # 原因分析
 教程中并没有报错，检查半天，发现其他配置都一样，然后怀疑是使用的git版本不一样。我使用的CentOS系统，yum install git安装的最新版本是1.7.1，其实这个版本比较老了，有关于认证方一个限制，就是用户名是需要严格声明的。
@@ -32,7 +32,7 @@ fatal: HTTP request failed
 2、在git repo link中添加username用户名字段
 先删除掉远程库，然后添加username用户名字段到git repo link中，再重新添加远程库，  
 然后git push，发现不需要输入用户名了，直接提示输入密码，输入正确的密码后就可以进行push了。
->
+<pre>
 [root@Aliyun-BJ-01 tutorial]# git remote rm origin
 [root@Aliyun-BJ-01 tutorial]# git remote add origin https://Jamin.Zhang@jaminzhang.backlogtool.com/git/JAMIN_GIT/tutorial.git
 [root@Aliyun-BJ-01 tutorial]# git push
@@ -43,6 +43,7 @@ Writing objects: 100% (3/3), 334 bytes, done.
 Total 3 (delta 1), reused 0 (delta 0)
 To https://Jamin.Zhang@jaminzhang.backlogtool.com/git/JAMIN_GIT/tutorial.git
    703bd79..b961c67  master -> master
+</pre>
 
 # Ref
 [git pull gives error: 401 Authorization Required while accessing https://git.foo.com/bar.git](http://stackoverflow.com/questions/16572286/git-pull-gives-error-401-authorization-required-while-accessing-https-git-foo)  
