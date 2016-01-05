@@ -18,7 +18,7 @@ duoshuo: true
 
 [TCP-header-Colour](https://www.securitywizardry.com/packets/pdf/TCP-header-Colour.pdf)  
 
-（对于TCP的理论概念，用自己的话表达很费劲，直接参考下面现成的文字资料介绍说明吧，-_-#）  
+（对于TCP的理论概念，用自己的话表达很费劲，看完《TCP/IP详解 卷1：协议》第17章后，再结合参考下面现成的文字资料介绍说明吧，-_-#）  
 
 [TCP Message (Segment) Format](http://www.tcpipguide.com/free/t_TCPMessageSegmentFormat-3.htm)  
 [TCP报文段首部格式详解](http://blog.csdn.net/wilsonpeng3/article/details/12869233)  
