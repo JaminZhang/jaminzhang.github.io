@@ -14,10 +14,12 @@ duoshuo: true
 下面我列出一些相关资料，以便日后参考查看。  
 
 # TCP首部字段详解参考资料
-书中有个TCP包首部的图解，但我自己用Google搜索一下，看到很多类似的图解，个人对偏爱多种色彩，所以就找出一个我感觉比较好的图解放在下面。
+书中有个TCP包首部的图解，但我自己用Google搜索一下，看到很多类似的图解，个人对偏爱多种色彩，所以就找出一个我感觉比较好的彩色图解，链接是PDF。  
+
 [TCP-header-Colour](https://www.securitywizardry.com/packets/pdf/TCP-header-Colour.pdf)  
 
-（对于TCP的理论概念，用自己的话表达很费劲，直接参考下面现成的文字资料介绍说明吧，-_-#）
+（对于TCP的理论概念，用自己的话表达很费劲，直接参考下面现成的文字资料介绍说明吧，-_-#）  
+
 [TCP Message (Segment) Format](http://www.tcpipguide.com/free/t_TCPMessageSegmentFormat-3.htm)  
 [TCP报文段首部格式详解](http://blog.csdn.net/wilsonpeng3/article/details/12869233)  
 [IPv4 Header 和 TCP Header 简介](http://yumaojun03.gotoip55.com/?p=1064)
