@@ -63,3 +63,4 @@ screen 是在大批量操作时不二的选择了。
 
 # Ref
 [Linux 技巧：让进程在后台可靠运行的几种方法](http://www.ibm.com/developerworks/cn/linux/l-cn-nohup/)  
+[Linux Shell的 & 、&& 、 ||](http://my.oschina.net/hanzhankang/blog/202754)  
