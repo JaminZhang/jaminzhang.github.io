@@ -59,13 +59,3 @@ screen 是在大批量操作时不二的选择了。
 
 # Ref
 [Linux 技巧：让进程在后台可靠运行的几种方法](http://www.ibm.com/developerworks/cn/linux/l-cn-nohup/)  
-
-
-
-
-
-
-
-
-
-nohup/setsid 无疑是临时需要时最方便的方法，disown 能帮助我们来事后补救当前已经在运行了的作业，而 screen 则是在大批量操作时不二的选择了。
