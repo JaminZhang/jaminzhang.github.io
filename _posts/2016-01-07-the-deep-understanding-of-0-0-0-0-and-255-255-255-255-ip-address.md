@@ -43,7 +43,11 @@ netstat命令显示出来的是在255.255.255.255上监听，这样只有去看n
 有结果输出就不一定表示这种监听方式正确的。 
 能力有效，只能理解到这里了。  
 
+这是不是netstat 显示的bug？它好像并不验证你在什么IP地址上监听？
+255.255.255.255是受限的广播地址，用于IP数据报的目的地址，仅应用于UDP。
+
 # Ref
 [网络编程IP地址](https://www.loggerhead.me/posts/wang-luo-bian-cheng-ipdi-zhi.html)  
 [0.0.0.0](https://en.wikipedia.org/wiki/0.0.0.0)  
 [Broadcast_address](https://en.wikipedia.org/wiki/Broadcast_address)  
+[《TCP/IP详解 卷1：协议》第12章 广播和多播]
