@@ -37,7 +37,7 @@ tcp        0      0 127.0.0.1:20805             0.0.0.0:*                   LIST
 > 
 netstat as shipped with modern OSes (including Ubuntu) has a -W (--wide) switch that disables column width restrictions. This is definitely present since net-tools 1.60-23, documented in netstat(8), and listed in Changelog as an addition to 1.60-22.
 
-在CentOS 7下新版本netstat的--wide选项并不是像上面说的取消限制宽度限制。
+在CentOS 7下新版本netstat的--wide选项并不是像上面说的取消宽度限制。
 通过man netstat，-W选项功能如下：
 > 
    --wide , -W
