@@ -24,7 +24,8 @@ Acknowledgment number (32 bits)
 : 32位确认序号，ACK flag置1时才有效，指接收方期待的下一个报文段的序列号。
 
 # 通过实例理解TCP序列号、确认号
-个人比较lazy，就不自己抓包分析说明了，参照下面他人已经做过的抓包序列号分析说明。 
+个人比较lazy，就不自己抓包分析说明了，参照下面他人已经做过的抓包序列号分析说明。  
+
 [TCP序列号和确认号详解](http://www.cnblogs.com/chenboo/archive/2011/12/19/2293327.html)  
 [理解TCP序列号（Sequence Number）和确认号（Acknowledgment Number）](http://blog.csdn.net/a19881029/article/details/38091243)  
 
