@@ -59,7 +59,7 @@ tcp6       0      0 :::19999                :::*                    LISTEN      
 上面“1974/very-loooooooo”是一个测试监听进程，可以看到，使用了-W选项，Program name还是显示不全的，而且PID/Program name长度是19位。
 
 # 总结
-netstat输出的Program name在遇到较长进程命令名时，会截取，PID/Program name长度是19位。  
+netstat输出的Program name在遇到较长进程程序名时，会截取，PID/Program name长度是19位。  
 不知道这算不算一个bug?
 
 # Ref
