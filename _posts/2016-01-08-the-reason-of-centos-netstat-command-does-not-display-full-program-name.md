@@ -11,6 +11,7 @@ duoshuo: true
 # 引言
 使用netstat -lntp查看业务进程，发现显示程序名称显示不完整。
 如下：
+
 <pre>
 tcp        0      0 0.0.0.0:20811               0.0.0.0:*                   LISTEN      15459/./gate_s9990  
 tcp        0      0 0.0.0.0:843                 0.0.0.0:*                   LISTEN      15431/./flash_s9990 
@@ -27,6 +28,7 @@ tcp        0      0 127.0.0.1:20803             0.0.0.0:*                   LIST
 tcp        0      0 127.0.0.1:20804             0.0.0.0:*                   LISTEN      15434/./center_s999 
 tcp        0      0 127.0.0.1:20805             0.0.0.0:*                   LISTEN      15434/./center_s999 
 </pre>
+
 上面可以看到center_s999应该是center_s9990，但没显示出来，于是我就想为什么不能显示出来？观察了几个实例，推断PID/Porgram Name宽度限制在19位。  
 于是我想netstat没有选项控制显示完整Program Name吗？ 通过man netstat并没有发现有相关选项。
 
@@ -44,6 +46,7 @@ netstat as shipped with modern OSes (including Ubuntu) has a -W (--wide) switch 
 
 
 我在CentOS 7上使用新版本的netstat验证了下，结果如下：
+
 <pre>
 [root@centos-512mb-sgp1-01 ~]# netstat -lntp -W
 Active Internet connections (only servers)
