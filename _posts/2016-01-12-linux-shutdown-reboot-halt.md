@@ -1,0 +1,1 @@
+Linux下的shutdown/reboot/halt等关机命令
