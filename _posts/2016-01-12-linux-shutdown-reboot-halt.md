@@ -32,11 +32,13 @@ Short answer: shutdown -h now or shutdown -r now are graceful.
 
 # reboot/halt/poweroff
 我们首先要看下这3个命令所处路径：
-> 
+
+<pre>
 [root@Aliyun-BJ-01 ~]# ll /sbin/halt /sbin/reboot /sbin/poweroff
 lrwxrwxrwx. 1 root root     6 Aug 14  2014 /sbin/halt -> reboot
 lrwxrwxrwx. 1 root root     6 Aug 14  2014 /sbin/poweroff -> reboot
 -rwxr-xr-x. 1 root root 14832 Mar 12  2014 /sbin/reboot
+</pre>
 
 上面是在CentOS系统下，可以看到halt/poweroff命令实际是指向reboot命令的软链接。所以我们man reboot/man halt/man poweroff
 会得到相同的结果，
@@ -56,8 +58,8 @@ lrwxrwxrwx. 1 root root     6 Aug 14  2014 /sbin/poweroff -> reboot
 
 # 总结
 模拟非正常关机/重启的方法：
-1.halt -f / reboot -f
-2.kill -9 1
+## 1.halt -f / reboot -f
+## 2.kill -9 1
 
 # Ref
 [Linux Graceful Shutdown](http://serverfault.com/questions/327758/linux-graceful-shutdown)  
