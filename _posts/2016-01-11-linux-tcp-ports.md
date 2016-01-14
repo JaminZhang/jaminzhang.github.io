@@ -29,7 +29,7 @@ The Dynamic and/or Private Ports are those from 49152 through 65535
 
 那么如何让普通用户使用1024以下的端口？
 
-# 普通用户进程使用1024以下的端口的方法
+# 普通用户进程使用1024以下端口的方法
 ## 1.1 setcap配置
 setcap 'cap_net_bind_service=+ep' /path/to/program
 这个是配置指定的进程。我没有使用过。
