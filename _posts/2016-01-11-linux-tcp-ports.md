@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Linux中的TCP端口
@@ -31,17 +30,17 @@ The Dynamic and/or Private Ports are those from 49152 through 65535
 那么如何让普通用户使用1024以下的端口？
 
 # 普通用户进程使用1024以下的端口的方法
-1.1 setcap配置
+## 1.1 setcap配置
 setcap 'cap_net_bind_service=+ep' /path/to/program
 这个是配置指定的进程。我没有使用过。
 
-1.2 sudo配置
+## 1.2 sudo配置
 将普通用户添加到sudoers，这个普通用户运行时就具有root权限了。
 
-1.3 端口转发
+## 1.3 端口转发
 使用iptalbes进行端口转发。
 
-1.4 authbind
+## 1.4 authbind
 这个没有见过。
 
 PS:我们的这个业务进程最后直接使用root用户运行。
