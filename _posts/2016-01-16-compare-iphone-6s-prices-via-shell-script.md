@@ -9,7 +9,7 @@ duoshuo: true
 ---
 
 # 引言
-最近在关注iPhone 6S Plus价格，每次去不同国家官网看了价格，然后换算成人民币，有点烦琐，于是写了个Shell脚本来做个这个事。
+最近在关注iPhone 6s Plus价格，每次去不同国家官网看了价格，然后换算成人民币，有点烦琐，于是写了个Shell脚本来做个这个事。
 
 # iPhone不同国家价格获取及转换成人民币
 以下是脚本内容：
@@ -18,7 +18,6 @@ duoshuo: true
 #!/bin/bash
 
 echo
-echo "----------"
 echo "[1] iPhone 6s 5.5-inch-display-64gb-rose-gold"
 echo 
 
@@ -57,7 +56,6 @@ fi
 <pre>
 [root@Aliyun-BJ-01 test]# sh Apple-Products-Prices-Converter.sh 
 
-----------
 [1] iPhone 6s 5.5-inch-display-64gb-rose-gold
 
 Please choose one iPhone product listed above(enter the number): 1
