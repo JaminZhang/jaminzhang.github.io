@@ -59,8 +59,9 @@ secrets file = /etc/rsyncd.pass
 
 </pre>
 
-上面rsyncd.conf配置文件中的hosts allow参数是用的主机名的形式。
-验证过程中出现了小问题，通过日志可以看出来。首先， missing secret for user "backuper"，是因为rsync daemon端中的secrets file中内容规则应该是auth-user:passwrod的形式，再password mismatch，是因为rsync client端的pasword file中内容规则应该是password形式，rsync很久手动配置过，忘记了。  
+上面rsyncd.conf配置文件中的hosts allow参数是用的主机名的形式。  
+验证过程中出现了小问题，通过日志可以看出来。  
+首先， missing secret for user "backuper"，是因为rsync daemon端中的secrets file中内容规则应该是auth-user:passwrod的形式，再就是password mismatch，是因为rsync client端的pasword file中内容规则应该是password形式，rsync很久没有手动配置过，忘记了。  
 从这里也可以看出日志文件对于排错非常重要。
 
 # Ref
