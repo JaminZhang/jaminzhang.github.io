@@ -11,7 +11,7 @@ duoshuo: true
 # 引言
 一些业务的机器重装系统了，我们是用saltstack进行批量命令执行的，然后发现这些重装的机器上的salt minion无法和salt master认证。
 
-# 原因及解析决方法
+# 原因及解决方法
 因为salt master上已经存在了这些机器重装之前的pubic key，可以通过 salt-key -L命令查找出来（salt mininon的public key默认存放路径为/etc/salt/pki/master/minions/）。机器重装之后salt minion会生成新的public key，就与之前的key冲突了。  
 
 于是解决方法就是删除之前的key。
