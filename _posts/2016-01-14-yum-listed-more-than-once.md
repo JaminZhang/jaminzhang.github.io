@@ -1,3 +1,13 @@
+---
+layout: post
+title: yum repository listed more than once
+description: "yum repository listed more than once"
+category: Linux
+avatarimg:
+tags: [yum]
+duoshuo: true
+---
+
 # 引言
 服务器上使用yum命令更新软件上提示如下：  
 yum repository xxx is listed more than once
