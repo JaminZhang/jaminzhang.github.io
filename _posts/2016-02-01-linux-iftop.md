@@ -1,3 +1,13 @@
+---
+layout: post
+title: Linux iftop命令
+description: "Linux iftop命令"
+category: Linux
+avatarimg:
+tags: [iftop]
+duoshuo: true
+---
+
 # 引言
 通常查看Linux系统的限时网卡速率及流量，我会使用iftop命令。  
 但有时会对命令输出底部的数据各代表什么有些模棱两可，今天就确认一下他们的确切含义。  
