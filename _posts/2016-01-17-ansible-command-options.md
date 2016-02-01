@@ -40,7 +40,7 @@ all 针对hosts定义的所有主机执行，可以指定组名或者模式。
 -k指定SSH密码认证时的密码提示。  
 
 # Ref
-[man ansible]
+man ansible  
 [Ansible quick start](http://tuxknight-notes.readthedocs.org/en/latest/ansible/install.html)  
 
 
