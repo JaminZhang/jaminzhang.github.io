@@ -10,7 +10,7 @@ duoshuo: true
 
 # 引言
 我们使用的服务器监控软件是Zabbix，这是现在普遍使用的监控软件。  
-现在我登录服务器上去看看zabbix agentd的配置文件。由于我并没有经常使用zabbix, 所以有些参数需要重新了解下。  
+刚才我登录服务器上去看了下zabbix agentd的配置文件。由于我并没有经常使用zabbix, 所以有些参数需要重新了解加深下。  
 
 # Zabbix agent配置文件zabbix_agentd.conf说明
 以下是我们的一个zabbix_agentd.conf配置文件，比较简单：
