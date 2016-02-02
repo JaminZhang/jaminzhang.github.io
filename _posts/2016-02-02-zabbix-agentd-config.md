@@ -23,7 +23,7 @@ EnableRemoteCommands=0
 Timeout=30
 </pre>
 
-各个参数的含义是什么呢？直接去看官网的说明吧，https://www.zabbix.com/documentation/2.4/manual/appendix/config/zabbix_agentd  
+各个参数的含义是什么呢？直接去看官网的说明吧，[点这](https://www.zabbix.com/documentation/2.4/manual/appendix/config/zabbix_agentd)  
 
 <pre>
 Server	no			List of comma delimited IP addresses (or hostnames) of Zabbix servers. Spaces are allowed since the Zabbix 2.2 version.
