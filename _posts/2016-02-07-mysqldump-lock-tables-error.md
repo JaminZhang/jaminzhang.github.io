@@ -4,7 +4,7 @@ title: mysqldump锁表出错及解决方法
 description: "mysqldump锁表出错及解决方法"
 category: MySQL
 avatarimg:
-tags: [mysqldump]
+tags: [Database,MySQL,mysqldump]
 duoshuo: true
 ---
 
