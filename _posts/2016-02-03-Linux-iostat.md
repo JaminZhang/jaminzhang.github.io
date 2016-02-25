@@ -1,3 +1,13 @@
+---
+layout: post
+title: Linux iostat使用
+description: "Linux iostat使用"
+category: Linux
+avatarimg: 
+tags: [iostat]
+duoshuo: true
+---
+
 # 引言
 某游戏业务进行合服，游戏区服数据库比较大，有77G，合服前会先全备一下数据库。  
 于是我想查看当前数据库备份时系统的IO情况，主要是IO的速度，以便估计整个备份所花费的时间。  
