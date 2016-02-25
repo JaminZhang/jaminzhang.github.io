@@ -4,7 +4,7 @@ title: mysql Duplicate entry for key错误提示
 description: "mysql Duplicate entry for key错误提示"
 category: MySQL
 avatarimg:
-tags: [MySQL]
+tags: [Database,MySQL]
 duoshuo: true
 ---
 
