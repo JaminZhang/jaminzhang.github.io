@@ -70,6 +70,7 @@ mysql锁表原理深入下去还有很多细节可以学习，可以参考Ref相
 [mysqldump备份数据库时出现when using LOCK TABLES的提示](http://mysqldba.blog.51cto.com/6728219/1329206)  
 [对mysqldump在备份数据库时锁表的认识](http://www.freeoa.net/osuport/db/mysqldump-lock-on-backup_1453.html)  
 [mysql - Run MySQLDump without Locking Tables - Stack Overflow](http://stackoverflow.com/questions/104612/run-mysqldump-without-locking-tables)  
+[mysqldump — A Database Backup Program](http://dev.mysql.com/doc/refman/5.7/en/mysqldump.html#option_mysqldump_single-transaction)  
 [Best kept MySQLDump Secret - MySQL Performance Blog](https://www.percona.com/blog/2012/03/23/best-kept-mysqldump-secret/)  
 [mysqldump的流程 | P.Linux Laboratory](http://www.penglixun.com/tech/database/the_process_of_mysqldump.html)  
 [mysql中lock tables与unlock tables(锁表/解锁)使用总结](http://www.111cn.net/database/mysql/55482.htm)  
