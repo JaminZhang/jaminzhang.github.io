@@ -32,5 +32,3 @@ Use charset_name as the default character set. See Section 10.5, “Character Se
 [MySQL :: MySQL 5.7 Reference Manual :: 10.5 Character Set Configuration](http://dev.mysql.com/doc/refman/5.7/en/charset-configuration.html)  
 [mysql导入提示Unknown command '\"' 错误即mysqldump说明](http://chenchao40322.blog.51cto.com/2181131/407699)  
 [修改及查看mysql数据库的字符集 - donqiang - 博客园](http://www.cnblogs.com/donqiang/articles/2057972.html)   
-
-[]()  
