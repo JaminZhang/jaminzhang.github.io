@@ -28,7 +28,7 @@ do
 done
 </pre>
 
-然后运行2分钟后发现，CPU占用率达到100%，机器hang住了，原因可以看这里的一个解释(http://www.lfyzjck.com/why-infinite-loop-increase-cpu-use/)。
+然后运行2分钟后发现，CPU占用率达到100%，机器hang住了，原因可以看[这里的一个解释](http://www.lfyzjck.com/why-infinite-loop-increase-cpu-use/)。
 
 避免CPU占用率100%可以增加一个usleep (微秒)。
 
