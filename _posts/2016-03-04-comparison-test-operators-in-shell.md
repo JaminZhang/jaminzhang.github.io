@@ -30,7 +30,7 @@ String Comparison
 \<	Less than (ASCII) *
 \>	Greater than (ASCII) *
 * If within a double-bracket [[ ... ]] test construct, then no escape \ is needed.
-* 
+ 
 -z	String is empty
 -n	String is not empty
 
