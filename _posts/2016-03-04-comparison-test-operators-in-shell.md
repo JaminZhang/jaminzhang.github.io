@@ -28,9 +28,9 @@ String Comparison
 ==	Equal to
 !=	Not equal to
 \<	Less than (ASCII) *
- 	 	 
 \>	Greater than (ASCII) *
-	 	 	 
+* If within a double-bracket [[ ... ]] test construct, then no escape \ is needed.
+* 
 -z	String is empty
 -n	String is not empty
 
@@ -39,7 +39,6 @@ Arithmetic Comparison	within double parentheses (( ... ))
 >=	Greater than or equal to	 	 	 
 <	Less than	 	 	 
 <=	Less than or equal to	 	 	 
-* If within a double-bracket [[ ... ]] test construct, then no escape \ is needed.
 
 </pre>
 
