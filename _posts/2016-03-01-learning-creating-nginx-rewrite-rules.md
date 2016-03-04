@@ -51,7 +51,7 @@ rewrite ^(/download/.*)/audio/(.*)$ $1/mp3/$2.ra  last;
 （这个是301跳转，Ref文章[Nginx控制域名301跳转出现"此网页包含重定向循环"]中使用rewrite指定解决的，其实上面的文章中说了不推荐rewrite来解决，
 因为rewrite的效率要比return低。）
 然后配置了一个配置文件，还是不生效，依旧提示“此网页包含重定向循环”，经排查发现在nginx.conf主配置文件中并没有include www.new-name.com
-对应的配置文件, 还以为默认会include nginx/conf.d目录下的所有conf文件呢。。。于是加上inclue指令，就可以测试成功了。
+对应的配置文件, 还以为默认会include nginx/conf.d目录下的所有conf文件呢。。。于是加上include指令，就可以测试成功了。
 <pre>
 server {
     listen 80;
