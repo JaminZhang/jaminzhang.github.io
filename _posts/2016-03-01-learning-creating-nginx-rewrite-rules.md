@@ -45,7 +45,7 @@ server {
 <pre>
 rewrite ^(/download/.*)/media/(.*)$ $1/mp3/$2.mp3 last;
 rewrite ^(/download/.*)/audio/(.*)$ $1/mp3/$2.ra  last;
-<pre>
+</pre>
 
 ## 2 nginx配置文件不熟悉
 下面示例配置中的return指令中的www.new-name.com新域名的配置必须要存在，一开始测试时我没有配置，提示“此网页包含重定向循环”，
