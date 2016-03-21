@@ -22,7 +22,8 @@ This version of ps accepts several kinds of options:
        2   BSD options, which may be grouped and must not be used with a dash.
        3   GNU long options, which are preceded by two dashes.
 -e     Select all processes.  Identical to -A.
--f     Do full-format listing. This option can be combined with many other UNIX-style options to add additional columns.  It also causes the command arguments to be printed.  When used with -L, the
+-f     Do full-format listing. This option can be combined with many other UNIX-style options to add additional columns.  
+It also causes the command arguments to be printed.  When used with -L, the
               NLWP (number of threads) and LWP (thread ID) columns will be added.  See the c option, the format keyword args, and the format keyword comm.
 -L     Show threads, possibly with LWP and NLWP columns.
 -L是显示线程和线程数，之前有写一篇文章写过通过/proc/${PID}/task判断一个程序是否是多线程程序，这里更直接一些。
@@ -44,7 +45,7 @@ S (task_interruptible): 可中断的睡眠状态
 pkill主要是基于名字来发送信号给相关进程的。
 
 # Ref
-man ps pkill pgrep
+man ps pkill pgrep  
 [Linux 进程状态 说明](http://blog.csdn.net/tianlesoftware/article/details/6457487)  
 [ps 进程查看器](http://linuxtools-rst.readthedocs.org/zh_CN/latest/tool/ps.html)  
 [Linux进程关系](http://www.cnblogs.com/vamei/archive/2012/10/07/2713023.html)  
