@@ -21,7 +21,6 @@ This version of ps accepts several kinds of options:
        1   UNIX options, which may be grouped and must be preceded by a dash.
        2   BSD options, which may be grouped and must not be used with a dash.
        3   GNU long options, which are preceded by two dashes.
-
 -e     Select all processes.  Identical to -A.
 -f     Do full-format listing. This option can be combined with many other UNIX-style options to add additional columns.  It also causes the command arguments to be printed.  When used with -L, the
               NLWP (number of threads) and LWP (thread ID) columns will be added.  See the c option, the format keyword args, and the format keyword comm.
