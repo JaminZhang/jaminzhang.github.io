@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Twitter Murder测试
-description: "Twitter的大规模文件P2P分发系统-Murder"
+title: Murder下载测试
+description: "Murder下载测试"
 category: Linux
 avatarimg:
 tags: [Murder, P2P, BT]
