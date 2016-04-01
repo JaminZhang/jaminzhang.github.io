@@ -22,5 +22,5 @@ select concat('drop table ', table_name, ';') from information_schema.tables whe
 去掉第一行，后面就是删除指定数据库中的所有表。可以手动删，如果表数量很多，可以使用Shell脚本for循环来执行删除。
 
 # Ref
-[http://blog.5ibc.net/p/20280.html](http://blog.5ibc.net/p/20280.html)  
+[mysql删除所有表不删除数据库方法](http://blog.5ibc.net/p/20280.html)  
 
