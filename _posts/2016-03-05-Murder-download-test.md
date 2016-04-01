@@ -43,10 +43,11 @@ python /usr/local/murder/dist/murder_client.py seed ${deploy_file}.torrent ${dep
 > 
 看了一个别人的用法，可以在执行下载时指定torrent文件时使用HTTP URL的形式。
 
-> 
+<pre> 
 download_file=/data/download/deploy.test.tar.gz
 IP=`curl http://www.5ding.com/dnsip/dnsip`
 python /usr/local/murder/dist/murder_client.py peer ${download_file}.torrent ${download_file} $IP
+</pre>
 
 # Murder测试使用过程中的疑问
 ## 1、peer节点进行下载时使用的是peer模式，只有下载，有没有上传？
