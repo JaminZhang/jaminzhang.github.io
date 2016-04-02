@@ -4,6 +4,4 @@ title: 关于
 permalink: /about/
 ---
 
-# 关于
-
-### 这是一个Demo...
+帝都运维
