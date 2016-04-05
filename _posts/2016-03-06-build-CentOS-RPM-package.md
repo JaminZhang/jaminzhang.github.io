@@ -4,7 +4,7 @@ title: 构建CentOS RPM包
 description: "构建CentOS RPM包"
 category: Linux
 avatarimg:
-tags: [yum]
+tags: [RPM, FPM, YUM]
 duoshuo: true
 ---
 
