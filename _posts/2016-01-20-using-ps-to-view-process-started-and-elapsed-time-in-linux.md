@@ -20,7 +20,6 @@ ps aux 或 ps -ef 不就可以看时间吗？
        a      Lift the BSD-style "only yourself" restriction, which is imposed upon the set of all processes when some BSD-style (without "-") options are used or when the ps personality setting is
               BSD-like.  The set of processes selected in this manner is in addition to the set of processes selected by other means.  An alternate description is that this option causes ps to list all
               processes with a terminal (tty), or to list all processes when used together with the x option.
-       
        x      Lift the BSD-style "must have a tty" restriction, which is imposed upon the set of all processes when some BSD-style (without "-") options are used or when the ps personality setting is
               BSD-like.  The set of processes selected in this manner is in addition to the set of processes selected by other means.  An alternate description is that this option causes ps to list all
               processes owned by you (same EUID as ps), or to list all processes when used together with the a option.
@@ -71,7 +70,7 @@ UID        PID  PPID  C STIME TTY          TIME CMD
 
 TIME列也和前面说的TIME列一样指的命令使用的累积CPU时间。
 
-# 
+# 使用ps命令查看进程启动的精确时间和启动后所流逝的时间
 回到引言中的问题，同事实际要问的是一个进程启动的精确时间和进程启动后所流逝的时间。  
 其实这2个时间也是可以通过ps命令输出的。
 标识符如下：
