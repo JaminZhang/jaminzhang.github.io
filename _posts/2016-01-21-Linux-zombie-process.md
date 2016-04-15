@@ -28,7 +28,8 @@ duoshuo: true
 <pre>
 　　unix提供了一种机制可以保证只要父进程想知道子进程结束时的状态信息， 就可以得到。
 　　这种机制就是: 在每个进程退出的时候,内核释放该进程所有的资源,包括打开的文件,占用的内存等。 
-　　但是仍然为其保留一定的信息(包括进程号the process ID,退出状态the termination status of the process,运行时间the amount of CPU time taken by the process等)。直到父进程通过wait / waitpid来取时才释放。 
+　　但是仍然为其保留一定的信息(包括进程号the process ID,退出状态the termination status of the process,
+　　运行时间the amount of CPU time taken by the process等)。直到父进程通过wait / waitpid来取时才释放。 
 　　但这样就导致了问题，如果进程不调用wait/waitpid的话，那么保留的那段信息就不会释放，其进程号就会一直被占用，
 　　但是系统所能使用的进程号是有限的，如果大量的产生僵死进程，将因为没有可用的进程号而导致系统不能产生新的进程. 此即为僵尸进程的危害，应当避免。
 
