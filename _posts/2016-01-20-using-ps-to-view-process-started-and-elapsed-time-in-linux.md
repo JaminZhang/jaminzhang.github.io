@@ -23,7 +23,6 @@ ps aux 或 ps -ef 不就可以看时间吗？
        x      Lift the BSD-style "must have a tty" restriction, which is imposed upon the set of all processes when some BSD-style (without "-") options are used or when the ps personality setting is
               BSD-like.  The set of processes selected in this manner is in addition to the set of processes selected by other means.  An alternate description is that this option causes ps to list all
               processes owned by you (same EUID as ps), or to list all processes when used together with the a option.
-              
        u      Display user-oriented format.
               
 </pre>
