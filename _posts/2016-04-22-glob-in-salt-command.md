@@ -19,7 +19,7 @@ glob听起来不太懂，其实就shell-style，shell里能用的，它也就能
 在Linux中，glob是用来匹配路径名的通配符。
 具体man 7 glob
 
-salt命令中的glob也就是shell中的glob。
+salt命令中的glob也应该是shell中的glob。
 
 # Ref 
 [saltstack（二）target](http://lixcto.blog.51cto.com/4834175/1428659)  
