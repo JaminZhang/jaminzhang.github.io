@@ -57,6 +57,8 @@ Using XML
 Fetch an XML document
 Use the XML DOM to loop through the document
 Extract values and store in variables
+
+
 Using JSON
 
 Fetch a JSON string
