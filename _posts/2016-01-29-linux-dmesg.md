@@ -33,7 +33,7 @@ The default action is to read all messages from kernel ring buffer.
 使用bash命令转换：
 ```bash
 date -d "1970-01-01 UTC `echo "$(date +%s)-$(cat /proc/uptime|cut -f 1 -d' ')+[dmesg显示的时间]"|bc ` seconds"
-    
+```    
     
 当然还有其他工具，比如这个上python写的[pydmesg](https://gist.github.com/saghul/542780)  
 
