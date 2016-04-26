@@ -31,7 +31,8 @@ The default action is to read all messages from kernel ring buffer.
 
 ## 2.使用命令或其他工具转换
 使用bash命令转换：
-```bash
+
+``` bash
 date -d "1970-01-01 UTC `echo "$(date +%s)-$(cat /proc/uptime|cut -f 1 -d' ')+[dmesg显示的时间]"|bc ` seconds"
 ```    
     
