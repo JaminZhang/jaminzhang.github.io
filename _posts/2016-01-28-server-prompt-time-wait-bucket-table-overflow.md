@@ -2,7 +2,7 @@
 layout: post
 title: 服务器提示kernel: TCP: kernel: TCP: time wait bucket table overflow
 description: "服务器提示kernel: TCP: kernel: TCP: time wait bucket table overflow"
-category: Networking
+category: Network
 avatarimg:
 tags: [TCP]
 duoshuo: true
