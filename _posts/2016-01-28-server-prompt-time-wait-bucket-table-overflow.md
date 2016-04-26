@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 服务器提示kernel: TCP: kernel: TCP: time wait bucket table overflow
-description: "服务器提示kernel: TCP: kernel: TCP: time wait bucket table overflow"
+title: 服务器提示kernel: TCP: time wait bucket table overflow
+description: "服务器提kernel: TCP: time wait bucket table overflow"
 category: Network
 avatarimg:
 tags: [TCP]
