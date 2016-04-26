@@ -26,7 +26,7 @@ Linux系统内核参数net.ipv4.tcp_max_tw_buckets是控制系统允许处于TIM
 如果超过net.ipv4.tcp_max_tw_buckets上限，该连接被关闭，并且输出该信息到syslog(/var/log/messages)。
 
 所以出现上面的提示，就是处于TIME_WAIT状态的套接字达到了net.ipv4.tcp_max_tw_buckets的数量，此时调大net.ipv4.tcp_max_tw_buckets。
-如果net.ipv4.tcp_max_tw_buckets已经很大了，还可以配置另外2个TIME WAIT相关的内核参数。
+如果net.ipv4.tcp_max_tw_buckets已经很大了，尝试配置另外2个TIME WAIT相关的内核参数。
 
 ## net.ipv4.tcp_tw_recycle
 <pre>
@@ -39,7 +39,7 @@ The default value is 0 (disabled). Should be used with caution with loadbalancer
 
 </pre>
 
-##　net.ipv4.tcp_tw_reuse
+## net.ipv4.tcp_tw_reuse
 <pre>
 This allows reusing sockets in TIME_WAIT state for new connections when it is safe from protocol viewpoint.
 Default value is 0 (disabled). It is generally a safer alternative to tcp_tw_recycle.
