@@ -29,5 +29,5 @@ tcpdump -l -n arp | grep "who-has" | head -100 | awk -F"[ ,]+" '{print $7}' | so
 如果在只有几台机器的LAN上，这个命令可能花几天执行完。
 
 # Ref
-[《时间管理：给系统管理员》 第十三章 自动化 建立长命令行 P193] (http://item.jd.com/10042434.html)
+[《时间管理：给系统管理员》 第十三章 自动化 建立长命令行 P193] (http://item.jd.com/10042434.html)  
 [《时间管理：给系统管理员》 豆瓣读书](https://book.douban.com/subject/2253513/)
