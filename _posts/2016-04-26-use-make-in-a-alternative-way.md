@@ -35,12 +35,12 @@ whole: partA partB partC
 下面是一个实例：
 
 ``` bash
-whole.txt: partA partB
-	cat partA partB > whole.txt	
+whole.txt: partA.txt partB.txt
+	cat partA.txt partB.txt > whole.txt	
 	@echo Done updating whole.txt 
 ```    
 
-这段代码是说如果partA或partB有了改变，就使用cat命令重新产生whole.txt。然后，此规则会输出“Done updating whole.txt”以公告其成功。
+这段代码是说如果partA.txt或partB.txt有了改变，就使用cat命令重新产生whole.txt。然后，此规则会输出“Done updating whole.txt”以公告其成功。
 
 
 # 例子2
