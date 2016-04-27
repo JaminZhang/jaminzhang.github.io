@@ -19,7 +19,8 @@ duoshuo: true
 
 ``` bash  
 tcpdump -l -n arp | grep "who-has" | head -100 | awk -F"[ ,]+" '{print $7}' | sort  | uniq -c | sort -n
-```
+```    
+
 
 上面的命令及相关选项请man。
 上面逻辑是：使用tcpdump抓ARP的协议包，然后使用grep过滤出含有"who-has"的行，然后用awk提取出发出ARP请求的IP，最后排序，去重汇总，排序。  
