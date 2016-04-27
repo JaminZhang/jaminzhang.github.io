@@ -49,6 +49,7 @@ foo.o: foo.c defs.h # foo 模块
 	cc -c -g foo.c
 ```    
 
+<pre>
 看到这个例子，各位应该不是很陌生了，前面也已说过，foo.o 是我们的目标，foo.c 和
 defs.h 是目标所依赖的源文件，而只有一个命令cc -c -g foo.c（以Tab 键开头）。
 
@@ -57,7 +58,7 @@ defs.h 是目标所依赖的源文件，而只有一个命令cc -c -g foo.c（�
 文件日期要比foo.o 文件日期要新，或是foo.o 不存在，那么依赖关系发生。
 2. 生成或更新foo.o 文件，就是那个cc 命令。它说明了如何生成foo.o 这个文件。
 （当然，foo.c 文件include 了defs.h 文件）
-
+</pre>
 
 # Ref
 [《时间管理：给系统管理员》 第十三章 自动化 make简介 P183] (http://item.jd.com/10042434.html)  
