@@ -46,7 +46,7 @@ whole.txt: partA partB
 # 例子2
 ``` bash
 foo.o: foo.c defs.h # foo 模块
-cc -c -g foo.c
+	cc -c -g foo.c
 ```    
 
 看到这个例子，各位应该不是很陌生了，前面也已说过，foo.o 是我们的目标，foo.c 和
