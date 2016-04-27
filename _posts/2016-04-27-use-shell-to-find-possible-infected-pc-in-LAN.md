@@ -15,8 +15,8 @@ duoshuo: true
 
 # 使用Shell命令找出局域网哪台机器最可能被蠕虫感染
 
-使用的Shell命令如下：
-``` bash
+使用的Shell命令如下：  
+```  bash
 tcpdump -l -n arp | grep "who-has" | head -100 | awk -F"[ ,]+" '{print $7}' | sort  | uniq -c | sort -n
 ```
 
