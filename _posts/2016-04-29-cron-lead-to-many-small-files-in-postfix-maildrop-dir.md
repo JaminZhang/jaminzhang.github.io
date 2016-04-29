@@ -58,6 +58,10 @@ X-Cron-Env: <USER=root>
 # 解决方案
 
 在crontab的第一行加入 MAILTO=""便可，这样执行当前用户的cron时，不会发送邮件。  
+修改命令：
+```bash
+sed -i '1 i\MAILTO=""' /var/spool/cron/root
+```    
 
 上面这种方法是治标，如果想治本，就把对应cron的中执行脚本的output重定向到文件或/dev/null中。
 
