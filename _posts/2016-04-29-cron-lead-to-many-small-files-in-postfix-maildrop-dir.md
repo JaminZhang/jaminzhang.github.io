@@ -62,7 +62,7 @@ X-Cron-Env: <USER=root>
 
 ```bash
 sed -i '1 i\MAILTO=""' /var/spool/cron/root
-```    
+```     
 
 上面这种方法是治标，如果想治本，就把对应cron的中执行脚本的output重定向到文件或/dev/null中。
 
