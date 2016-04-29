@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Markdown备忘单
+title:  Vim备忘单
 description: "Vim备忘单"
 category: Linux
 avatarimg:
