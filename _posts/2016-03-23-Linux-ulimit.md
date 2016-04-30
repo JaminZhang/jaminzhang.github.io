@@ -58,6 +58,7 @@ man ulimit
 
 ## 2.在应用程序的启动脚本中
 如果用户要对某个应用程序 myapp 进行限制，可以写一个简单的脚本 startmyapp。
+
 ```bash
 ulimit -s 512 
 myapp
