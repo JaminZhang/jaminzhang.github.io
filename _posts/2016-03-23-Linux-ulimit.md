@@ -28,6 +28,7 @@ ulimit 用于限制 shell 启动进程所占用的资源，支持以下各种类
 
 # ulimit参数
 man ulimit
+
 ```bash
 -a     All current limits are reported
 -b     The maximum socket buffer size
