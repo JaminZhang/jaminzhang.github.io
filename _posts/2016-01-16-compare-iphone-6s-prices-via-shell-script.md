@@ -14,7 +14,7 @@ duoshuo: true
 # iPhone不同国家价格获取及转换成人民币
 以下是脚本内容：
 
-```bash
+<pre>
 
 #!/bin/bash
 
@@ -49,13 +49,13 @@ then
 
 fi
 
-```    
+</pre>    
 
 以上只列了一个我关注的iPhone型号，脚本逻辑很简单，模拟人工的操作，首先指定iPhone型号的对应的URL，然后通过curl和grep/awk/sed等命令获取iPhone的价格，再就是获取当日汇率（使用yahoo提供的API），最后就是换算成人民币输出结果了。
 
 运行结果如下：
 
-```bash
+<pre>
 [root@Aliyun-BJ-01 test]# sh Apple-Products-Prices-Converter.sh 
 
 [1] iPhone 6s 5.5-inch-display-64gb-rose-gold
@@ -66,7 +66,7 @@ iphone6s/5.5-inch-display-64gb-rose-gold in US, HK, CN on 2016-01-16:
 The US Version in CNY is:  5573.7699
 The HK Version in CNY is:  6054.4524
 The CN Version in CNY is:  6888
-```    
+</pre>  
 
 
 # Ref
