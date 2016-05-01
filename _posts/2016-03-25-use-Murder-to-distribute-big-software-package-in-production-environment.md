@@ -81,3 +81,6 @@ Peer节点下载完成后默认上传1分钟后（可调整）就退出进程了
 基础安全要做好，防止服务器上的种子和文件泄露；每次文件发布完成后，关闭Seeder服务器的对应的上传进程。
 
 
+# Ref
+[Twitter的大规模文件P2P分发系统-Murder](http://jaminzhang.github.io/linux/Twitter-Murder-a-large-scale-file-distribute-system-via-p2p/)  
+[Murder下载测试](http://jaminzhang.github.io/linux/Murder-download-test/)  
