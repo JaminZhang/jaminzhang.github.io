@@ -67,6 +67,7 @@ The HK Version in CNY is:  6054.4524
 The CN Version in CNY is:  6888
 ```    
 
+
 # Ref
 [调用YAHOO API监控外汇汇率](http://raynix.info/archives/2216)  
 [通过Yahoo API获取实时货币汇率代码](http://www.diebiang.com/webdev/_shijiyingyong_shixianshili_tongguoYahoo_APIhuoqushishihuobihuilvdaima_15.html)  
