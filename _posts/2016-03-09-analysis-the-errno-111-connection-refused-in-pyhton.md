@@ -25,9 +25,9 @@ Problem connecting to tracker - [Errno 111] Connection refused
 
 exception socket.error
 > 
-exception socket.error
 This exception is raised for socket-related errors. The accompanying value is either a string telling what went wrong or a pair (errno, string) representing an error returned by a system call, similar to the value accompanying os.error. See the module errno, which contains names for the error codes defined by the underlying operating system.
 
+module-errno
 > 
 This module makes available standard errno system symbols. The value of each symbol is the corresponding integer value. The names and descriptions are borrowed from linux/include/errno.h, which should be pretty all-inclusive.
 
