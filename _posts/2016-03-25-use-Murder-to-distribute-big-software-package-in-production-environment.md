@@ -35,8 +35,9 @@ yum install murder -y
 
 ```bash
 python /usr/local/murder/dist/murder_tracker.py > /var/log/murder_tracker.log 2>&1 &
-确保Tracker服务器启动状态
 ```    
+
+确保Tracker服务器启动状态
 
 **2、在Seeder服务器（和Tracker服务器是同一台）上准备好要分发的文件并创建种子**
 
@@ -66,7 +67,7 @@ python /usr/local/murder/dist/murder_client.py seed ${deploy_file}.torrent ${dep
 python /usr/local/murder/dist/murder_client.py peer /data/download/deploy.tar.gz.torrent /data/download/deploy.tar.gz ${Peer_IP}
 ```    
 
-**5、文件下载完成后，关闭Seeder服务器进程**
+**5、文件下载完成后，关闭Seeder服务器进程**  
 kill Seeder进程PID
 避免它一直做种和提升安全性。
 
