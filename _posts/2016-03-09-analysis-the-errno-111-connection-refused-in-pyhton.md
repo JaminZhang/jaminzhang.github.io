@@ -1,0 +1,54 @@
+---
+layout: post
+title: Python中的[Errno 111] Connection refused报错分析
+description: "Python中的[Errno 111] Connection refused报错分析"
+category: Python
+avatarimg:
+tags: [Errno, socket]
+duoshuo: true
+---
+
+
+又说到之前Murder的一个python输出结果引发的深入分析：
+前几天测试Murder时，当没开启Tracker服务器时，在Peer下执行下载时会有如下报错：
+
+```bash
+[root@xxx_game dist]# python /usr/local/murder/dist/murder_client.py peer /data/download/server_1262.zip.torrent /data/download/server_1262.zip x.x.x.x
+Problem connecting to tracker - [Errno 111] Connection refused
+
+提示已经很明显示了，不能连接到tracker，事实也是如此，我把tracker进程给关了。
+起初我以为[Errno 111] Connection refused是作者自己定义的错误码，
+在源码里搜索Errno 111 Connection refused，并没有搜索到相关代码。
+
+然后查了下，
+
+exception socket.error
+> 
+exception socket.error
+This exception is raised for socket-related errors. The accompanying value is either a string telling what went wrong or a pair (errno, string) representing an error returned by a system call, similar to the value accompanying os.error. See the module errno, which contains names for the error codes defined by the underlying operating system.
+
+> 
+This module makes available standard errno system symbols. The value of each symbol is the corresponding integer value. The names and descriptions are borrowed from linux/include/errno.h, which should be pretty all-inclusive.
+
+
+当python执行脚本时连接Track时，最终是系统创建sokcet去连接，这个过程中出错了，系统给出errno和提示。
+“[Errno 111] Connection refused”这个提示是系统给出来的。
+通过 man errno.h和python中的输出可以验证：
+
+```bash
+ECONNREFUSED
+       Connection refused.
+```    
+
+```bash
+>>> import errno;
+>>> print errno.ECONNREFUSED
+111
+```    
+
+# Ref
+[socket — Low-level networking interface](https://docs.python.org/2/library/socket.html)  
+[errno — Standard errno system symbols](https://docs.python.org/2/library/errno.html#module-errno)  
+
+
+
