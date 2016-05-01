@@ -15,6 +15,7 @@ duoshuo: true
 ```bash
 [root@xxx_game dist]# python /usr/local/murder/dist/murder_client.py peer /data/download/server_1262.zip.torrent /data/download/server_1262.zip x.x.x.x
 Problem connecting to tracker - [Errno 111] Connection refused
+```    
 
 提示已经很明显示了，不能连接到tracker，事实也是如此，我把tracker进程给关了。
 起初我以为[Errno 111] Connection refused是作者自己定义的错误码，
