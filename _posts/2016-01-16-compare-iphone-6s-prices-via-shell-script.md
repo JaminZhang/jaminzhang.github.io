@@ -15,6 +15,7 @@ duoshuo: true
 以下是脚本内容：
 
 ```bash
+
 #!/bin/bash
 
 echo
