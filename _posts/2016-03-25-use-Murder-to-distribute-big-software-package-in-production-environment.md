@@ -27,7 +27,8 @@ Murder经过之前的调研测试后，已经在线上正式使用了。
 
 **0、准备工作**
 
-确保游戏服上安装好murder软件包（我已将https://github.com/lg/murder/tree/master/dist再加上一些脚本打包成了rpm放在公司内部yum源上了）  
+确保游戏服上安装好murder软件包  
+我已将https://github.com/lg/murder/tree/master/dist 再加上一些脚本打包成了rpm放在公司内部yum源上了 
 
 yum install murder -y
 
