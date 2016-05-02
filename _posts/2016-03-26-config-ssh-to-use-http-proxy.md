@@ -29,7 +29,7 @@ Corkscrew是一个用于通过HTTP代理访问SSH的工具。它已经在一些�
 去官网下载最新源码包，然后根据README中提到的安装方法来安装，
 经典的安装步骤：配置、编译、安装
 
-# 配置SSH使用Crokscrew
+# 配置SSH使用Corkscrew
 Crokscrew的README中写得很清楚了
 在~/.ssh/config中添加以下一行配置：
 
