@@ -51,7 +51,8 @@ deploy_file=/data/upload/deploy.test.tar.gz
 python /usr/local/murder/dist/murder_make_torrent.py ${deploy_file} ${Seeder_IP}:8998 ${deploy_file}.torrent
 ```    
 
-**3、启动Seeder服务器**
+**3、启动Seeder服务器**  
+
 启动Seeder服务器手动命令：
 
 ```bash
@@ -61,6 +62,7 @@ python /usr/local/murder/dist/murder_client.py seed ${deploy_file}.torrent ${dep
 要确保Seeder服务器在启动状态，否则Peer节点下载时连接不到。
 
 **4、下载节点peer执行下载**  
+
 4.1 将Seeder服务器上/data/upload/下刚才生成的种子文件上传到要分发文件去的目标服务器上  
 4.2 种子文件上传完成后，在目标服务器上执行P2P下载命令  
 
@@ -69,6 +71,7 @@ python /usr/local/murder/dist/murder_client.py peer /data/download/deploy.tar.gz
 ```    
 
 **5、文件下载完成后，关闭Seeder服务器进程**  
+
 kill Seeder进程PID
 避免它一直做种和提升安全性。
 
