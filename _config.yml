@@ -70,7 +70,8 @@ future:      true
 #markdown: redcarpet
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "quote", "highlight", "tables", "footnotes"]
-highlighter: pygments
+#highlighter: pygments
+highlighter: rouge
     
 
 # Analytics and webmaster tools stuff goes here
