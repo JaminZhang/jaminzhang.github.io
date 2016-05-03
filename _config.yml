@@ -67,7 +67,7 @@ future:      true
 #
 # 其它可选的markdown: rdiscount, kramdown, 
 #
-markdown: redcarpet
+#markdown: redcarpet
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "quote", "highlight", "tables", "footnotes"]
 highlighter: pygments
