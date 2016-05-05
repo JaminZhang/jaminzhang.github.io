@@ -19,7 +19,7 @@ grep recharge /data/gameinfo/s*/* |awk 'BEGIN{FS="&|="} {if($14 > 1462258800 && 
 所以考虑ansible是否可以将一个Shell脚本传送到远端执行，查了下，script模块就是做这个的。
 
 # ansible script模块
-使用script模块可以在本地写一个脚本，然后在远程服务器上执行：
+使用script模块可以在本地写一个脚本，然后在远程服务器上执行：  
 
 ```bash
 ansible myservers  -m script -a "/opt/app/target.sh"
