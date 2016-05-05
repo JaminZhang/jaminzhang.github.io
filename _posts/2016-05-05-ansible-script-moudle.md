@@ -20,6 +20,7 @@ grep recharge /data/gameinfo/s*/* |awk 'BEGIN{FS="&|="} {if($14 > 1462258800 && 
 
 # ansible script模块
 使用script模块可以在本地写一个脚本，然后在远程服务器上执行：
+
 ```bash
 ansible myservers  -m script -a "/opt/app/target.sh"
 ```    
