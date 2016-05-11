@@ -17,10 +17,11 @@ duoshuo: true
 
 ## 1.直接对数据库进行重命名
 （经测试该方法在5.6.15版本中不可用）
+
 > 
 RENAME {DATABASE | SCHEMA} db_name TO new_db_name;
 
->
+> 
 This statement was added in MySQL 5.1.7 but was found to be dangerous and was removed in MySQL 5.1.23. 
 However, use of this statement could result in loss of database contents, which is why it was removed. 
 Do not use RENAME DATABASE in earlier versions in which it is present.
