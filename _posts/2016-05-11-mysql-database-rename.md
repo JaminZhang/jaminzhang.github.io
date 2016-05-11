@@ -19,7 +19,7 @@ duoshuo: true
 （经测试该方法在5.6.15版本中不可用）
 
 > 
-RENAME {DATABASE | SCHEMA} db_name TO new_db_name;
+RENAME {DATABASE | SCHEMA} db_name TO new_db_name;  
 
 > 
 This statement was added in MySQL 5.1.7 but was found to be dangerous and was removed in MySQL 5.1.23. 
