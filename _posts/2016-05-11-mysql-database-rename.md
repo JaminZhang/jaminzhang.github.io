@@ -15,7 +15,7 @@ duoshuo: true
 
 # mysql数据库重命名方法
 ## 1.直接对数据库进行重命名（经测试该方法在5.6.15版本中不可用）
->
+> 
 RENAME {DATABASE | SCHEMA} db_name TO new_db_name;
 
 >
