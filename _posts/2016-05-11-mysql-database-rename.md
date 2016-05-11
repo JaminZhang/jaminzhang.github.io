@@ -32,7 +32,7 @@ Do not use RENAME DATABASE in earlier versions in which it is present.
 
 information_schema数据库table表记录了数据库中所有表的信息
 
->
+> 
 1、CREATE DATABASE new_db_name;  #创建新的数据库  
 2、RENAME TABLE db_name.table1 TO new_db_name.table1;   #对所有的表进行重命名  
 3、DROP DATABASE db_name;            #删除原来的数据库  
