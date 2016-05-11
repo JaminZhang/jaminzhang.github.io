@@ -14,8 +14,10 @@ duoshuo: true
 下面我亲自使用tcpdump来分析查看下DNS通信过程。
 
 # 使用tcpdump观察DNS通信过程
+
 ## 1.启动tcpdump对DNS报文进行抓包
 命令如下：
+
 > 
 tcpdump -i eth0 -nt -s 500 port domain
 
@@ -23,6 +25,7 @@ tcpdump -i eth0 -nt -s 500 port domain
 
 ## 2.使用host命令进行DNS查询
 命令如下：
+
 > 
 host -t A www.qq.com
 
