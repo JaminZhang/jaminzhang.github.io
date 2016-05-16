@@ -44,4 +44,5 @@ duoshuo: true
 # Ref
 [《TCP/IP详解 卷1：协议》 第14章 DNS：域名系统 14.8 用UDP还是用TCP](https://book.douban.com/subject/1088054/)  
 [TCP 方式查询解决 DNS 污染问题](https://cokebar.info/archives/1053)  
+[DNS使用的是TCP协议还是UDP协议](http://benbenxiongyuan.iteye.com/blog/1088085)  
 
