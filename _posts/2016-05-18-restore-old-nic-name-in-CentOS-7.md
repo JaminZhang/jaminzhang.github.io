@@ -29,6 +29,7 @@ CentOS 7网卡命名变化的原因，是由于systemd 和 udev 引入了一种�
 # CentOS 7下恢复旧式网卡命名方式
 
 参考CentOS官方文档，如下：  
+
 > 
 And what if I want the old naming back?  
 These are the necessary steps:  
