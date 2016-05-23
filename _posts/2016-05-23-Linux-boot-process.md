@@ -14,7 +14,8 @@ duoshuo: true
 
 # Linux操作系统启动流程
 
-首先贴一张总结得比较好图：
+首先贴一张总结得比较好图：  
+
 ![Linux操作系统启动流程图](http://img1.51cto.com/attachment/201206/111242100.png)  
 
 
