@@ -19,6 +19,7 @@ duoshuo: true
 
 
 下面进行文字版本再说明：
+
 ## 第一阶段：硬件引导启动阶段
 	1.1 POST(Power On Self Test) 加电自检
 	1.2 BIOS
