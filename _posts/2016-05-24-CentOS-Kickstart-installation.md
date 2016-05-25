@@ -23,11 +23,16 @@ duoshuo: true
 # 怎样准备一个Kickstart安装
 流程如下（具体操作参见红帽官网，这里就不写了）
 
-## 1.创建一个Kickstart文件  
+## 1.创建一个Kickstart文件
+
 ## 2.验证Kickstart文件    
+
 ## 3.使Kickstart文件可用  
+
 ## 4.使安装源可用  
+
 ## 5.开始安装Kickstart安装  
+
 
 
 # Kickstart无人值守安装系统
