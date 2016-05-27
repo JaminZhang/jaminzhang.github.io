@@ -13,6 +13,7 @@ duoshuo: true
 
 # 什么是Kickstart安装
 首先复习什么是Kickstart安装，红帽官网解释如下：
+
 > Kickstart installations offer a means to automate the installation process, either partially or fully. Kickstart files contain answers to all questions normally asked by the installation program, such as what time zone you want the system to use, how the drives should be partitioned, or which packages should be installed. Providing a prepared Kickstart file when the installation begins therefore allows you to perform the installation automatically, without need for any intervention from the user. This is especially useful when deploying Red Hat Enterprise Linux on a large number of systems at once.
 
 第一句话就是重点。Kickstart是自动化安装系统一种方式。
