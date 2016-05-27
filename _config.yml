@@ -9,7 +9,8 @@
 
 title:              Jamin Zhang
 description:        Striving to pursuit the DREAM, the LIFE, the LOVE.
-disqus_shortname: 
+disqus_shortname:
+duoshuo_shortname:  jaminzhang
 url:                http://jaminzhang.me
 
 # url_tags必须和tags.md中的permalink定义相同，这样定义的原因是不希望permalink中包含文件类型后缀。
