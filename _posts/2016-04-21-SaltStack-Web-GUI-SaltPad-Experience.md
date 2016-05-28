@@ -2,7 +2,7 @@
 layout: post
 title: SaltStack Web GUI之SaltPad体验
 description: "SaltStack Web GUI之SaltPad体验"
-category: Linux
+category: SaltStack
 avatarimg:
 tags: [SaltStack]
 duoshuo: true
