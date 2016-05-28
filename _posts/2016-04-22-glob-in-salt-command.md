@@ -2,7 +2,7 @@
 layout: post
 title: salt命令中的glob参数理解
 description: "salt命令中的glob参数理解"
-category: Linux
+category: SaltStack
 avatarimg:
 tags: [SaltStack]
 duoshuo: true
