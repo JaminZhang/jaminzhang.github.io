@@ -2,7 +2,7 @@
 layout: post
 title: Zabbix Agent配置文件说明
 description: "Zabbix Agent配置文件说明"
-category: Linux
+category: Zabbix
 avatarimg: 
 tags: [Zabbix]
 duoshuo: true
