@@ -2,7 +2,7 @@
 layout: post
 title: SaltStack中的gitfs初步了解
 description: "SaltStack中的gitfs初步了解"
-category: Linux
+category: SaltStack
 avatarimg:
 tags: [SaltStack, gitfs]
 duoshuo: true
