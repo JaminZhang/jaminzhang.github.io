@@ -2,7 +2,7 @@
 layout: post
 title: salt minion pulic key冲突
 description: "salt minion pulic key冲突"
-category: Linux
+category: SaltStack
 avatarimg:
 tags: [SaltStack]
 duoshuo: true
