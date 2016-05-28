@@ -2,7 +2,7 @@
 layout: post
 title: Zabbix Agent监听端口相关问题
 description: "Zabbix Agent监听端口相关问题"
-category: Linux
+category: Zabbix
 avatarimg: 
 tags: [Zabbix, Telnet]
 duoshuo: true
