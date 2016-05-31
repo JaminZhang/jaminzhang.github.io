@@ -105,7 +105,7 @@ Updating / installing...
 * 虚拟机网卡采用 NAT 模式并关闭，不要使用桥接模式，因为我们会搭建 DHCP 服务器，在同一局域网多个 DHCP 服务会有冲突，并且导致实践失败。    
 * VMware 的 NAT 模式的 DHCP 服务也关闭，避免干扰。  
 
-## 4 Cobbler 安装配置
+## 4 Cobbler 安装配置  
 
 ### 4.1 安装 Cobbler 及相关软件包  
 
