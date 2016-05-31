@@ -57,13 +57,13 @@ duoshuo: true
 * 安装Zabbix Agent：  Zabbix Server:192.168.56.11
 * 安装SaltStack Minion： Saltstack Master:192.168.56.11
 * histroy 记录时间
-<pre>
+```bash
 export HISTTIMEFORMAT="%F %T `whoami`"
-</pre>
+```    
 * 日志记录操作
-<pre>
+```bash
 export PROMPT_COMMAND='{ msg=$(history 1 | { read x y; echo $y; });logger "[euid=$(whoami)]":$(who am i):[`pwd`]"$msg"; }'
-</pre>
+```    
 * 内核参数优化
 * YUM 仓库
 * 主机名解析
