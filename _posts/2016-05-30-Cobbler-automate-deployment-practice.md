@@ -639,6 +639,31 @@ CentOS-6-x86_64
 登陆系统检查相关信息  
 ![Cobbler-PXE-Custom-02.png](https://raw.githubusercontent.com/JaminZhang/jaminzhang.github.io/master/images/Cobbler/Cobbler-PXE-Custom-02.png)  
 
+### 6.4 服务器采购及系统安装流程
+
+1. 服务器采购
+2. 服务器验收并设置 RAID
+3. 服务商提供验收单，运维验收负责人签字。
+4. 服务器上架
+5. 资产录入。
+6. 开始自动化安装。
+	1. 将新服务器划入装机 VLAN
+	2. 根据资产清单上的 MAC 地址，自定义安装。
+		1. 机房 2. 机房区域 3. 机柜  4. 服务器位置  5. 服务器网线接入端口  6. 该端口 MAC 地址  	
+		7. profile ks.cfg 中指定操作系统 分区等、预分配的 IP 地址、主机名、子网、网关、DNS、角色等。
+		
+	3. 自动化装机平台，安装。
+	例子：  
+	MAC: 00:50:56:35:46:6E  
+	IP: 192.168.56.118  
+	掩码：255.255.255.0   
+	网关：192.168.56.2   
+	主机名：jaminzhang.github.io   
+	DNS：223.5.5.5 223.6.6.6  
+	根据 6.3 中的定制化安装配置如下 system:  
+	cobbler system add --name=jaminzhang.github.io --mac=00:50:56:35:46:6E --profile=CentOS-7-x86_64 --ip-address=192.168.56.118 --subnet=255.255.255.0 --gateway=192.168.56.2 \  
+--interface=eth0 --static=1 --hostname=jaminzhang.github.io --name-servers="223.5.5.5 223.6.6.6" --kickstart=/var/lib/cobbler/kickstarts/CentOS-7-x86_64.cfg
+
 
 ## 7 Cobbler Web 管理配置
 
@@ -685,6 +710,85 @@ Re-type new password:123456
 ![Cobbler-Web-02-Profiles.png](https://raw.githubusercontent.com/JaminZhang/jaminzhang.github.io/master/images/Cobbler/Cobbler-Web-02-Profiles.png)  
 ![Cobbler-Web-03-Systems.png](https://raw.githubusercontent.com/JaminZhang/jaminzhang.github.io/master/images/Cobbler/Cobbler-Web-03-Systems.png)  
 ![Cobbler-Web-04-Repos.png](https://raw.githubusercontent.com/JaminZhang/jaminzhang.github.io/master/images/Cobbler/Cobbler-Web-04-Repos.png)  
+
+
+## 8 Cobbler API 使用
+
+cobbler_list.py 获取 Cobbler 服务器中的 distros/profiles/systems/images/repos 信息，代码如下：
+
+```python
+#!/usr/bin/python
+import xmlrpclib
+server = xmlrpclib.Server("http://192.168.56.11/cobbler_api")
+print server.get_distros()
+print server.get_profiles()
+print server.get_systems()
+print server.get_images()
+print server.get_repos()
+```    
+
+cobbler_api.py 通过 Cobber API 添加 system
+
+```python
+#!/usr/bin/env python 
+# -*- coding: utf-8 -*-
+import xmlrpclib 
+
+class CobblerAPI(object):
+    def __init__(self,url,user,password):
+        self.cobbler_user= user
+        self.cobbler_pass = password
+        self.cobbler_url = url
+    
+    def add_system(self,hostname,ip_add,mac_add,profile):
+        '''
+        Add Cobbler System Infomation
+        '''
+        ret = {
+            "result": True,
+            "comment": [],
+        }
+        #get token
+        remote = xmlrpclib.Server(self.cobbler_url) 
+        token = remote.login(self.cobbler_user,self.cobbler_pass) 
+		
+		#add system
+        system_id = remote.new_system(token) 
+        remote.modify_system(system_id,"name",hostname,token) 
+        remote.modify_system(system_id,"hostname",hostname,token) 
+        remote.modify_system(system_id,'modify_interface', { 
+            "macaddress-eth0" : mac_add, 
+            "ipaddress-eth0" : ip_add, 
+            "dnsname-eth0" : hostname, 
+        }, token) 
+        remote.modify_system(system_id,"profile",profile,token) 
+        remote.save_system(system_id, token) 
+        try:
+            remote.sync(token)
+        except Exception as e:
+            ret['result'] = False
+            ret['comment'].append(str(e))
+        return ret
+
+def main():
+    cobbler = CobblerAPI("http://192.168.56.11/cobbler_api","cobbler","cobbler")
+    ret = cobbler.add_system(hostname='cobbler-api-test',ip_add='192.168.56.11',mac_add='00:50:56:35:46:6F',profile='CentOS-7-x86_64')
+    print ret
+
+if __name__ == '__main__':
+    main()
+```
+
+执行此 Python 脚本正确后输出为：
+
+```bash
+[root@linux-node1 ~]# python cobbler_api.py 
+{'comment': [], 'result': True}
+[root@linux-node1 ~]# cobbler system list
+   cobbler-api-test
+   jaminzhang.github.io
+```    
+
 
 # Ref
 [COBBLER无人值守安装](http://www.zyops.com/autoinstall-cobbler)  
