@@ -27,15 +27,15 @@ Cobbler 客户端 koan 支持虚拟机安装和操作系统重新安装，使重
 ![官网 Cobbler 系统对象模型图](http://cobbler.github.io/images/how-we-do.png)   
 
 
-**distro**
+**distro**  
 * 发行版
 * 面对不同的操作系统
 * 面对同一个操作系统不同的版本
 
-**profile**
+**profile**  
 * 核心特性是通过 kickstart 来部署
 
-**system**
+**system**  
 * 主要目的配置网络接口
 
 ## 2 Cobbler 功能
@@ -106,7 +106,8 @@ Updating / installing...
 * VMware 的 NAT 模式的 DHCP 服务也关闭，避免干扰。  
 
 ## 4 Cobbler 安装配置
-### 4.1 安装 Cobbler 及相关软件包
+
+### 4.1 安装 Cobbler 及相关软件包  
 
 ```bash
 [root@linux-node1 ~]# yum install dhcp tftp-server xinetd httpd cobbler cobbler-web pykickstart -y
@@ -258,7 +259,7 @@ subnet 192.168.56.0 netmask 255.255.255.0 {
 ...
 ```    
 
-### 4.5 同步 Cobbler 配置
+### 4.4 同步 Cobbler 配置
 
 ```bash
 # 同步最新 Cobbler 配置，它会根据配置自动修改 DHCP 等服务
@@ -327,7 +328,7 @@ running shell triggers from /var/lib/cobbler/triggers/change/*
 # ******************************************************************
 ```    
 
-### 4.6 配置开机启动
+### 4.5 配置开机启动
 
 ```bash
 [root@linux-node1 ~]# systemctl enable dhcpd xinetd httpd cobblerd
@@ -588,7 +589,7 @@ MENU TITLE Cobbler | http://jaminzhang.github.io
 
 ![Cobbler-PXE-Menu-02.png](https://raw.githubusercontent.com/JaminZhang/jaminzhang.github.io/master/images/Cobbler/Cobbler-PXE-Menu-02.png)  
 
-```    
+
 
 ks.cfg 模板文件: [Cobbler-CentOS-7.2-x86_64.cfg](http://jaminzhang.github.io/soft-conf/Cobbler/Cobbler-CentOS-7.2-x86_64.cfg)  
 
@@ -609,7 +610,7 @@ CentOS-6-x86_64
 ```    
 
 > 
-如何避免 koan 安装错误机器，或者 cobbler 自动化安装错误机器。
+如何避免 koan 安装错误机器，或者 cobbler 自动化安装错误机器。  
 解决方法：环境设计：配置装机 VLAN
 
 ### 6.3 定制化安装
@@ -661,8 +662,8 @@ cobbler_web 支持多种认证方式，如 authn_configfile、authn_ldap 或 aut
 
 3. 使用 Cobbler 默认的 Web 账号密码认证
 
-user:cobbler
-password:cobbler
+   user:cobbler  
+   password:cobbler  
 
 ```bash
 /etc/cobbler/users.conf       # Web服务授权配置文件
