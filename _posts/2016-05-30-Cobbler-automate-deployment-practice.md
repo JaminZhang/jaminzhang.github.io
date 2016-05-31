@@ -2,7 +2,7 @@
 layout: post
 title: Cobbler 自动化部署实践
 description: "Cobbler 自动化部署实践"
-category: Linux
+category: Automated Ops
 avatarimg:
 tags: [Linux, Cobbler]
 duoshuo: true
