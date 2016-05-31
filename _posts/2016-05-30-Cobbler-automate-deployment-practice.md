@@ -649,8 +649,8 @@ CentOS-6-x86_64
 6. 开始自动化安装。
 	1. 将新服务器划入装机 VLAN
 	2. 根据资产清单上的 MAC 地址，自定义安装。
-		1. 机房 2. 机房区域 3. 机柜  4. 服务器位置  5. 服务器网线接入端口  6. 该端口 MAC 地址  	
-		7. profile ks.cfg 中指定操作系统 分区等、预分配的 IP 地址、主机名、子网、网关、DNS、角色等。
+		1.机房 2. 机房区域 3. 机柜  4. 服务器位置  5. 服务器网线接入端口  6. 该端口 MAC 地址    	
+		7.profile ks.cfg 中指定操作系统 分区等、预分配的 IP 地址、主机名、子网、网关、DNS、角色等。
 		
 	3. 自动化装机平台，安装。
 	例子：  
@@ -667,8 +667,9 @@ CentOS-6-x86_64
 
 ## 7 Cobbler Web 管理配置
 
-> 
-新版 Cobbler 的 Web 界面使用的是 https，登录URL: https://192.168.56.11/cobbler_web
+
+新版 Cobbler 的 Web 界面使用的是 https  
+登录URL: https://192.168.56.11/cobbler_web
 
 ### 7.1 配置账号密码
 cobbler_web 支持多种认证方式，如 authn_configfile、authn_ldap 或 authn_pam 等，默认为authn_denyall，即拒绝所有用户登陆。
