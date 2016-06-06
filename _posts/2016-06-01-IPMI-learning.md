@@ -16,7 +16,7 @@ IPMI是智能型平台管理接口（Intelligent Platform Management Interface�
 
 Linux 可以使用 IPMI 和 BMC 控制器通信，监控和控制硬件设备。
   
-  ipmitool
+  ipmitool  
     1. 硬件要支持  
     2. 操作系统要支持  Linux IPMI  
     3. 管理工具 ipmitool  
