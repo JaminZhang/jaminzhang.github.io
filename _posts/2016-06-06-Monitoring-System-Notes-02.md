@@ -50,7 +50,7 @@ Zabbix 支持多种监控方式：IPMI SNMP JVM Agent 等等
 
 # 6 Zabbix 安装部署配置
 
-## 6.1 Zabbix 安装
+## 6.1 Zabbix Server 安装
 
 参考官方文档，写得比较详细了。  
 [Installation from packages](https://www.zabbix.com/documentation/3.0/manual/installation/install_from_packages)  
@@ -135,5 +135,27 @@ systemctl start httpd
 打开 http://zabbix-frontend-hostname/zabbix   
 默认用户名/密码是： Admin/zabbix  
 具体步骤还是可以参考官方文档 [Installing frontend](https://www.zabbix.com/documentation/3.0/manual/installation/install#installing_zabbix_web_interface)  
+
+## 6.2 Zabbix Agent 安装配置
+
+### 6.2.1 配置 Zabbix yum 源
+同6.1.1
+
+### 6.2.2 zabbix agent 安装配置
+
+```bash
+yum install zabbix-agent -y
+
+vim /etc/zabbix/zabbix_agentd.conf     
+Server=192.168.56.11               # 用于被动模式，数据获取
+ServerActive=192.168.56.11         # 用于主动模式，数据提交
+
+systemctl start zabbix-agent       # 启动 zabbix agent
+```    
+
+## 6.3 Zabbix 配置及使用
+
+这就涉及到比较多的内容了。  
+参考官方文档和相关书籍，中文有一本[Zabbix 企业级分布式监控系统](https://book.douban.com/subject/25957954/)，可以看看。
 
 
