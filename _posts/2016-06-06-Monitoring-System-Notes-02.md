@@ -59,13 +59,13 @@ Zabbix 支持多种监控方式：IPMI SNMP JVM Agent 等等
 有人说大陆网络连接 Zabbix 官方源可能比较慢（这个我在安装时，确实遇到了）  
 网络不好可以使用阿里的 yum 源
 
-Zabbix 官方源  
-> 
+```bash
+# Zabbix 官方源  
 rpm -ivh http://repo.zabbix.com/zabbix/3.0/rhel/7/x86_64/zabbix-release-3.0-1.el7.noarch.rpm
 
-阿里 yum 源
-> 
+# 阿里 yum 源
 rpm -ivh http://mirrors.aliyun.com/zabbix/zabbix/3.0/rhel/7/x86_64/zabbix-release-3.0-1.el7.noarch.rpm
+```    
 
 ### 6.1.2 安装 Zabbix 相关软件
 
@@ -132,8 +132,8 @@ systemctl start httpd
 ```    
 
 ### 6.1.7 安装 Zabbix Web
-打开 http://zabbix-frontend-hostname/zabbix 
-默认用户名/密码是： Admin/zabbix
+打开 http://zabbix-frontend-hostname/zabbix   
+默认用户名/密码是： Admin/zabbix  
 具体步骤还是可以参考官方文档 [Installing frontend](https://www.zabbix.com/documentation/3.0/manual/installation/install#installing_zabbix_web_interface)  
 
 
