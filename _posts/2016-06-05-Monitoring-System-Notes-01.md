@@ -62,10 +62,12 @@ ipmitool --help
 ```    
 
 使用 IPMI 有两种方式：
+
   1. 本地调用 
   2. 远程调用 （IP 地址 用户名 密码）
 
 IPMI 配置网络，有两种方式：
+
   1. ipmi over LAN
   2. 独立  (DELL 服务器前面板配置)
 
@@ -106,6 +108,7 @@ Management information base (MIB)
 Object identifier (OID)  
 
 SNMP protocol data unit (PDU) types:
+
   * GetRequest
   * SetRequest
   * GetNextRequest
@@ -135,7 +138,9 @@ SNMP protocol data unit (PDU) types:
 * IO（磁盘、网络）
 
 ## 3.1 CPU
+
 CPU 三个重要的概念：
+
   * 上下文切换：CPU 调度器实施的进程的切换过程/CPU 调度器分配时间片
   * 运行队列（负载）
   * 使用率：us sy ni id wa hi si st(虚拟化相关)
@@ -150,10 +155,12 @@ CPU 三个重要的概念：
 	
  
 确定服务类型：
+
   * IO 密集型  比如：数据库
   * CPU 密集型 比如：Web/Mail
     
 确定性能基准线：
+
   * 运行队列：1 核心 1-3个线程，比如：1 CPU 4 核心，负载不超过 12（经验值）
   * CPU 使用率：
     - 65%-70% 用户态利用率
@@ -162,6 +169,7 @@ CPU 三个重要的概念：
   * 上下文切换：基于 CPU 使用率和历史数据来判断
     
 监控工具：
+
   * top   复习 CPU/内存使用率排序 （P/M）
   * sysstat	rpm -ql sysstat
     - vmstat
@@ -174,11 +182,13 @@ CPU 三个重要的概念：
 > 公有云云主机不设置 swap
     
 内存页概念 默认大小为 4KB 
+
   1. 寻址
   2. 空间
     合并成连续内存 大页内存
         
 监控工具：  
+
   * free
   * vmstat
     - swpd free buff cache si(swap->mem) so(mem->swap)
@@ -194,10 +204,12 @@ CPU 三个重要的概念：
 内存的脏页内容写到硬盘
     
 IOPS  
+
   * 顺序 IO
   * 随机 IO
     
 监控工具：
+
   * df
   * iotop
   * iostat
@@ -206,12 +218,14 @@ IOPS
 ## 3.4 网络
 
 监控工具：  
+
   * ping
   * iftop
   * 带宽
     
     
 大厂商提供的在线网络测试工具：  
+
   * 奇云测 http://ce.cloud.360.cn/
   * 阿里测 http://alibench.com/
   * 站长工具 http://ping.chinaz.com/
@@ -236,9 +250,9 @@ IOPS
 ```bash      
 yum install gcc glibc gcc-c++ pcre-devel openssl-devel -y
   
-	  wget https://nginx.org/download/nginx-1.10.1.tar.gz
-  
-	  useradd -s /sbin/nologin -M www
+wget https://nginx.org/download/nginx-1.10.1.tar.gz
+
+useradd -s /sbin/nologin -M www
   
   
 configure Shell 脚本 作用：产生 Makefile
