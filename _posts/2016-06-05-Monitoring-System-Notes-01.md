@@ -230,7 +230,7 @@ IOPS
 
 # 4 应用服务监控
 
-举例：Nginx
+举例：通过 Nginx 的 http_stub_status_module 模块提供的状态信息来对 Nginx 服务进行监控。
 
 ```bash      
 yum install gcc glibc gcc-c++ pcre-devel openssl-devel -y
