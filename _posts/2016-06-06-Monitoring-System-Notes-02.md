@@ -4,7 +4,7 @@ title: 运维监控体系学习笔记-02
 description: "运维监控体系学习笔记-02"
 category: Automated Ops
 avatarimg:
-tags: [Linux, Monitoring]
+tags: [Monitoring, Zabbix]
 duoshuo: true
 ---
 
