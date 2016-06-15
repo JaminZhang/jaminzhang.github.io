@@ -120,11 +120,11 @@ http://192.168.56.11/smokeping
 
 注意事项：
 
-1 在 /usr/local/smokeping/etc/config 中添加
-2 smokeping 就这点不好，添加节点不能在前台 Web 页面添加，一定要在后台的配置文件中添加
-3 修改 /usr/local/smokeping/etc/config 后，必须重启 smokeping 程序，配置才会生效  
-4 smokeping 会根据配置文件 config 在 /usr/local/smokeping/data 之下添加文件夹及子文件夹
-5 用 VMware Workstation 的虚拟机测试有一点好处，虚拟网卡可以设置出入的丢包率，适合 smokeping 做丢包测试，经过测试 smokeping 检测出的丢包率与 VMware Workstation 虚拟网卡设置的丢包率基本相同，也就是说 smokeping 能够反应网络的真实状况
+1 在 /usr/local/smokeping/etc/config 中添加  
+2 smokeping 就这点不好，添加节点不能在前台 Web 页面添加，一定要在后台的配置文件中添加  
+3 修改 /usr/local/smokeping/etc/config 后，必须重启 smokeping 程序，配置才会生效    
+4 smokeping 会根据配置文件 config 在 /usr/local/smokeping/data 之下添加文件夹及子文件夹  
+5 用 VMware Workstation 的虚拟机测试有一点好处，虚拟网卡可以设置出入的丢包率，适合 smokeping 做丢包测试，经过测试 smokeping 检测出的丢包率与 VMware Workstation 虚拟网卡设置的丢包率基本相同，也就是说 smokeping 能够反应网络的真实状况  
 
 添加监控节点示例：注意 + 是第一层，++ 是第二层，+++ 是第三层
 
