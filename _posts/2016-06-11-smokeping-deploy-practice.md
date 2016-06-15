@@ -284,8 +284,8 @@ alerts = someloss
 host = 211.136.192.6
 ```    
 
-出图效果截图如下：
-
+出图效果截图如下：  
+![SmokePing](https://raw.githubusercontent.com/JaminZhang/jaminzhang.github.io/master/images/SmokePing-01.png)  
 
 # 报错
 
