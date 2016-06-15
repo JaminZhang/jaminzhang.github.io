@@ -105,8 +105,9 @@ CentOS 7 暂定
 
 # 6 启动服务以及访问 smokeping
 
-systemctl start httpd
-/usr/local/smokeping/bin/smokeping
+> 
+systemctl start httpd  
+/usr/local/smokeping/bin/smokeping  
 
 访问 URL:  
 http://192.168.56.11/smokeping
@@ -303,6 +304,7 @@ Can't locate ExtUtils/Manifest.pm in @INC (@INC contains: FatPacked::35736456=HA
 ```    
 
 解决方法：
+
 > 
 yum install perl-ExtUtils-MakeMaker
 
@@ -315,6 +317,7 @@ Failed
 ```    
 
 解决方法：
+
 > 
 yum search all perl | grep "rrd"  
 yum install rrdtool-perl  
@@ -333,6 +336,7 @@ gmake: *** [install-recursive] Error 1
 ```    
 
 解决方法：
+
 > 
 [root@linux-node1 ~]# yum search all perl | grep -i "syslog"  
 perl-Unix-Syslog.x86_64 : Perl interface to the UNIX syslog(3) calls  
@@ -344,6 +348,7 @@ yum install perl-Sys-Syslog
 ERROR: /usr/local/smokeping/bin/../etc/config, line 153: unknown section 'China Telecom'
 
 解决方法：  
+
 > 
 根据 host /Other/CT/CT-BJ，  
 ++ China Telecom 应该修改成 ++ CT  
