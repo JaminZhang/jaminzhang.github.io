@@ -14,8 +14,9 @@ duoshuo: true
 
 # 构建rpm包
 构建rpm包一般有2种方法：
-01、使用rpmbuild指定spec文件构建RPM包
-02、使用命令行打包工具FPM
+
+01. 使用rpmbuild指定spec文件构建RPM包  
+02. 使用命令行打包工具FPM
 
 我大概看了下第一种方法，太复杂了，Murder实际上就一些py文件，我只是想把这些py文件打包成rpm，  
 所以选择使用FPM来打包。  
