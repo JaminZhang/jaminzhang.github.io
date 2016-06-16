@@ -91,6 +91,7 @@ http://192.168.56.11/
 <noscript><p><img src="//192.168.56.11/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
 ```    
+
 ## 2.6 Piwik Web 界面
 
 截图如下：
@@ -110,7 +111,8 @@ http://192.168.56.11/
 ```bash
 [Tue Jun 14 17:10:03.859201 2016] [:error] [pid 15967] [client 192.168.56.1:49170] PHP Fatal error:  Uncaught exception 'Exception' with message 'The configuration file {/var/www/html/config/config.ini.php} has not been found or could not be read.' in /var/www/html/core/Application/Kernel/EnvironmentValidator.php:63\nStack trace:\n#0 /var/www/html/core/Application/Kernel/EnvironmentValidator.php(44): Piwik\\Application\\Kernel\\EnvironmentValidator->checkConfigFileExists('/var/www/html/c...', false)\n#1 /var/www/html/core/Application/Environment.php(185): Piwik\\Application\\Kernel\\EnvironmentValidator->validate()\n#2 /var/www/html/core/Application/Environment.php(94): Piwik\\Application\\Environment->validateEnvironment()\n#3 /var/www/html/piwik.php(56): Piwik\\Application\\Environment->init()\n#4 {main}\n  thrown in /var/www/html/core/Application/Kernel/EnvironmentValidator.php on line 63
 ```   
-从上面的日志看到：/var/www/html/config/config.ini.php 不存在
+
+从上面的日志看到：/var/www/html/config/config.ini.php 不存在  
 这时我们可以忽略这个错误，当我们完成安装过程后，这个配置文件会自动生成的。
 
 
