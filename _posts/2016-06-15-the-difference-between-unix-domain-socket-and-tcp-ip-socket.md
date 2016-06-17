@@ -15,7 +15,8 @@ duoshuo: true
 # UNIX Domain Socket 与 TCP/IP Socket 对比
 <pre>
 socket API原本是为网络通讯设计的，但后来在socket的框架上发展出一种IPC机制，就是UNIX Domain Socket。
-虽然网络socket也可用于同一台主机的进程间通讯（通过loopback地址127.0.0.1），但是UNIX Domain Socket用于IPC更有效率：不需要经过网络协议栈，不需要打包拆包、计算校验和、维护序号和应答等，只是将应用层数据从一个进程拷贝到另一个进程。
+虽然网络socket也可用于同一台主机的进程间通讯（通过loopback地址127.0.0.1），
+但是UNIX Domain Socket用于IPC更有效率：不需要经过网络协议栈，不需要打包拆包、计算校验和、维护序号和应答等，只是将应用层数据从一个进程拷贝到另一个进程。
 UNIX域套接字与TCP套接字相比较，在同一台主机的传输速度前者是后者的两倍。
 这是因为，IPC机制本质上是可靠的通讯，而网络协议是为不可靠的通讯设计的。
 UNIX Domain Socket也提供面向流和面向数据包两种API接口，类似于TCP和UDP，但是面向消息的UNIX Domain Socket也是可靠的，消息既不会丢失也不会顺序错乱。
