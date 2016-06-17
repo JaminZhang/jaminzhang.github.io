@@ -34,10 +34,6 @@ So if you plan to communicate with processes on the same host, this is a better 
 
 # Ref
 [linux网络编程之socket（十五）：UNIX域套接字编程和socketpair 函数](http://blog.csdn.net/jnu_simba/article/details/9079359)  
-[http://blog.csdn.net/jnu_simba/article/details/9079359](http://serverfault.com/questions/124517/whats-the-difference-between-unix-socket-and-tcp-ip-socket)  
+[What's the difference between Unix socket and TCP/IP socket?](http://serverfault.com/questions/124517/whats-the-difference-between-unix-socket-and-tcp-ip-socket)  
 [nginx、php-fpm默认配置与性能–TCP socket还是unix domain socket](https://www.cnxct.com/default-configuration-and-performance-of-nginx-phpfpm-and-tcp-socket-or-unix-domain-socket/)  
 [Unix Socket 与 IP Socket (TCP/IP) 的区别](http://coseylee.com/2012-04-13-unix-socket-ip-vs-ip-socket.html)  
-
-
-
-	
