@@ -1,6 +1,7 @@
 # 修改部分配置用于自己个人博客的编写
 具体配置暂未说明
 
+UPDATE 2016-06-20, by Jamin Zhang
 
 # Jekyll主题 &bull;JekyllPure
 
