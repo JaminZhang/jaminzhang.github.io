@@ -19,7 +19,7 @@ duoshuo: true
 # 2 创建并配置用户
 如下图示  
 重点是配置该用户的 Media Type（告警类型）和 Send to （收件人邮箱）：
-![03-Create-user](https://raw.githubusercontent.com/JaminZhang/jaminzhang.github.io/master/images/Zabbix/Zabbix-Email-Notification-03-Create-user.png)  
+![03-Create-user](https://raw.githubusercontent.com/JaminZhang/jaminzhang.github.io/master/images/Zabbix/Zabbix-Email-Notification-03-Create-user.png.png)  
 ![04-Config-User-Media](https://raw.githubusercontent.com/JaminZhang/jaminzhang.github.io/master/images/Zabbix/Zabbix-Email-Notification-04-Config-User-Media.png) 
 
 
