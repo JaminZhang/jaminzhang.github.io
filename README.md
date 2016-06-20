@@ -1,3 +1,7 @@
+# 修改部分配置用于自己个人博客的编写
+具体配置暂未说明
+
+
 # Jekyll主题 &bull;JekyllPure
 
 fork Github:[JekyllPure'github](https://github.com/liyouhai/JekyllPure)
