@@ -1,8 +1,8 @@
 #!/bin/bash
 ############################################################
-# $Name:		zabbix_linux_plugins.sh
+# $Name:		zabbix_linux_plugin.sh
 # $Version:		v1.1
-# $Function:		zabbix plugins
+# $Function:		zabbix plugin
 # $Forkd by:		Jamin Zhang
 # $Author:		Jason Zhao
 # $Organization:	www.unixhot.com
