@@ -12,7 +12,8 @@ duoshuo: true
 # Zabbix Proxy 介绍
 
 <pre>
-zabbix proxy 可以代替 zabbix server 检索客户端的数据，然后把数据汇报给 zabbix server，并且在一定程度上分担了 zabbix server 的压力.zabbix proxy可以非常简便的实现了集中式、分布式监控.
+zabbix proxy 可以代替 zabbix server 检索客户端的数据，然后把数据汇报给 zabbix server，
+并且在一定程度上分担了 zabbix server 的压力.zabbix proxy可以非常简便的实现了集中式、分布式监控.
 
 zabbix proxy使用场景:
 	监控远程区域设备
@@ -20,8 +21,10 @@ zabbix proxy使用场景:
 	当zabbix监控上千设备时，使用它来减轻server的压力
 	简化zabbix的维护
 	
-zabbix proxy仅仅需要一条tcp连接到zabbix server,所以防火墙上仅仅需要加上一条规则即可.zabbix proxy数据库必须和server分开，否则数据会被破坏，毕竟这两个数据库的表大部分都相同。总之记住，数据库分开即可。
-proxy收集到数据之后，首先将数据缓存在本地，然后在一定得时间之后传递给zabbix server.这个时间由proxy配置文件中参数ProxyLocalBuffer and ProxyOfflineBuffer决定.	
+zabbix proxy仅仅需要一条tcp连接到zabbix server,所以防火墙上仅仅需要加上一条规则即可.zabbix proxy数据库必须和server分开，
+否则数据会被破坏，毕竟这两个数据库的表大部分都相同。总之记住，数据库分开即可。
+proxy收集到数据之后，首先将数据缓存在本地，然后在一定得时间之后传递给zabbix server.
+这个时间由proxy配置文件中参数ProxyLocalBuffer and ProxyOfflineBuffer决定.	
 
 zabbix proxy是一个数据收集器，它不计算触发器、不处理事件、不发送报警.
 </pre>
