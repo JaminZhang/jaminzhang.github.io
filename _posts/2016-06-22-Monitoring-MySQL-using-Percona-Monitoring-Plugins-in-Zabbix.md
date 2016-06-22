@@ -8,9 +8,8 @@ tags: [Zabbix, MySQL, Percona]
 duoshuo: true
 ---
 
-
-
 # Zabbix 中监控 MySQL 方式
+
 ## 1 使用自带模板监控 MySQL
 Zabbix-Agent 本身并没有提供直接对 MySQL 监控的 Key，所以首先需要通过自定义 Key 来应用自带的 MySQL 模板。  
 
