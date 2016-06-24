@@ -31,6 +31,7 @@ API 采用JSON-RPC实现。这意味着调用任何函数，都需要发送POST�
 </pre>
 
 # Zabbix API的使用流程
+
 ## 使用 API 的基本步骤 
 
 1. 连接 http://x.x.x.x/api_jsonrpc.php 提供用户名和密码，并标识 HTTP 头部 
