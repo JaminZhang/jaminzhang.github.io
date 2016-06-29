@@ -1,7 +1,7 @@
 ---
 layout: post
-title: SaltStack 系统性学习笔记 01
-description: "SaltStack 系统性学习笔记 01"
+title: SaltStack 系统性学习 01 - 简介及安装
+description: "SaltStack 系统性学习 01 - 简介及安装"
 category: SaltStack
 avatarimg:
 tags: [SaltStack]
