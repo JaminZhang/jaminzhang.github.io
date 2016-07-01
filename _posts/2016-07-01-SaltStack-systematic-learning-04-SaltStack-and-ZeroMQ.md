@@ -10,10 +10,11 @@ duoshuo: true
 
 # 引言
 
-> 
+<pre>
 我们进行自动化运维大多数情况下，是我们的服务器数量已经远远超过人工 SSH 维护的范围，SaltStack 可以支数以千计，甚至更多的服务器。   
 这些性能的提供主要来自于 ZeroMQ，因为 SaltStack 底层是基于 ZeroMQ 进行高效的网络通信。   
 ZMQ 用于 node 与 node 间的通信，node 可以是主机也可以是进程。    
+</pre>
 
 # ZeroMQ 简介
 <pre>
