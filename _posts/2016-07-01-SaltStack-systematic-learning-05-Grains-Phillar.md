@@ -1,7 +1,7 @@
 ---
 layout: post
-title: SaltStack 系统性学习 04 - Grains 与 Pillar
-description: "SaltStack 系统性学习 04 - Grains 与 Pillar"
+title: SaltStack 系统性学习 05 - Grains 与 Pillar
+description: "SaltStack 系统性学习 05 - Grains 与 Pillar"
 category: SaltStack
 avatarimg:
 tags: [SaltStack, Grains, Pillar]
@@ -234,10 +234,10 @@ pillar_roots:
 
 # Grains VS Pillar
 
-      | 类型 | 数据采集方式   | 应用场景 | 定义位置
-------|------|----------------|----------|---------
-Grains| 静态 | minion 启动时收集 | 数据查询、目标选择、配置管理 | minion 端
-Pillar| 动态 | master 自定义 | 目标选择、配置管理、敏感数据存储 | master 端
+|      | 类型 | 数据采集方式   | 应用场景 | 定义位置 |
+|------|------|----------------|----------|--------- |
+|Grains| 静态 | minion 启动时收集 | 数据查询、目标选择、配置管理 | minion 端 |
+|Pillar| 动态 | master 自定义 | 目标选择、配置管理、敏感数据存储 | master 端 |
 
 
 # Ref
