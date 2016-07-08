@@ -1,0 +1,134 @@
+#Kickstart Configurator for cobbler by Jamin Zhang
+#platform=x86, AMD64, or Intel EM64T
+key --skip
+#System  language
+lang en_US
+#System keyboard
+keyboard us
+#Sytem timezone
+timezone Asia/Shanghai
+#Root password
+rootpw --iscrypted $default_password_crypted
+#Use text mode install
+text
+#Install OS instead of upgrade
+install
+#Use NFS installation Media
+url --url=$tree
+#System bootloader configuration
+bootloader --location=mbr
+#Clear the Master Boot Record
+zerombr yes
+#Partition clearing information
+clearpart --all --initlabel 
+#Disk partitioning information
+part /boot --fstype ext4 --size 1024 --ondisk sda
+part swap --size 16384 --ondisk sda
+part / --fstype ext4 --size 1 --grow --ondisk sda
+#System authorization infomation
+auth  --useshadow  --enablemd5 
+#Network information
+$SNIPPET('network_config')
+#network --bootproto=dhcp --device=em1 --onboot=on
+#Reboot after installation
+reboot
+#Firewall configuration
+firewall --disabled 
+#SELinux configuration
+selinux --disabled
+#Do not configure XWindows
+skipx
+#Package install information
+%packages
+@ base
+@ chinese-support
+@ core
+ntpdate
+zip
+unzip
+telnet
+iftop
+tree
+sysstat
+iptraf
+ntp
+e2fsprogs-devel
+keyutils-libs-devel
+krb5-devel
+libselinux-devel
+libsepol-devel
+lrzsz
+ncurses-devel
+openssl-devel
+zlib-devel
+OpenIPMI-tools
+mysql
+lockdev
+minicom
+nmap
+
+%post
+/usr/bin/echo "# Time sync" >> /var/spool/cron/root
+/usr/bin/echo "*/10 * * * * /usr/sbin/ntpdate cn.pool.ntp.org; /usr/sbin/hwclock -w" >> /var/spool/cron/root
+#/bin/sed -i 's/#Protocol 2,1/Protocol 2/' /etc/ssh/sshd_config
+/bin/sed  -i 's/^ca::ctrlaltdel:/#ca::ctrlaltdel:/' /etc/inittab
+/sbin/chkconfig --level 3 diskdump off
+/sbin/chkconfig --level 3 dc_server off
+/sbin/chkconfig --level 3 nscd off
+/sbin/chkconfig --level 3 netfs off
+/sbin/chkconfig --level 3 psacct off
+/sbin/chkconfig --level 3 mdmpd off
+/sbin/chkconfig --level 3 netdump off
+/sbin/chkconfig --level 3 readahead off
+/sbin/chkconfig --level 3 wpa_supplicant off
+/sbin/chkconfig --level 3 mdmonitor off
+/sbin/chkconfig --level 3 microcode_ctl off
+/sbin/chkconfig --level 3 xfs off
+/sbin/chkconfig --level 3 lvm2-monitor off
+/sbin/chkconfig --level 3 iptables off
+/sbin/chkconfig --level 3 nfs off
+/sbin/chkconfig --level 3 ipmi off
+/sbin/chkconfig --level 3 autofs off
+/sbin/chkconfig --level 3 iiim off
+/sbin/chkconfig --level 3 cups off
+/sbin/chkconfig --level 3 openibd off
+/sbin/chkconfig --level 3 saslauthd off
+/sbin/chkconfig --level 3 ypbind off
+/sbin/chkconfig --level 3 auditd off
+/sbin/chkconfig --level 3 rdisc off
+/sbin/chkconfig --level 3 tog-pegasus off
+/sbin/chkconfig --level 3 rpcgssd off
+/sbin/chkconfig --level 3 kudzu off
+/sbin/chkconfig --level 3 gpm off
+/sbin/chkconfig --level 3 arptables_jf off
+/sbin/chkconfig --level 3 dc_client off
+/sbin/chkconfig --level 3 lm_sensors off
+/sbin/chkconfig --level 3 apmd off
+/sbin/chkconfig --level 3 sysstat off
+/sbin/chkconfig --level 3 cpuspeed off
+/sbin/chkconfig --level 3 rpcidmapd off
+/sbin/chkconfig --level 3 rawdevices off
+/sbin/chkconfig --level 3 rhnsd off
+/sbin/chkconfig --level 3 nfslock off
+/sbin/chkconfig --level 3 winbind off
+/sbin/chkconfig --level 3 bluetooth off
+/sbin/chkconfig --level 3 isdn off
+/sbin/chkconfig --level 3 portmap off
+/sbin/chkconfig --level 3 anacron off
+/sbin/chkconfig --level 3 irda off
+/sbin/chkconfig --level 3 NetworkManager off
+/sbin/chkconfig --level 3 acpid off
+/sbin/chkconfig --level 3 pcmcia off
+/sbin/chkconfig --level 3 atd off
+/sbin/chkconfig --level 3 sendmail off
+/sbin/chkconfig --level 3 haldaemon off
+/sbin/chkconfig --level 3 smartd off
+/sbin/chkconfig --level 3 xinetd off
+/sbin/chkconfig --level 3 netplugd off
+/sbin/chkconfig --level 3 readahead_early off
+/sbin/chkconfig --level 3 xinetd off
+/sbin/chkconfig --level 3 ntpd on
+/sbin/chkconfig --level 3 avahi-daemon off
+/sbin/chkconfig --level 3 ip6tables off
+/sbin/chkconfig --level 3 restorecond off
+/sbin/chkconfig --level 3 postfix off
