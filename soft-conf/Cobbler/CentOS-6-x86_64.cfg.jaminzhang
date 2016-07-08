@@ -47,7 +47,6 @@ ntpdate
 zip
 unzip
 telnet
-iftop
 tree
 sysstat
 iptraf
@@ -66,6 +65,14 @@ mysql
 lockdev
 minicom
 nmap
+
+%pre
+$SNIPPET('log_ks_pre')
+$SNIPPET('kickstart_start')
+$SNIPPET('pre_install_network_config')
+# Enable installation monitoring
+$SNIPPET('pre_anamon')
+%end
 
 %post
 /usr/bin/echo "# Time sync" >> /var/spool/cron/root
@@ -132,3 +139,4 @@ nmap
 /sbin/chkconfig --level 3 ip6tables off
 /sbin/chkconfig --level 3 restorecond off
 /sbin/chkconfig --level 3 postfix off
+%end
