@@ -13,7 +13,8 @@ duoshuo: true
 
 以下操作都在 Master DNS 上做操作：
 
-增加一条 A 记录 和 一条 MX 记录：  
+增加一条 A 记录 和 一条 MX 记录： 
+
 * a               A       192.168.122.100  
 * mx               MX 5       192.168.122.101  
 
@@ -184,4 +185,4 @@ Aliases:
 
 102.122.168.192.in-addr.arpa domain name pointer a.example.com.
 
- ```    
+```        
