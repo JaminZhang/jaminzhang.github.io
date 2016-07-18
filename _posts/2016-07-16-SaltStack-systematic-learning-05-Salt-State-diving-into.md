@@ -247,14 +247,81 @@ mysql-service:
 1. 按状态分类，如果单独使用，很清晰
 2. 服务分类，可以被其他的 SLS include。例如 LNMP include mysql的服务。
 
-## 使用 include
+## 使用 include 改写 lamp.sls
 
 ```bash
 cd /srv/salt/lamp/
-mv lamp.sls pkg.sls
+# 分别将 pkg/config/service相关状态写到独立的文件中
+[root@linux-node1 lamp]# cat pkg.sls 
+lamp-pkg:
+  pkg.installed:
+    - pkgs:
+      - httpd
+      - php
+      - mariadb
+      - mariadb-server
+      - php-cli
+      - php-mbstring
+You have new mail in /var/spool/mail/root
+[root@linux-node1 lamp]# cat pkg.sls
+lamp-pkg:
+  pkg.installed:
+    - pkgs:
+      - httpd
+      - php
+      - mariadb
+      - mariadb-server
+      - php-cli
+      - php-mbstring
+[root@linux-node1 lamp]# cat config.sls 
+apache-config:
+  file.managed:
+    - name: /etc/httpd/conf/httpd.conf
+    - source: salt://lamp/files/httpd.conf
+    - user: root
+    - group: root
+    - mode: 644
+
+php-config:
+  file.managed:
+    - name: /etc/php.ini
+    - source: salt://lamp/files/php.ini
+    - user: root
+    - group: root
+    - mode: 644
+
+mysql-config:
+  file.managed:
+    - name: /etc/my.cnf
+    - source: salt://lamp/files/my.cnf
+    - user: root
+    - group: root
+    - mode: 644
+    - require_in:
+      - service: mysql-service
+[root@linux-node1 lamp]# cat service.sls 
+apache-service:
+  service.running:
+    - name: httpd
+    - enable: True
+    - reload: True
+    - require:
+      - pkg: lamp-pkg
+    - watch:
+      - file: apache-config
+
+mysql-service:
+  service.running:
+    - name: mariadb
+    - enable: True
+    - reload: True
+    
+# 使用 include 包含以上 sls
 cat > init.sls << EOF
 include:
   - lamp.pkg
+  - lamp.config
+  - lamp.service
 EOF
 
 salt 'linux-node2*' state.sls lamp.init
