@@ -215,21 +215,64 @@ The default Salt pillar module defines pillar using a YAML file, though over 30 
 
 pillar 也是 key/value，但是 pillar 数据是动态的，和 minion 启不启动没关系，它给特定的 minion 指定特定的数据，跟 top file 很像。只有指定的 minion 自己能看到自己的数据。
 
+使用：  
+>
+# 查看pillar条目  
+salt '*' pillar.items
 
-## 1. 配置 pillar_roots
-
+## 1 在 Salt Master 上开启 pillar 及配置 pillar_roots
 
 ```bash
 在 /etc/salt/master 中配置 pillar_roots
 pillar_roots:
   base:
     - /srv/pillar
-	
-[root@linux-node1 ~]# mkdir -p /srv/pillar
-[root@linux-node1 ~]# cd /srv/pillar
-[root@linux-node1 pillar]# mkdir web
+ pillar_opts: True
+# 修改配置文件 /etc/salt/master 后要重启 master 
+[root@linux-node1 pillar]# systemctl restart salt-master
 
-# 创建一个 pillar sls apache.sls
+```    
+## 2 创建一个 pillar 的 sls apache.sls
+
+```bash
+mkdir -p /srv/pillar
+cd /srv/pillar
+mkdir web
+cd web
+cat > apache.sls << EOF
+{% if grains['os'] == 'CentOS' %}
+apache: httpd
+{% elif grains['os'] == 'Debian' %}
+apache: apache2
+{% endif %}
+EOF
+```    
+## 3 配置 pillar 的 top file
+
+编辑 top file(pillar 必须要写 top file，不像配置管理不用也可以)
+
+```bash
+vim /srv/pillar/top.sls
+base:
+  'linux-node2*':
+    - web.apache
+```    
+## 4 刷新 pillar 并测试获取 pillar item
+
+```bash
+[root@linux-node1 pillar]# salt '*' saltutil.refresh_pillar
+linux-node2.example.com:
+    True
+linux-node1.example.com:
+    True
+[root@linux-node1 pillar]# salt '*' pillar.items apache
+linux-node2.example.com:
+    ----------
+    apache:
+        httpd
+linux-node1.example.com:
+    ----------
+    apache:
 ```    
 
 # Grains VS Pillar
