@@ -8,8 +8,6 @@ tags: [SaltStack, Jinja2]
 duoshuo: true
 ---
 
-SaltStack 中使用 Jinja2 模板
-
 # 什么是 Jinja2
 
 <pre>
