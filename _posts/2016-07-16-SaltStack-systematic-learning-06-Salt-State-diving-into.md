@@ -22,8 +22,8 @@ duoshuo: true
 
 ## SLS 文件说明
 
-SLS 文件包含名称 ID 声明、状态 State 声明、选项（或属性）声明。  
-其中名称 ID 声明默认作为 State 的 name 声明（没有指定 name 声明时）。
+SLS 文件包含名称 ID 声明、状态 State 声明、选项（或属性）声明。   
+其中名称 ID 声明默认作为 State 的 name 声明（没有指定 name 声明时）。  
 
 例子：  
 
