@@ -28,7 +28,7 @@ Grains are also an integral part of the targeting system. Grains are used to tar
 
 Grains 是静态数据，它是在 Minion 启动的时候收集的 Minion 本地的相关信息，如：操作系统版本，内核版本，CPU，内存，硬盘，设备型号，机器序列号。它可以做资产管理，只要不重启它，它就会只收集一次，当重启的时候才会再次收集，启动完后就不会变了,它是一个 key/value 的东西。
 
-作用：
+作用：  
 
 * 资产管理、信息查询
 * 用于目标选择（不同于 ID 的另外目标定义方法，操作系统等）
