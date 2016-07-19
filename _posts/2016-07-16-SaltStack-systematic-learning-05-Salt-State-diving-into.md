@@ -3,7 +3,7 @@ layout: post
 title: SaltStack 系统性学习 06 - SaltStack 状态深入学习
 description: "SaltStack 系统性学习 06 - SaltStack 状态深入学习"
 category: SaltStack
-avatarimg:
+avatarimg: 
 tags: [SaltStack, SLS]
 duoshuo: true
 ---
