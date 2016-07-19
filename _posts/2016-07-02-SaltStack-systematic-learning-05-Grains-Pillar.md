@@ -275,6 +275,7 @@ linux-node1.example.com:
     apache:
 ```    
 
+
 # Grains VS Pillar
 
 |      | 类型 | 数据采集方式   | 应用场景 | 定义位置 |
