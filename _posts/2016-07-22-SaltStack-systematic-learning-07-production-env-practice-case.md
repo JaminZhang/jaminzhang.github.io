@@ -256,6 +256,9 @@ salt '*node2*' state.highstate
 
 ## 3 Salt prod 环境规划及配置
 
+**生产案例架构图**
+![生产案例架构图*](https://raw.githubusercontent.com/unixhot/saltbook-code/master/saltstack-arch.png)  
+
 ### 3.1 Salt prod 环境下 modules 常用服务功能模块配置
 
 /srv/salt/prod/ 为生产环境 file_roots，在此级目录创建 modules 目录，用于放置各功能模块状态配置  
@@ -458,5 +461,76 @@ server web-node2 192.168.56.12:8080 check inter 2000 rise 30 fall 15
 
 salt '*node2*' state.sls cluster.haproxy-outside saltenv=prod
 
+```    
 
-```   
+### 3.3 Salt prod 环境下 modules 常用服务模块和 外部 Web 业务模块配置
+
+以上状态模块配置较多，以下为对应的文件和目录结构：
+
+```bash
+[root@linux-node1 salt]# tree prod
+prod
+├── bbs
+│   ├── files
+│   │   ├── nginx-bbs.conf
+│   │   └── php.ini-production
+│   ├── memcached.sls
+│   └── web.sls
+├── cluster
+│   ├── files
+│   │   ├── haproxy-outside.cfg
+│   │   └── haproxy-outside-keepalived.conf
+│   ├── haproxy-outside-keepalived.sls
+│   └── haproxy-outside.sls
+└── modules
+    ├── haproxy
+    │   ├── files
+    │   │   ├── haproxy-1.6.3.tar.gz
+    │   │   └── haproxy.init
+    │   └── install.sls
+    ├── keepalived
+    │   ├── files
+    │   │   ├── keepalived-1.2.17.tar.gz
+    │   │   ├── keepalived.init
+    │   │   └── keepalived.sysconfig
+    │   └── install.sls
+    ├── libevent
+    │   ├── files
+    │   │   └── libevent-2.0.22-stable.tar.gz
+    │   └── install.sls
+    ├── memcached
+    │   ├── files
+    │   │   └── memcached-1.4.24.tar.gz
+    │   └── install.sls
+    ├── nginx
+    │   ├── files
+    │   │   ├── nginx-1.9.1.tar.gz
+    │   │   ├── nginx.conf
+    │   │   └── nginx-init
+    │   ├── install.sls
+    │   └── service.sls
+    ├── pcre
+    │   ├── files
+    │   │   └── pcre-8.37.tar.gz
+    │   └── install.sls
+    ├── php
+    │   ├── files
+    │   │   ├── init.d.php-fpm
+    │   │   ├── memcache-2.2.7.tgz
+    │   │   ├── php-5.6.9.tar.gz
+    │   │   ├── php-fpm.conf.default
+    │   │   ├── php.ini-production
+    │   │   └── redis-2.2.7.tgz
+    │   ├── install.sls
+    │   ├── php-memcache.sls
+    │   └── php-redis.sls
+    ├── pkg
+    │   └── make.sls
+    └── user
+        └── www.sls
+
+```    
+
+将这上面的 base 和 prod 环境打包上传到 GitHub 上。
+
+
