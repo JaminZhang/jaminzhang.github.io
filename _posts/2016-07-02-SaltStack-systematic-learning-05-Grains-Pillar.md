@@ -231,7 +231,8 @@ pillar_roots:
 # 修改配置文件 /etc/salt/master 后要重启 master 
 [root@linux-node1 pillar]# systemctl restart salt-master
 
-```    
+```   
+
 ## 2 创建一个 pillar 的 sls apache.sls
 
 ```bash
