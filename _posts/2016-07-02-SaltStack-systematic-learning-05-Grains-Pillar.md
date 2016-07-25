@@ -235,20 +235,7 @@ pillar_roots:
 
 ## 2 创建一个 pillar 的 sls apache.sls
 
-<pre>
-mkdir -p /srv/pillar
-cd /srv/pillar
-mkdir web
-cd web
-cat > apache.sls << EOF
-{% if grains['os'] == 'CentOS' %}
-apache: httpd
-{% el\if grains['os'] == 'Debian' %}
-apache: apache2
-{% endif %}
-EOF
-</pre>
-  
+
 ## 3 配置 pillar 的 top file
 
 编辑 top file(pillar 必须要写 top file，不像配置管理不用也可以)
