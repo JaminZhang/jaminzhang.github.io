@@ -17,9 +17,9 @@ duoshuo: true
 我想起我之前 GitHub Page build failure 会发邮件的，这个邮箱我没怎么登录使用。  
 登录进去，果然有 Page build failure 的提示邮件。如下：
 
-<The page build failed with the following error:
-
 <pre>
+The page build failed with the following error:
+
 The tag `elif` on line 235 in `_posts/2016-07-02-SaltStack-systematic-learning-05-Grains-Pillar.md` is not a recognized Liquid tag. For more information, see https://help.github.com/articles/page-build-failed-unknown-tag-error.
 
 For information on troubleshooting Jekyll see:
