@@ -243,7 +243,7 @@ cd web
 cat > apache.sls << EOF
 {% if grains['os'] == 'CentOS' %}
 apache: httpd
-{% elif grains['os'] == 'Debian' %}
+{% el\if grains['os'] == 'Debian' %}
 apache: apache2
 {% endif %}
 EOF
