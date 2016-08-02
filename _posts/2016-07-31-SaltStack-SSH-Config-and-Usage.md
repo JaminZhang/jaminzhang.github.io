@@ -239,12 +239,7 @@ salt ALL=(ALL) NOPASSWD: ALL
 
 # 创建 roster 模板，在 jinja 中使用 salt-mine 获取主机的 Minion ID 和 IP 地址：
 vim /srv/salt/base/salt/files/roster
-{% for minion_id, minion_ip in salt['mine.get']('*', 'network.ip_addrs').iteritems() - %}
-{{ minion_id }}:
-  host: {{ minion_ip[0] }}
-  user: salt
-  sudo: True
-{% endfor -%}
+[roster 文件](https://jaminzhang.github.io/soft-conf/SaltStack/salt-roster-template.yaml)
 ```    
 
 # 4 执行状态并测试
