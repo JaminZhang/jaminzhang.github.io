@@ -1,0 +1,6 @@
+{% for minion_id, minion_ip in salt['mine.get']('*', 'network.ip_addrs').iteritems() - %}
+{{ minion_id }}:
+  host: {{ minion_ip[0] }}
+  user: salt
+  sudo: True
+{% endfor -%}
