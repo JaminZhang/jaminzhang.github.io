@@ -102,7 +102,8 @@ performance.client-io-threads                performance.least-rate-limit       
 performance.enable-least-priority            performance.low-prio-threads                 performance.quick-read                       performance.write-behind
 performance.flush-behind                     performance.md-cache-timeout                 performance.read-after-open                  performance.write-behind-window-size
 
-```    
+``` 
+
 ## 3.6 监控及日常维护
 
 可以使用 Zabbix 自带模板监控 CPU、内存、主机存活、磁盘空间、主机运行时间、系统 Load 等。  
