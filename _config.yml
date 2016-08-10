@@ -22,6 +22,7 @@ url_categories:     /categories/
 url_timeline:       /timeline/
 url_rss:            /rss/
 url_about:          /about/
+url_blogroll:       /blogroll/
 
 production_url:     http://jaminzhang.me           # production_url是sitemap生成的url,方便百度谷歌收录.
 favicon:            /images/favicon.ico
