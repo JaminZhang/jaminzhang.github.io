@@ -27,6 +27,7 @@ duoshuo: true
 ### 2.2.1 修改主机名
 
 修改：
+
 * /etc/sysconfig/network 
 
 
