@@ -51,3 +51,4 @@ Scale Up，比如：我们向原有的机器添加CPU、内存。
 [什么是Scale Up和Scale Out？](http://www.chinastor.com/a/jishu/scale.html)  
 [Scale OUT还是Scale UP？](http://samyu.blog.51cto.com/344284/169764)  
 [Scale Out将是未来的企业架构](http://www.csdn.net/article/1970-01-01/309324)    
+[Scale Up和Scale Out的区别](https://www.zhihu.com/question/39888195/answer/84801901)  
