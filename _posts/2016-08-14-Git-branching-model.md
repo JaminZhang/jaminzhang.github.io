@@ -62,6 +62,7 @@ Git 主分支的名字，默认叫做 Master。它是自动建立的，版本库
 最后一种是修补 bug 分支。软件正式发布以后，难免会出现 bug。这时就需要创建一个分支，进行 bug 修补。
 修补 bug 分支是从 Master 分支上面分出来的。修补结束以后，再合并进 Master 和 Develop 分支。它的命名，可以采用 fixbug-* 的形式。
 
+以下图示了以上介绍的各种分支之间的关系
 ![Git branching model](http://nvie.com/img/git-model@2x.png)  
 
 
