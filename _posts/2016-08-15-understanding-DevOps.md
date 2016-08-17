@@ -30,7 +30,7 @@ DevOps（Development和Operations的组合词）是一种重视“软件开发�
 下面的一些参考资料也有助于我们从各个不同视角对其进行理解。
 
 # Ref
-[DevOps](https://zh.wikipedia.org/wiki/DevOpshttps://zh.wikipedia.org/wiki/DevOps)  
+[DevOps](https://zh.wikipedia.org/wiki/DevOps)  
 [What Is DevOps?](https://theagileadmin.com/what-is-devops/)  
 [如何成为一名Top DevOps Engineer](http://www.cnblogs.com/yuxc/p/3578926.html)  
 [专题：DevOps，并非你想的那么简单](http://os.51cto.com/art/201404/436824.htm)  
