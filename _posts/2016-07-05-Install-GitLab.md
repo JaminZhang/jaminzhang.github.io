@@ -41,6 +41,7 @@ yum makecache
 yum install gitlab-ce -y
 
 ```    
+
 ## 3 配置启动 GitLab
 
 >
