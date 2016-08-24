@@ -17,3 +17,8 @@ duoshuo: true
 # 运维生涯收集
 
 [《一个老运维的心里话》-谭志宇，运维总监@胡莱游戏](http://chuansong.me/n/2303527)  
+
+
+# 运维职位发展
+
+[IT：从运维到运营](http://www.yunweipai.com/archives/7662.html)  
