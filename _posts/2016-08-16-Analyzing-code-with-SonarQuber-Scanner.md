@@ -25,6 +25,7 @@ duoshuo: true
 
 # 使用 Sonar 进行代码分析
 
+SonarQube 的编程语言插件包含代码扫描分析规则。    
 分析一个编程语言的代码，首先要在 SonarQube 上安装这个编程语言的分析插件。  
 然后使用 SonarQube Scanner 进行代码分析。
 
