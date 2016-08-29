@@ -17,8 +17,11 @@ duoshuo: true
 # 运维生涯收集
 
 [《一个老运维的心里话》-谭志宇，运维总监@胡莱游戏](http://chuansong.me/n/2303527)  
-
+[运维老鸟阐述：努力做好自己，才是对父亲最大的回馈](http://chuansong.me/n/369614451072)  
 
 # 运维职位发展
 
 [IT：从运维到运营](http://www.yunweipai.com/archives/7662.html)  
+
+[中美运维科技公司差异和创业思考](http://www.yunweipai.com/archives/6876.html)  
+
