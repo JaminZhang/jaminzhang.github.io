@@ -75,6 +75,29 @@ output {
 
 上面的框架是无功能的，因为 input 和 output 区块并没有任何有效的定义选项。
 
+## Logstash 配置实例
+
+```bash
+[root@linux-node2 logstash]# bin/logstash -e 'input { stdin { } } output { stdout { codec => rubydebug } elasticsearch { hosts => ["192.168.56.12:9200"] index => "logstash-%{+%YYYY.MM.dd}" } }'
+```    
+
+上面第一次看有些不易读，其实上面的功能是从标准输入读入数据，然后以 rubydebug 格式化后输出到标准输出，同时将数据写到 ES 中。  
+这个流程中使用到了 input/codec/output/ 插件。
+
+>
+技巧：当使用 Logstash 收集数据时，可先在前台运行 Logstash，可先在 stdin 和 stdout 进行数据输入输出的调试，调试正确后再写入配置文件后台运行 Logstash。
+
+# Logstash 插件
+
+经过上面的实例，我们再来总结一下，Logstash 的功能是由 input/filter/codec/output 四种类型的插件结合来实现的。  
+除了必需的 input 和 output 插件，上面给出的示例中，配置有 codec 插件。  
+
+Codec 插件  
+一个 codec 插件用于改变一个事件的数据表达方式。Codecs 本质上是流过滤器，  
+它们能够作为一个 input 或 output 的一部分来运作。
+
+rubydebug 插件将使用 Ruby Awesome Print 库来输出你的 Logstash 事件数据。  
+这种输出是易读的 JSON 格式的。
 
 # Ref
 [Logstash Introduction](https://www.elastic.co/guide/en/logstash/current/introduction.html)  
