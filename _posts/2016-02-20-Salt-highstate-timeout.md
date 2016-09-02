@@ -4,7 +4,7 @@ title: Salt state.highstate 超时
 description: "Salt state.highstate 超时"
 category: SaltStack
 avatarimg:
-tags: [SaltStack, API, RESTful]
+tags: [SaltStack, highstat, timeout]
 duoshuo: true
 ---
 
