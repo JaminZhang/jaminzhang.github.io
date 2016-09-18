@@ -132,8 +132,26 @@ Docker 利用容器（Container）来运行应用。
 *注：Docker 仓库的概念跟 Git 类似，注册服务器可以理解为 GitHub 这样的托管服务。
 </pre>
 
+# Docker 用例
+
+官网例举了下面几个方面可以使用 Docker 加速应用的开发、分发和部署（当然可以有更多）：
+
+* CI/CD
+* DEVOPS
+* INFRASTRUCTURE OPTIMIZATION
+
+下面是赵班长从另一个角度总结的 Docker 的用途：
+
+* 面向产品：产品交付
+* 面向开发：简化环境配置
+* 面向测试：多版本测试
+* 面向运维：环境一致性
+* 面向架构：自动化扩容（微服务）
+
+
 # Ref
 [WHAT IS DOCKER?](https://www.docker.com/what-docker)  
 [什么是 Docker](https://yeasy.gitbooks.io/docker_practice/content/introduction/what.html)  
 [为什么要使用 Docker？](https://yeasy.gitbooks.io/docker_practice/content/introduction/why.html)  
-[Understand the architecture](https://docs.docker.com/v1.11/engine/understanding-docker/)
+[Understand the architecture](https://docs.docker.com/v1.11/engine/understanding-docker/)  
+[DOCKER USE CASES](https://www.docker.com/use-cases)  
