@@ -120,7 +120,7 @@ docker.io/centos            latest              980e0e4c79ec        5 days ago  
 * 运行容器：docker run 
 * 停止容器：docker stop
 * 查看容器：docker ps
-* 进入容器：docker attach | nsenter | docker exec
+* 进入容器：docker attach / nsenter / docker exec
 * 删除容器：docker rm
 
 
@@ -186,6 +186,7 @@ root        14  0.0  0.0  47424  1660 ?        R+   09:07   0:00 ps aux
 # docker attach 进入容器后，执行 exit 容器也 会 exit
 
 ```   
+
 ### 2. 使用 nsenter 进入容器
 
 nsenter 工具在 util-linux 包2.23版本后包含。  
@@ -236,6 +237,7 @@ USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 logout
 
 ```    
+
 ### 3. 使用 docker exec 进入容器
 
 ```bash
