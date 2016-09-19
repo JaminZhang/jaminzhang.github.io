@@ -61,6 +61,7 @@ root@9e061b675f1a:/# ls /data/
 test1
 
 ```    
+
 ## 指定本地主机源目录和容器中的目标目录
 
 注意：Dockerfile 中不支持这种用法，这是因为 Dockerfile 是为了移植和分享用的。然而，不同操作系统的路径格式不一样，所以目前还不能支持。
@@ -89,6 +90,7 @@ root@868a9e6b7aa0:/# cd /data/
 root@868a9e6b7aa0:/data# touch test3
 touch: cannot touch 'test3': Read-only file system
 ```    
+
 ## 挂载文件
 
 ```bash
