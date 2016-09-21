@@ -176,6 +176,7 @@ jaminzhang/centos-ssh       base                40af0c56e966        11 minutes a
 jaminzhang/centos           base                b0cfe8ee533b        20 minutes ago      283.3 MB
 ...此处内容省略...
 ```    
+
 ### 构建带 SSH 服务 的 Python 运行环境镜像
 
 ```bash
