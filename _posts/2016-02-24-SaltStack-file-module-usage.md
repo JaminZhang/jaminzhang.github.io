@@ -1,7 +1,7 @@
 ---
 layout: post
-title: salt minion pulic key冲突
-description: "SaltStack file 模块使用"
+title: SaltStack File 模块使用
+description: "SaltStack File 模块使用"
 category: SaltStack
 avatarimg:
 tags: [SaltStack]
