@@ -54,7 +54,7 @@ Adding password for user admin
 admin:$apr1$i0szKFN2$0aiDnahUbl7EA4HK7wxwz.
 ```    
 
-## 1.4 添加 nginx 配置文件
+## 1.4 添加 Nginx 配置文件
 
 添加如下的 nginx 配置文件（根据上面的相关配置指定好 SSL 证书/ 基本认证） ：
 
@@ -110,7 +110,7 @@ server {
 ```    
 
 
-# 2 安装运行 docker registry
+# 2 安装运行 Docker Registry
 
 ```bash
 # 运行 docker registry 容器，镜像存储目录为 /opt/data/registry
@@ -179,6 +179,7 @@ Docker-Distribution-Api-Version: registry/2.0
 WARNING: login credentials saved in /root/.docker/config.json
 Login Succeeded
 ```    
+
 ## 3.3 上传、查看镜像
 
 ```bash
