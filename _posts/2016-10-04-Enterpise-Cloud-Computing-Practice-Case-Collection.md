@@ -2,9 +2,9 @@
 layout: post
 title: 企业云计算实践案例收集
 description: "企业云计算实践案例收集"
-category: Ops
+category: Cloud-Computing
 avatarimg:
-tags: [Ops]
+tags: [Cloud-Computing, Ops]
 duoshuo: true
 ---
 
