@@ -52,6 +52,13 @@ udp        0      0 0.0.0.0:514             0.0.0.0:*                           
 # 重启后，会将服务器现有的 syslog 日志上传到 logstash
 # 确认 logstash 前台运行时标准输出可以接收到 syslog 日志后，
 # 我们再修改 logstash 配置文件 syslog.conf output 部分修改如下（这样将收集到的 syslog 日志写入到 ES）:
+[root@linux-node2 ~]# cat /etc/logstash/conf.d/syslog.conf 
+input {
+  syslog {
+    type => "system-syslog"
+    port => 514  
+  }
+}
 
 output {
   elasticsearch {
