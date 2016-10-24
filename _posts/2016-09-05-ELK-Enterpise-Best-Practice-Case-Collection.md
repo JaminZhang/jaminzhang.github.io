@@ -2,7 +2,7 @@
 layout: post
 title: ELK 企业最佳实践案例收集
 description: "ELK 企业最佳实践案例收集"
-category: Docker
+category: ELK
 avatarimg:
 tags: [ELK, Ops, Best-Practice]
 duoshuo: true
