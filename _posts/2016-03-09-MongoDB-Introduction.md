@@ -15,7 +15,8 @@ NoSQL 数据库里面比较常见的有 Memcached, Redis, MongoDB 等等，今�
 # MongoDB 简介
 
 <pre>
-MongoDB is an open-source document database that provides high performance, high availability, and automatic scaling.
+MongoDB is an open-source document database that provides high performance, high availability, 
+and automatic scaling.
 </pre>
 
 
