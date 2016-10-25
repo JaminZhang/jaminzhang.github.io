@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Redis 简介
+title: Memcached 简介
 description: "Memcached 简介"
 category: NoSQL
 avatarimg:
