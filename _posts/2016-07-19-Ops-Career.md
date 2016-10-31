@@ -16,6 +16,7 @@ duoshuo: true
 
 # 运维生涯收集
 
+[【运维专家大讲堂】51CTO专访腾讯高级运维工程师刘天斯](http://mp.weixin.qq.com/s?scene=23&mid=2675503914&sn=51e3a13f03a0d9f3bb8b2c6eea3a59b7&idx=1&__biz=MzAwMDM2NzUxMg%3D%3D&srcid=103103IPtAyXM7DapIUcbyg7&mpshare=1#rd)    
 [《一个老运维的心里话》-谭志宇，运维总监@胡莱游戏](http://chuansong.me/n/2303527)  
 [运维老鸟阐述：努力做好自己，才是对父亲最大的回馈](http://chuansong.me/n/369614451072)  
 
