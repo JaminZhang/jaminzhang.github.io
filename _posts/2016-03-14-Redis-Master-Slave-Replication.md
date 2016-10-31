@@ -10,7 +10,7 @@ duoshuo: true
 
 # Redis 主从复制简介
 
-<pre>
+
 Redis 支持简单且易用的主从复制（master-slave replication）功能， 
 该功能可以让从服务器(slave server)成为主服务器(master server)的精确复制品。
 
@@ -24,11 +24,11 @@ Redis 支持简单且易用的主从复制（master-slave replication）功能�
 你还可以配置从服务器， 让它在与主服务器之间的连接断开时， 向客户端发送一个错误。
 * 复制功能可以单纯地用于数据冗余（data redundancy）， 也可以通过让多个从服务器处理只读命令请求来提升扩展性（scalability）： 比如说， 繁重的 SORT 命令可以交给附属节点去运行。
 * 可以通过复制功能来让主服务器免于执行持久化操作： 只要关闭主服务器的持久化功能， 然后由从服务器去执行持久化操作即可。
-</pre>
+
 
 # 关闭主服务器持久化时，复制功能的数据安全
 
-<pre>
+
 当配置 Redis 复制功能时，强烈建议打开主服务器的持久化功能。 否则的话，由于延迟等问题，部署的服务应该要避免自动拉起。
 
 为了帮助理解主服务器关闭持久化时自动拉起的危险性，参考一下以下会导致主从服务器数据全部丢失的例子：
@@ -43,11 +43,11 @@ Redis 支持简单且易用的主从复制（master-slave replication）功能�
 然后还是会执行上面的数据丢失的流程。
 
 无论何时，数据安全都是极其重要的，所以应该禁止主服务器关闭持久化的同时自动拉起。
-</pre>
+
 
 # 复制功能的运作原理
 
-<pre>
+
 无论是初次连接还是重新连接， 当建立一个从服务器时， 从服务器都将向主服务器发送一个 SYNC 命令。
 
 接到 SYNC 命令的主服务器将开始执行 BGSAVE ， 并在保存操作执行期间， 将所有新执行的写入命令都保存到一个缓冲区里面。
@@ -64,26 +64,26 @@ Redis 支持简单且易用的主从复制（master-slave replication）功能�
 
 从服务器可以在主从服务器之间的连接断开时进行自动重连， 在 Redis 2.8 版本之前， 
 断线之后重连的从服务器总要执行一次完整重同步（full resynchronization）操作， 但是从 Redis 2.8 版本开始， 从服务器可以根据主服务器的情况来选择执行完整重同步还是部分重同步（partial resynchronization）。
-</pre>
+
 
 # 配置
 
-<pre>
+
 配置一个从服务器非常简单， 只要在配置文件中增加以下的这一行就可以了：
 
-slaveof 192.168.1.1 6379
+slaveof 192.168.1.1 6379  
 
 当然， 你需要将代码中的 192.168.1.1 和 6379 替换成你的主服务器的 IP 和端口号。
 
 另外一种方法是调用 SLAVEOF 命令， 输入主服务器的 IP 和端口， 然后同步就会开始：
 
-127.0.0.1:6379> SLAVEOF 192.168.1.1 10086
-OK
-</pre>
+127.0.0.1:6379> SLAVEOF 192.168.1.1 10086  
+OK  
+
 
 # 只读从服务器
 
-<pre>
+
 从 Redis 2.6 开始， 从服务器支持只读模式， 并且该模式为从服务器的默认模式。
 
 只读模式由 redis.conf 文件中的 slave-read-only 选项控制， 也可以通过 CONFIG SET 命令来开启或关闭这个模式。
@@ -95,31 +95,30 @@ OK
 你可能会感到好奇， 既然从服务器上的写数据会被重同步数据覆盖， 也可能在从服务器重启时丢失， 那么为什么要让一个从服务器变得可写呢？
 
 原因是， 一些不重要的临时数据， 仍然是可以保存在从服务器上面的。 比如说， 客户端可以在从服务器上保存主服务器的可达性（reachability）信息， 从而实现故障转移（failover）策略。
-</pre>
+
 
 # 从服务器相关配置
 
-<pre>
+
 如果主服务器通过 requirepass 选项设置了密码， 那么为了让从服务器的同步操作可以顺利进行， 我们也必须为从服务器进行相应的身份验证设置。
 
 对于一个正在运行的服务器， 可以使用客户端输入以下命令：
 
-config set masterauth <password>
+config set masterauth <password>  
 
 要永久地设置这个密码， 那么可以将它加入到配置文件中：
 
-masterauth <password>
+masterauth <password>  
 
 另外还有几个选项， 它们和主服务器执行部分重同步时所使用的复制流缓冲区有关， 详细的信息可以参考 Redis 源码中附带的 redis.conf 示例文件。
-</pre>
+
 
 
 
 # Ref
 [复制（Replication）](http://redisdoc.com/topic/replication.html)  
 [redis高可用主从复制](http://daisywei.blog.51cto.com/7837970/1828337)  
-[
-Redis - 密码配置和主从复制](http://www.cnblogs.com/binchen-china/p/5568007.html)  
+[Redis - 密码配置和主从复制](http://www.cnblogs.com/binchen-china/p/5568007.html)  
 
 
 
