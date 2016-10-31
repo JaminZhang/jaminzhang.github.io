@@ -10,7 +10,6 @@ duoshuo: true
 
 # 集群简介
 
-<pre>
 
 Redis 集群是一个可以在多个 Redis 节点之间进行数据共享的设施（installation）。
 
@@ -23,11 +22,11 @@ Redis 集群提供了以下两个好处：
 * 将数据自动切分（split）到多个节点的能力。
 * 当集群中的一部分节点失效或者无法进行通讯时， 仍然可以继续处理命令请求的能力。
 
-</pre>
+
 
 # Redis 集群数据共享
 
-<pre>
+
 
 Redis 集群使用数据分片（sharding）而非一致性哈希（consistency hashing）来实现： 一个 Redis 集群包含 16384 个哈希槽（hash slot）， 数据库中的每个键都属于这 16384 个哈希槽的其中一个， 集群使用公式 CRC16(key) % 16384 来计算键 key 属于哪个槽， 其中 CRC16(key) 语句用于计算键 key 的 CRC16 校验和 。
 
@@ -44,11 +43,11 @@ Redis 集群使用数据分片（sharding）而非一致性哈希（consistency 
 
 因为将一个哈希槽从一个节点移动到另一个节点不会造成节点阻塞， 所以无论是添加新节点还是移除已存在节点， 又或者改变某个节点包含的哈希槽数量， 都不会造成集群下线。
 
-</pre>
+
 
 # Redis 集群中的主从复制
 
-<pre>
+
 
 为了使得集群在一部分节点下线或者无法与集群的大多数（majority）节点进行通讯的情况下， 仍然可以正常运作， Redis 集群对节点使用了主从复制功能： 集群中的每个节点都有 1 个至 N 个复制品（replica）， 其中一个复制品为主节点（master）， 而其余的 N-1 个复制品为从节点（slave）。
 
@@ -58,17 +57,17 @@ Redis 集群使用数据分片（sharding）而非一致性哈希（consistency 
 
 不过如果节点 B 和 B1 都下线的话， Redis 集群还是会停止运作。
 
-</pre>
+
 
 # Redis 集群的一致性保证（guarantee）
 
-<pre>
+
 Redis 集群不保证数据的强一致性（strong consistency）： 在特定条件下， Redis 集群可能会丢失已经被执行过的写命令。
 
 使用异步复制（asynchronous replication）是 Redis 集群可能会丢失写命令的其中一个原因。
 
 Redis 集群另外一种可能会丢失命令的情况是， 集群出现网络分裂（network partition）， 并且一个客户端与至少包括一个主节点在内的少数（minority）实例被孤立。
-</pre>
+
 
 # Ref
 [集群教程](http://redisdoc.com/topic/cluster-tutorial.html)  
