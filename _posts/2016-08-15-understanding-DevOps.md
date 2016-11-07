@@ -29,6 +29,9 @@ DevOps（Development和Operations的组合词）是一种重视“软件开发�
 以上定义 DevOps 是一种文化、运动或惯例比较抽象，我们可以从现实中的具体事例来理解它。
 下面的一些参考资料也有助于我们从各个不同视角对其进行理解。
 
+# DevOps 业界实践
+[布道-腾讯游戏数据服务运营之道，DevOps思想传教者](http://mp.weixin.qq.com/s?__biz=MzA3MzYwNjQ3NA==&mid=2651297238&idx=1&sn=2c56ad68a5e173cb24bbf0df7f37130d&chksm=84ff41f3b388c8e51f6a42f30bd8d74255c5671da24904ba72847cf38aaa1020fbac02055863&mpshare=1&scene=23&srcid=11069sAoFXMe4cAWlEkHD4G2#rd)
+
 # Ref
 [DevOps](https://zh.wikipedia.org/wiki/DevOps)  
 [What Is DevOps?](https://theagileadmin.com/what-is-devops/)  
