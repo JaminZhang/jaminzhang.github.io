@@ -16,4 +16,4 @@ duoshuo: true
 # 企业运维发展案例
 
 [B站运维团队成长的血泪史](http://mp.weixin.qq.com/s?__biz=MzA3MzYwNjQ3NA==&mid=2651297171&idx=1&sn=ec227d4aa558486ce3dc1e7d249b9e60&mpshare=1&scene=23&srcid=11022oEaHmgTbWNRdkRmd4dO#rd)  
-
+[汽车之家运维团队博客](http://autohomeops.corpautohome.com/)  
