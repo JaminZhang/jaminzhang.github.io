@@ -69,3 +69,4 @@ OpenStack 通过 Nova 调用 KVM/XEN/VMware 等虚拟机化技术创建虚拟机
 [OpenStack Wikipedia](https://en.wikipedia.org/wiki/OpenStack)
 [OpenStack Installation Guide for Red Hat Enterprise Linux and CentOS](http://docs.openstack.org/mitaka/zh_CN/install-guide-rdo/index.html)    
 [Openstack之一:环境准备及基础服务](https://www.studylinux.net/?p=2881)  
+[《每天5分钟玩转 OpenStack》教程目录](http://mp.weixin.qq.com/s?srcid=1108ZATkVHdI6vDMtFySyWWY&scene=23&mid=403471227&sn=d645ec0df174e05384bbff40aada4cff&idx=1&__biz=MzIwMTM5MjUwMg%3D%3D&chksm=0b1673623c61fa74f005312b9ed1713a5134c26b448cc46e6903964d7c54810d0d17b656d211&mpshare=1#rd)  
