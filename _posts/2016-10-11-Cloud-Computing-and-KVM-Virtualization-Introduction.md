@@ -127,4 +127,5 @@ KVM 是全虚拟化，XEN 是半虚拟化，KVM 在部分设备也支持半虚�
 # Ref
 [KVM](http://www.linux-kvm.org/page/Main_Page)  
 [虚拟化之KVM](https://www.studylinux.net/?p=2678)  
+[深度实践KVM](https://book.douban.com/subject/26606473/)  
 [云主机和物理机PK|谁将蓝瘦香菇？](http://mp.weixin.qq.com/s?__biz=MzAwMDM2NzUxMg==&mid=2247485451&idx=1&sn=8c5748dcc3a06e9d8c6ef852560e33f0&chksm=9aeb46fcad9ccfea027ce69851a66479deca3e123ef0185f4cde818f4a3ffb7fef04871f4a1c&mpshare=1&scene=23&srcid=1108s6cL2TTR9knlsypS5tkr#rd)  
