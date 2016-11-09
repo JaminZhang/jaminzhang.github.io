@@ -18,5 +18,5 @@ duoshuo: true
 我们一般所讲的带宽是指数据的发送速度。比如百兆网卡，便是指网卡的最大发送速度为 100 Mbps，也就是网卡在 1 秒钟最多可以发出 100 Mb 的数据。  
 
 # Ref
-[《构建高性能Web站点》](https://book.douban.com/subject/3924175/)  
+[《构建高性能Web站点》第2章 数据的网络传输 2.2 带宽](https://book.douban.com/subject/3924175/)  
  
