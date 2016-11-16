@@ -23,12 +23,14 @@ duoshuo: true
 
 我想设置murder的rpm安装好后的目录为/usr/local/murder，于是首先将murder相关py文件放到这个目录下。  
 然后开始打包，命令如下：
+
 >
 fpm -s dir -t rpm -n murder -v 0.1.3 /usr/local/murder/
 
 具体命令选项请man。
 
 生成rpm包后，就可以放在公司内部的yum源上。
+
 
 
 # 遇到的问题
@@ -50,4 +52,5 @@ gem sources -l
 《网站运维技术与实践》7.4 搭建私有软件仓库  
 [用fpm便捷地打RPM包](http://blog.csdn.net/willas/article/details/10329225)  
 [GitHub FPM](https://github.com/jordansissel/fpm)  
+[基于官方 rpm 快速创建自定义 rpm](https://mritd.me/2016/09/13/%E5%9F%BA%E4%BA%8E%E5%AE%98%E6%96%B9-rpm-%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89-rpm/)  
 
