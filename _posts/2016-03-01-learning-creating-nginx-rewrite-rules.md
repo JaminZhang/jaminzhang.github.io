@@ -43,7 +43,8 @@ duoshuo: true
 # 学习实践过程中遇到的问题
 
 ## 1 示例有不能正确工作
-如下配置，我在实践中测试不出来，花了很长时间，本以为自己的问题，但在测试中始终不能成功。
+
+1. 如下配置，我在实践中测试不出来，花了很长时间，本以为自己的问题，但在测试中始终不能成功。
 <pre>
 server {
     ...
@@ -59,6 +60,18 @@ server {
 rewrite ^(/download/.*)/media/(.*)$ $1/mp3/$2.mp3 last;
 rewrite ^(/download/.*)/audio/(.*)$ $1/mp3/$2.ra  last;
 </pre>
+
+2. 使用文章的配置增加 www 前缀，提示此网页包含重定向循环，解决方法是需要先判断 host 主机名 如下：
+
+```bash
+    if ($host != 'www.jaminzhang.me') {
+        return 301   $scheme://www.jaminzhang.me$request_uri;
+        #rewrite ^(.*)$ $scheme://www.jaminzhang.me$1 permanent; # 不推荐 rewrite，文章说 rewrite 的效率要比 return 低
+    }
+
+```    
+
+
 
 ## 2 nginx配置文件不熟悉
 下面示例配置中的return指令中的www.new-name.com新域名的配置必须要存在，一开始测试时我没有配置，提示“此网页包含重定向循环”，
