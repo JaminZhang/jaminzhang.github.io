@@ -93,5 +93,5 @@ server {
 [nginx配置location总结及rewrite规则写法](http://seanlook.com/2015/05/17/nginx-location-rewrite/)  
 [用include指令实现nginx多虚拟主机配置](http://blog.haohtml.com/archives/6203)  
 [Nginx 301重定向规则](https://timeting.com/30/nginx-301-redirect/)  
-[Nginx控制域名301跳转出现"此网页包含重定向循环"](http://tqcto.com/article/recommend/61.html)  
-
+[Nginx控制域名301跳转出现"此网页包含重定向循环"](http://www.voidcn.com/blog/u014723529/article/p-2686699.html)  
+[Nginx 301重定向域名](http://www.tqcto.com/article/internet/50988.html)  
