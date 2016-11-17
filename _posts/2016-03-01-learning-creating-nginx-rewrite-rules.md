@@ -64,11 +64,11 @@ rewrite ^(/download/.*)/audio/(.*)$ $1/mp3/$2.ra  last;
 2. 使用文章的配置增加 www 前缀，提示此网页包含重定向循环，解决方法是需要先判断 host 主机名 如下：
 
 ```bash
-    if ($host != 'www.jaminzhang.me') {
-        return 301   $scheme://www.jaminzhang.me$request_uri;
-        #rewrite ^(.*)$ $scheme://www.jaminzhang.me$1 permanent; # 不推荐 rewrite，文章说 rewrite 的效率要比 return 低
-    }
-
+server_name  jaminzhang.me;
+if ($host != 'www.jaminzhang.me') {
+    return 301   $scheme://www.jaminzhang.me$request_uri;
+    #rewrite ^(.*)$ $scheme://www.jaminzhang.me$1 permanent; # 不推荐 rewrite，文章说 rewrite 的效率要比 return 低
+}
 ```    
 
 
