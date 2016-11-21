@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 
+title: HTTP 中使用 gzip
 description: "HTTP 中使用 gzip"
 category: Web
 avatarimg:
