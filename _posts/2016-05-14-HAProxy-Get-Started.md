@@ -168,6 +168,124 @@ http://192.168.56.11:8888/haproxy-status
 >
 对比 Nginx，只有 Nginx Plus（Nginx 企业版）才有类似 HAProxy Web 状态页面的 Dashboard
 
+# HAProxy 在线维护
+
+## 在线增加、删除节点
+
+配置文件`/etc/haproxy/haproxy.cfg` 中的 stat socket 修改如下：  
+`stats socket /var/lib/haproxy/haproxy.sock mode 600 level admin`  
+然后重启 HAProxy `systemctl restart haproxy`  
+
+```bash
+# 需要安装 socat 传递信息给 socket 
+[root@linux-node1 ~]# yum install socat -y
+
+# 查看 help
+[root@linux-node1 ~]# echo "help" | socat stdio /var/lib/haproxy/haproxy.sock 
+Unknown command. Please enter one of the following commands only :
+  clear counters : clear max statistics counters (add 'all' for all counters)
+  clear table    : remove an entry from a table
+  help           : this message
+  prompt         : toggle interactive mode with prompt
+  quit           : disconnect
+  show info      : report information about the running process
+  show pools     : report information about the memory pools usage
+  show stat      : report counters for each proxy and server
+  show errors    : report last request and response errors for each proxy
+  show sess [id] : report the list of current sessions or dump this session
+  show table [id]: report table usage stats or dump this table's contents
+  get weight     : report a server's current weight
+  set weight     : change a server's weight
+  set server     : change a server's state or weight
+  set table [id] : update or create a table entry's data
+  set timeout    : change a timeout setting
+  set maxconn    : change a maxconn setting
+  set rate-limit : change a rate limiting value
+  disable        : put a server or frontend in maintenance mode
+  enable         : re-enable a server or frontend which is in maintenance mode
+  shutdown       : kill a session or a frontend (eg:to release listening ports)
+  show acl [id]  : report avalaible acls or dump an acl's contents
+  get acl        : reports the patterns matching a sample for an ACL
+  add acl        : add acl entry
+  del acl        : delete acl entry
+  clear acl <id> : clear the content of this acl
+  show map [id]  : report avalaible maps or dump a map's contents
+  get map        : reports the keys and values matching a sample for a map
+  set map        : modify map entry
+  add map        : add map entry
+  del map        : delete map entry
+  clear map <id> : clear the content of this map
+  set ssl <stmt> : set statement for ssl
+
+# 查看 HAProxy 信息及状态
+[root@linux-node1 ~]# echo "show info;show stat" | socat stdio /var/lib/haproxy/haproxy.sock
+Name: HAProxy
+Version: 1.5.14
+Release_date: 2015/07/02
+Nbproc: 1
+Process_num: 1
+Pid: 13110
+Uptime: 0d 0h02m57s
+Uptime_sec: 177
+Memmax_MB: 0
+Ulimit-n: 8033
+Maxsock: 8033
+Maxconn: 4000
+Hard_maxconn: 4000
+CurrConns: 0
+CumConns: 2
+CumReq: 2
+MaxSslConns: 0
+CurrSslConns: 0
+CumSslConns: 0
+Maxpipes: 0
+PipesUsed: 0
+PipesFree: 0
+ConnRate: 0
+ConnRateLimit: 0
+MaxConnRate: 0
+SessRate: 0
+SessRateLimit: 0
+MaxSessRate: 0
+SslRate: 0
+SslRateLimit: 0
+MaxSslRate: 0
+SslFrontendKeyRate: 0
+SslFrontendMaxKeyRate: 0
+SslFrontendSessionReuse_pct: 0
+SslBackendKeyRate: 0
+SslBackendMaxKeyRate: 0
+SslCacheLookups: 0
+SslCacheMisses: 0
+CompressBpsIn: 0
+CompressBpsOut: 0
+CompressBpsRateLim: 0
+ZlibMemUsage: 0
+MaxZlibMemUsage: 0
+Tasks: 7
+Run_queue: 1
+Idle_pct: 100
+node: linux-node1
+description: 
+
+# pxname,svname,qcur,qmax,scur,smax,slim,stot,bin,bout,dreq,dresp,ereq,econ,eresp,wretr,wredis,status,weight,act,bck,chkfail,chkdown,lastchg,downtime,qlimit,pid,iid,sid,throttle,lbtot,tracked,type,rate,rate_lim,rate_max,check_status,check_code,check_duration,hrsp_1xx,hrsp_2xx,hrsp_3xx,hrsp_4xx,hrsp_5xx,hrsp_other,hanafail,req_rate,req_rate_max,req_tot,cli_abrt,srv_abrt,comp_in,comp_out,comp_byp,comp_rsp,lastsess,last_chk,last_agt,qtime,ctime,rtime,ttime,
+stats,FRONTEND,,,0,0,3000,0,0,0,0,0,0,,,,,OPEN,,,,,,,,,1,2,0,,,,0,0,0,0,,,,0,0,0,0,0,0,,0,0,0,,,0,0,0,0,,,,,,,,
+stats,BACKEND,0,0,0,0,300,0,0,0,0,0,,0,0,0,0,UP,0,0,0,,0,177,0,,1,2,0,,0,,1,0,,0,,,,0,0,0,0,0,0,,,,,0,0,0,0,0,0,-1,,,0,0,0,0,
+frontend_www_example_com,FRONTEND,,,0,0,3000,0,0,0,0,0,0,,,,,OPEN,,,,,,,,,1,3,0,,,,0,0,0,0,,,,0,0,0,0,0,0,,0,0,0,,,0,0,0,0,,,,,,,,
+backend_www_example_com,web-node1,0,0,0,0,,0,0,0,,0,,0,0,0,0,UP,1,1,0,0,0,177,0,,1,4,1,,0,,2,0,,0,L7OK,200,0,0,0,0,0,0,0,0,,,,0,0,,,,,-1,OK,,0,0,0,0,
+backend_www_example_com,BACKEND,0,0,0,0,300,0,0,0,0,0,,0,0,0,0,UP,1,1,0,,0,177,0,,1,4,0,,0,,1,0,,0,,,,0,0,0,0,0,0,,,,,0,0,0,0,0,0,-1,,,0,0,0,0,
+
+# 禁用一个节集群中的节点，常用于对节点进行维护操作
+[root@linux-node1 ~]# echo "disable server backend_www_example_com/web-node1" | socat stdio /var/lib/haproxy/haproxy.sock 
+
+Message from syslogd@localhost at Dec  1 14:33:26 ...
+ haproxy[13110]: backend backend_www_example_com has no server available!
+
+# 启用一个集群中的节点
+[root@linux-node1 ~]# echo "enable server backend_www_example_com/web-node1" | socat stdio /var/lib/haproxy/haproxy.sock 
+ 
+```    
+
 
 # Ref
 [Using nginx as HTTP load balancer](http://nginx.org/en/docs/http/load_balancing.html)  
