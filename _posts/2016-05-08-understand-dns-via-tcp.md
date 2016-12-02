@@ -2,7 +2,7 @@
 layout: post
 title: 初步了解基于TCP的DNS
 description: "初步了解基于TCP的DNS"
-category: Network
+category: DNS
 avatarimg:
 tags: [Network, DNS, TCP, UDP]
 duoshuo: true
