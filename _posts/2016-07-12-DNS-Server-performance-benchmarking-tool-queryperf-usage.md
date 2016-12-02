@@ -2,7 +2,7 @@
 layout: post
 title: DNS 服务器压测工具 queryperf 使用
 description: "DNS 服务器压测工具 queryperf 使用"
-category: Network
+category: DNS
 avatarimg:
 tags: [Network, DNS, BIND, queryperf]
 duoshuo: true
