@@ -2,7 +2,7 @@
 layout: post
 title: DNS 系统性学习 06 - DNS 自动化安装配置及维护
 description: "DNS 系统性学习 06 - DNS 自动化安装配置及维护"
-category: Network
+category: DNS
 avatarimg:
 tags: [Network, DNS, BIND, bind-dlz]
 duoshuo: true
