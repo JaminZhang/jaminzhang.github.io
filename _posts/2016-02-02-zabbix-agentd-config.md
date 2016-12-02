@@ -2,7 +2,7 @@
 layout: post
 title: Zabbix Agent配置文件说明
 description: "Zabbix Agent配置文件说明"
-category: Zabbix
+category: Monitoring
 avatarimg: 
 tags: [Zabbix]
 duoshuo: true
