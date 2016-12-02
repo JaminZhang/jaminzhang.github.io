@@ -2,7 +2,7 @@
 layout: post
 title: 域名泛解析
 description: "域名泛解析"
-category: Network
+category: DNS
 avatarimg:
 tags: [DNS, Wildcard]
 duoshuo: true
