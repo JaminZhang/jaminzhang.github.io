@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 
+title: CentOS 7 重置 root 密码
 description: "CentOS 7 重置 root 密码"
-category: Liunx
+category: Linux
 avatarimg:
 tags: [CentOS, Password]
 duoshuo: true
