@@ -2,7 +2,7 @@
 layout: post
 title: 字符编码(ASCII/Unicode/UTF-8)学习笔记
 description: "字符编码(ASCII/Unicode/UTF-8)学习笔记"
-category: Computer
+category: Programming
 avatarimg:
 tags: [Character Set, Encodings, ASCII, Unicode, UTF-8]
 duoshuo: true
