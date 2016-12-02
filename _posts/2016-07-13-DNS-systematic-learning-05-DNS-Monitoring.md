@@ -2,7 +2,7 @@
 layout: post
 title: DNS 系统性学习 05 - DNS 监控
 description: "DNS 系统性学习 05 - DNS 监控"
-category: Network
+category: DNS
 avatarimg:
 tags: [Network, DNS, BIND, Monitoring]
 duoshuo: true
