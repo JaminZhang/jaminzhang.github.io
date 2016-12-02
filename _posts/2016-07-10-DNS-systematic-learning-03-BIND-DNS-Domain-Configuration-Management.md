@@ -2,7 +2,7 @@
 layout: post
 title: DNS 系统性学习 03 - BIND 域名配置管理
 description: "DNS 系统性学习 03 - BIND 域名配置管理"
-category: Network
+category: DNS
 avatarimg:
 tags: [Network, DNS, BIND, CNAME, MX]
 duoshuo: true
