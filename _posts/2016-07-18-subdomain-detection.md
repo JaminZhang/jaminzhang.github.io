@@ -2,7 +2,7 @@
 layout: post
 title: 子域名查找
 description: "子域名查找"
-category: Network
+category: DNS
 avatarimg:
 tags: [Network, DNS, Subdomain]
 duoshuo: true
