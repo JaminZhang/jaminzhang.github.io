@@ -61,7 +61,7 @@ EOF
 根据上面的文档我们就能配置出图了。  
 下面就是最终的监控图。  
 
-![]()
+![Douyu-Live-Rooms](http://jaminzhang.github.io/images/Douyu/Douyu-Live-Rooms.png)
 
 
 # Ref
