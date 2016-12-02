@@ -2,7 +2,7 @@
 layout: post
 title: 关于网站排名
 description: "关于网站排名"
-category: Website
+category: Web
 avatarimg:
 tags: [Ranking, Website, Alexa]
 duoshuo: true
