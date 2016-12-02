@@ -2,7 +2,7 @@
 layout: post
 title: DNS 系统性学习 02 - 部署配置 BIND 及 DNS 主从
 description: "DNS 系统性学习 02 - 部署配置 BIND 及 DNS 主从"
-category: Network
+category: DNS
 avatarimg:
 tags: [Network, DNS, BIND]
 duoshuo: true
