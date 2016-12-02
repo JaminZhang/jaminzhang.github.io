@@ -2,7 +2,7 @@
 layout: post
 title: 深入理解带宽
 description: "深入理解带宽"
-category: Netowrk
+category: Network
 avatarimg:
 tags: [Bandwidth]
 duoshuo: true
