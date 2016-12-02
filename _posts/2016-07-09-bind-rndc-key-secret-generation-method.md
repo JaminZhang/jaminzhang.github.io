@@ -2,7 +2,7 @@
 layout: post
 title: BIND rndc key 生成方法
 description: "BIND rndc key 生成方法"
-category: Network
+category: DNS
 avatarimg:
 tags: [Network, DNS, BIND]
 duoshuo: true
