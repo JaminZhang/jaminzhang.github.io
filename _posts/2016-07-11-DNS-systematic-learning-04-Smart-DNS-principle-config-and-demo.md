@@ -2,7 +2,7 @@
 layout: post
 title: DNS 系统性学习 04 - 智能 DNS 原理配置演示
 description: "DNS 系统性学习 04 - 智能 DNS 原理配置演示"
-category: Network
+category: DNS
 avatarimg:
 tags: [Network, DNS, BIND]
 duoshuo: true
