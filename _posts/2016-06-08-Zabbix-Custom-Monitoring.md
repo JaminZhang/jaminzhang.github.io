@@ -2,7 +2,7 @@
 layout: post
 title: Zabbix 自定义监控项目配置
 description: "Zabbix 自定义监控项目配置"
-category: Zabbix
+category: Monitoring
 avatarimg: 
 tags: [Zabbix, Nginx]
 duoshuo: true
