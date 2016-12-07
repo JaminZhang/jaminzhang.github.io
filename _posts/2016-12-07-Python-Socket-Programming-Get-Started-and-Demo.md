@@ -109,5 +109,7 @@ server waiting...
 
 # Ref
 [自动化运维Python系列（七）之Socket编程](http://lilongzi.blog.51cto.com/5519072/1877897)  
+[python socket编程详细介绍](http://yangrong.blog.51cto.com/6945369/1339593)  
 [Socket Programming HOWTO](https://docs.python.org/2/howto/sockets.html)  
 [17.2. socket — Low-level networking interface](https://docs.python.org/2/library/socket.html)  
+
