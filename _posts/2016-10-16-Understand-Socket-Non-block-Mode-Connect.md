@@ -16,6 +16,8 @@ duoshuo: true
 这算是 Socket 网络编程必须要理解掌握的基础知识了。  
 由于自己并没有怎么写代码，所以不太清楚，现在我先来学习下 Socket 非阻塞 connect 方法的概念及原理。  
 
+# Socket 非阻塞 connect 方法
+
 <pre>
 
 TCP 连接的建立涉及到一个三次握手的过程，
