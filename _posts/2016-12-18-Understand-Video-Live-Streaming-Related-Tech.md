@@ -2,7 +2,7 @@
 layout: post
 title: 视频直播相关技术了解
 description: "视频直播相关技术了解"
-category: CDN
+category: Video
 avatarimg:
 tags: [Video, Live-Streaming, Tech, CDN, PandaTV]
 duoshuo: true
