@@ -21,3 +21,7 @@ duoshuo: true
 
 >
 iptables -A INPUT -p tcp --dport 80 -s 192.168.1.10 -j DROP
+
+
+# Ref
+[Linux上iptables防火墙的基本应用教程](http://www.vpser.net/security/linux-iptables.html)  
