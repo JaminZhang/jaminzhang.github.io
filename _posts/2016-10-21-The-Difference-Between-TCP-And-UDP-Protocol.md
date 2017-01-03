@@ -96,3 +96,4 @@ TCP 要建立连接、保证可靠性和有序性，就会传输更多的信息�
 # Ref
 [TCP和UDP的区别](http://liangjiabin.com/blog/2015/03/difference-between-tcp-vs-udp-protocol.html)  
 [面向报文（UDP）和面向字节流（TCP）的区别](http://blog.csdn.net/ce123_zhouwei/article/details/8976006)  
+[CP和UDP之间的区别](http://feinibuke.blog.51cto.com/1724260/340272)  
