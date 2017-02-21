@@ -14,12 +14,14 @@ duoshuo: true
 
 <pre>
 Remote execution is a big time saver, but it has some shortcomings. 
-Most tasks you perform are a combination of many commands, tests, and operations, each with their own nuances and points-of-failure.
-Often an attempt is made to combine all of these steps into a central shell script, but these quickly get unwieldy and 
-introduce their own headaches.
+Most tasks you perform are a combination of many commands, tests, and operations, 
+each with their own nuances and points-of-failure.
+Often an attempt is made to combine all of these steps into a central shell script, 
+but these quickly get unwieldy and introduce their own headaches.
 
-To solve this, SaltStack configuration management lets you create a re-usable configuration template, called a state, 
-that describes everything required to put a system component or application into a known configuration.
+To solve this, SaltStack configuration management lets you create a re-usable configuration template, 
+called a state, that describes everything required to put a system component or application 
+into a known configuration.
 </pre>
 
 ## State 使用 YAML ，所以易读
@@ -28,13 +30,14 @@ States are described using YAML, and are simple to create and read.
 
 *YAML 简介*
 
-YAML是"YAML Ain't a Markup Language"（YAML不是一种标记语言）的递归缩写。它是类似于标准通用标记语言的子集XML的数据描述语言，语法比XML简单很多。
+YAML 是"YAML Ain't a Markup Language"（YAML不是一种标记语言）的递归缩写。它是类似于标准通用标记语言的子集 XML 的数据描述语言，
+语法比 XML 简单很多。
 
 <pre>
 Salt uses a simple language, called YAML, to describe configurations. This is what you need to know:
 
-YAML uses a fixed indentation scheme to represent relationships between data layers. Salt requires that the indentation 
-for each level consists of exactly two spaces. Do not use tabs.
+YAML uses a fixed indentation scheme to represent relationships between data layers. 
+Salt requires that the indentation for each level consists of exactly two spaces. Do not use tabs.
 
 A dash represents an item in a list.
 
@@ -43,7 +46,7 @@ Key value pairs are represented by key: value
 
 以上说了 YAML 的语法，有 3 个规则：
 
-1. 缩进（代表层级关系，2个空格，并且不能使用 TAB 键，整个 SaltStack 里面都不能用 TAB 键）
+1. 缩进（代表数据层级关系，2 个空格，并且不能使用 TAB 键，整个 SaltStack 里面都不能用 TAB 键）
 2. 冒号 ：
 	1. 跟缩进一起代表一个数据层级（以冒号结尾不用空格）；
 	2. 分隔键值对 [key: value] ，支持嵌套，冒号后面必须有一个空格
@@ -96,7 +99,7 @@ cd web
 
 # 编写一个描述 apache 状态的状态文件
 cat >> apache.sls << EOF
-apache-install:     # 状态声明ID，每一个 ID 就是一个配置项
+apache-install:     # 状态声明 ID，每一个 ID 就是一个配置项
   pkg.installed:    # 这里面的模块可以是内置的状态模块，也可以是自定义的状态模块
     - names:
         - httpd
@@ -109,11 +112,13 @@ apache-service:
 EOF
 
 
-# 一个 Salt 状态可以使用单个的 SLS 文件（一个 SLS 文件就定义了一个状态），或者使用一个文件夹。后者更加灵活方便。
+# 一个 Salt 状态可以使用单个的 SLS 文件（一个 SLS 文件就定义了一个状态），或者使用一个目录。后者更加灵活方便。
 
-# 上面例子中 apache-install 是定义的状态声明 ID，pkg 是一个状态模块，模块分为执行模块和状态模块，installed 是模块中定义的函数方法
+# 上面例子中 apache-install 是定义的状态声明 ID，pkg 是一个状态模块，模块分为执行模块和状态模块，
+installed 是模块中定义的函数方法
 
-# Salt 有很多的模块，它们都放在 /usr/lib/python2.7/site-packages/salt/modules 下，而 pkg.py 是放在 /usr/lib/python2.7/site-packages/salt/states 目录下的，所以说它是一个状态模块
+# Salt 有很多的模块，它们都放在 /usr/lib/python2.7/site-packages/salt/modules 下，
+而 pkg.py 是放在 /usr/lib/python2.7/site-packages/salt/states 目录下的，所以说它是一个状态模块
 ```   
 
 ## 3. 执行状态模块
