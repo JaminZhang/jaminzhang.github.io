@@ -257,8 +257,8 @@ pillar_roots:
 
 ## 2 创建一个 pillar 的 sls: apache.sls
 
-/srv/pillar/web/apache.sls 文件内容如下：
-http://jaminzhang.github.io/soft-conf/SaltStack/SLS/apache.sls
+/srv/pillar/web/apache.sls 文件内容如下：  
+https://github.com/JaminZhang/jaminzhang.github.io/blob/master/soft-conf/SaltStack/SLS/apache.sls
 
 
 
