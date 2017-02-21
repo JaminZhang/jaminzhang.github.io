@@ -99,7 +99,8 @@ vim history.sls
   file.append:
     - text:
       - export HISTTIMEFORMAT="%F %T `whoami` "
-```
+```    
+
 **记录命令操作**
 
 ```bash
@@ -207,7 +208,7 @@ linux-node1.example.com:
 
 ```    
 
-**配置 init.sls include 以上各个系统初始化分模块**
+**配置 init.sls include 以上各个系统初始化模块**
 
 ```bash
 cd /srv/salt/base/init
@@ -256,7 +257,7 @@ salt '*node2*' state.highstate
 
 ## 3 Salt prod 环境规划及配置
 
-**生产案例架构图**
+**生产案例架构图**  
 ![生产案例架构图*](https://raw.githubusercontent.com/unixhot/saltbook-code/master/saltstack-arch.png)  
 
 ### 3.1 Salt prod 环境下 modules 常用服务功能模块配置
@@ -375,29 +376,29 @@ cd /srv/salt/prod/modules/haproxy/files
 
 # 测试 haproxy 安装初始化状态
 
-> 
+ 
 salt '*node2*' state.sls modules.haproxy.install saltenv=prod test=True
 
 ```    
 
-**配置编译安装 haproxy 的 haproxy.sls**
-
-```    
 
 ### 3.2 Salt prod 环境下 cluster 业务模块配置
 
 /srv/salt/prod/ 为生产环境 file_roots，在此级目录创建 cluster 目录，用于放置业务模块状态配置  
 比如 haproxy/nginx/php/mysql/memcached 等
 
+
 **创建相关 cluster 目录**
 
+```bash
 mkdir /srv/salt/prod/cluster
 cd /srv/salt/prod/cluster
 mkdir files
-
+```    
 
 **配置外部集群中 haproxy 服务器状态文件 haproxy-outside.sls**
 
+```bash
 vim haproxy-outside.sls
 include:
   - modules.haproxy.install
@@ -417,8 +418,11 @@ haproxy-service:
       - cmd: haproxy-install
     - watch:
       - file: haproxy-service
+```    
 
-# 将 haproxy-outside.cfg 放置在 /srv/salt/prod/cluster/files
+**将 haproxy-outside.cfg 放置在 /srv/salt/prod/cluster/files**  
+
+```bash
 # haproxy-outside.cfg 内容如下：
 
 global
@@ -456,12 +460,13 @@ balance source
 
 server web-node1 192.168.56.11:8080 check inter 2000 rise 30 fall 15
 server web-node2 192.168.56.12:8080 check inter 2000 rise 30 fall 15	 
-     
-# 测试外部集群中 haproxy 服务器对外提供服务器的状态
-
-salt '*node2*' state.sls cluster.haproxy-outside saltenv=prod
-
 ```    
+
+**测试外部集群中 haproxy 服务器对外提供服务器的状态** 
+
+>
+salt '*node2*' state.sls cluster.haproxy-outside saltenv=prod
+  
 
 ### 3.3 Salt prod 环境下 modules 常用服务模块和 外部 Web 业务模块配置
 
