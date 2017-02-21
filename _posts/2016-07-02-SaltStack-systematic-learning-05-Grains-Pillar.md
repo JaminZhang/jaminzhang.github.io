@@ -17,21 +17,28 @@ Salt 提供 2 个不同的子系统来实现以下 2 种任务。它们就是 Gr
 # Grains
 
 <pre>
-Grains are used to get data about your systems. Grains are static information about the underlying operating system, memory, disks, and many other system properties.
 
-Grains are gathered automatically when the minion starts and are refreshed periodically or by using a remote execution command.
+Grains are used to get data about your systems. Grains are static information about the underlying operating system,
+memory, disks, and many other system properties.
 
-So what can you do with grains? You can gather inventory using the grains execution module, which lets you list all grains, find systems with a specific grain value, and so on.
+Grains are gathered automatically when the minion starts and are refreshed periodically 
+or by using a remote execution command.
 
-Grains are also an integral part of the targeting system. Grains are used to target salt states and Salt pillar data
+So what can you do with grains? You can gather inventory using the grains execution module, 
+which lets you list all grains, find systems with a specific grain value, and so on.
+
+Grains are also an integral part of the targeting system. 
+Grains are used to target salt states and Salt pillar data.
+
 </pre>
 
-Grains 是静态数据，它是在 Minion 启动的时候收集的 Minion 本地的相关信息，如：操作系统版本，内核版本，CPU，内存，硬盘，设备型号，机器序列号。它可以做资产管理，只要不重启它，它就会只收集一次，当重启的时候才会再次收集，启动完后就不会变了,它是一个 key/value 的东西。
+Grains 是静态数据，它是在 Minion 启动的时候收集的 Minion 本地的相关信息，如：操作系统版本，内核版本，CPU，内存，硬盘，设备型号，机器序列号。  
+它可以做资产管理，只要不重启它，它就会只收集一次，当重启的时候才会再次收集，启动完后就不会变了,它是一个 key/value 的东西。
 
 作用：  
 
 * 资产管理、信息查询
-* 用于目标选择（不同于 ID 的另外目标定义方法，操作系统等）
+* 用于目标选择（不同于 Minion ID 的另外目标定义方法，操作系统等）
 * 配置管理中使用
 
 
@@ -94,7 +101,8 @@ linux-node2.example.com:
 linux-node1.example.com:
 
 
-# 生产环境不建议放在 minion 配置文件里面，写在 /etc/salt/grains 里面，minion 会自动来这找；并且上面这条命令中的 roles: 后面是没有空格的
+# 生产环境不建议放在 minion 配置文件里面，写在 /etc/salt/grains 里面，minion 会自动来这找；
+# 并且上面这条命令中的 roles: 后面是没有空格的
 
 ```    
 
@@ -142,6 +150,7 @@ base:
 ```    
 
 ### 4. 可以自己用 Python 脚本来写一个 grains，实现动态
+
 上面说的动态意思是通过逻辑后产生的
 
 Grains Python 脚本放置目录：/srv/salt/_grains (不存在时创建一下)
@@ -196,28 +205,42 @@ linux-node2.example.com:
 ### 5. Grains优先级
 
 1. 系统自带
-2. /etc/salt/grains 文件中配置
-3. /etc/salt/minion 文件中配置
+2. /etc/salt/minion 文件中配置
+3. /etc/salt/grains 文件中配置
 4. 自定义的 grains 模块中定义
 
 # Pillar
 
 <pre>
-Salt pillar is used to deliver data to your systems. Think about the different custom data needed when configuring even a simple system: user names, service URLs, preferred installation paths, ports, non-default application settings, and many others. Often these values are different for each system or system role (web, database, and so on).
 
-Salt pillar lets you define these data values and then assign them to one or more minions using targets. The values can then be inserted into Salt states using variables.
+Salt pillar is used to deliver data to your systems. 
+Think about the different custom data needed when configuring even a simple system: 
+user names, service URLs, preferred installation paths, ports, non-default application settings, and many others. 
+Often these values are different for each system or system role (web, database, and so on).
 
-Salt pillar data is encrypted using the targeted minion’s public key and sent over a secure channel, so Salt pillar is also well-suited to distribute secure data such as passwords and ssh keys since it can be decrypted only by the targeted minion. Salt pillar data is never written to disk on the minion.
+Salt pillar lets you define these data values and then assign them to one or more minions using targets. 
+The values can then be inserted into Salt states using variables.
 
-The default Salt pillar module defines pillar using a YAML file, though over 30 Salt pillar modules (aka plug-ins) are available to support a wide-variety of backends. Popular options include Mongo and Redis, which are both designed to store structured data. Many users stick with YAML files, but use a private git repo to manage and distribute the pillar data.
+Salt pillar data is encrypted using the targeted minion’s public key and sent over a secure channel, 
+so Salt pillar is also well-suited to distribute secure data such as passwords and ssh keys 
+since it can be decrypted only by the targeted minion. 
+Salt pillar data is never written to disk on the minion.
+
+The default Salt pillar module defines pillar using a YAML file, 
+though over 30 Salt pillar modules (aka plug-ins) are available to support a wide-variety of backends. 
+Popular options include Mongo and Redis, which are both designed to store structured data. 
+Many users stick with YAML files, but use a private git repo to manage and distribute the pillar data.
+
 </pre>
 
 
-pillar 也是 key/value，但是 pillar 数据是动态的，和 minion 启不启动没关系，它给特定的 minion 指定特定的数据，跟 top file 很像。只有指定的 minion 自己能看到自己的数据。
+pillar 也是 key/value，但是 pillar 数据是动态的，和 minion 启不启动没关系，它给特定的 minion 指定特定的数据，跟 top file 很像。  
+只有指定的 minion 自己能看到自己的数据。
 
 使用：  
+
 >
-# 查看pillar条目  
+# 查看 pillar 条目  
 salt '*' pillar.items
 
 ## 1 在 Salt Master 上开启 pillar 及配置 pillar_roots
@@ -233,7 +256,18 @@ pillar_roots:
 
 ```   
 
-## 2 创建一个 pillar 的 sls apache.sls
+## 2 创建一个 pillar 的 sls: apache.sls
+
+```bash
+# /srv/pillar/web/apache.sls 文件内容如下：
+
+{% if grains['os'] == 'CentOS' %}
+apache: httpd
+{% elif grains['os'] == 'Debian' %}
+apache: apache2
+{% endif %}
+
+```    
 
 
 ## 3 配置 pillar 的 top file
@@ -274,4 +308,5 @@ linux-node1.example.com:
 
 
 # Ref
-[Salt DATA](https://docs.saltstack.com/en/getstarted/system/data.html)
+[Salt DATA](https://docs.saltstack.com/en/getstarted/system/data.html)  
+[saltstack（四）grains（一）](http://lixcto.blog.51cto.com/4834175/1429249)  
