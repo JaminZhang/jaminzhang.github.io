@@ -18,8 +18,8 @@ Salt 提供 2 个不同的子系统来实现以下 2 种任务。它们就是 Gr
 
 <pre>
 
-Grains are used to get data about your systems. Grains are static information about the underlying operating system,
-memory, disks, and many other system properties.
+Grains are used to get data about your systems. Grains are static information about the 
+underlying operating system, memory, disks, and many other system properties.
 
 Grains are gathered automatically when the minion starts and are refreshed periodically 
 or by using a remote execution command.
@@ -238,7 +238,6 @@ pillar 也是 key/value，但是 pillar 数据是动态的，和 minion 启不�
 只有指定的 minion 自己能看到自己的数据。
 
 使用：  
-
 >
 # 查看 pillar 条目  
 salt '*' pillar.items
@@ -308,5 +307,5 @@ linux-node1.example.com:
 
 
 # Ref
-[Salt DATA](https://docs.saltstack.com/en/getstarted/system/data.html)  
+[Salt DATA](https://docs.saltstack.com/en/getstarted/system/data.html)   
 [saltstack（四）grains（一）](http://lixcto.blog.51cto.com/4834175/1429249)  
