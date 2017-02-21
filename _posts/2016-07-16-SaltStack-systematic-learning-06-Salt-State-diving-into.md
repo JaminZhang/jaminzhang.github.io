@@ -183,9 +183,9 @@ apache-service:
     - watch:
       - file: apache-config
 # 如果 apche-config 这个 ID 的状态发生变化就 reload，如果不加 reload=True 的话就 restart
+```    
 
-
-# 使用了状态关系配置后，lamp.sls 文件内容如下：
+使用了状态关系配置后，lamp.sls 文件内容如下：
 
 ```yaml
 lamp-pkg:
@@ -245,24 +245,13 @@ mysql-service:
 # 编写 SLS 技巧
 
 1. 按状态分类，如果单独使用，很清晰
-2. 服务分类，可以被其他的 SLS include。例如 LNMP include mysql的服务。
+2. 服务分类，可以被其他的 SLS include。例如 LNMP include mysql 的服务。
 
 ## 使用 include 改写 lamp.sls
 
 ```bash
 cd /srv/salt/lamp/
 # 分别将 pkg/config/service相关状态写到独立的文件中
-[root@linux-node1 lamp]# cat pkg.sls 
-lamp-pkg:
-  pkg.installed:
-    - pkgs:
-      - httpd
-      - php
-      - mariadb
-      - mariadb-server
-      - php-cli
-      - php-mbstring
-You have new mail in /var/spool/mail/root
 [root@linux-node1 lamp]# cat pkg.sls
 lamp-pkg:
   pkg.installed:
