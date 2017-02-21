@@ -261,5 +261,5 @@ linux-node2.example.com:
 Pillar {{ pillar['apache'] }} 上面是写在模板文件中，还有另外一种方法，Grains/Pillar 等也可以写在 SLS 文件里面
 
 # Ref
-[Jinja2 文档](http://docs.jinkan.org/docs/jinja2/index.html)
+[Jinja2 文档](http://docs.jinkan.org/docs/jinja2/index.html)  
 [SaltStack配置管理工具jinja2模板的使用](http://www.linuxe.cn/post-247.html)  
