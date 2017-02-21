@@ -34,7 +34,8 @@ SaltStack 四种运行方式：
 # 安装配置
 
 ## 安装
-使用 yum 方式，比较简单
+
+使用 yum 方式安装，比较简单
 
 ```bash
 yum install https://repo.saltstack.com/yum/redhat/salt-repo-latest-1.el7.noarch.rpm -y
@@ -42,7 +43,8 @@ yum install https://repo.saltstack.com/yum/redhat/salt-repo-latest-1.el7.noarch.
 yum install salt-master -y
 
 yum install salt-minion -y
-```    
+```   
+ 
 ## 配置及启动
 
 ```bash
@@ -55,17 +57,21 @@ systemctl start salt-minion
 另外一个重要的参数就是 minion_id，每个 minion 都有一个单独的 ID，它放在 /etc/salt 目录下，如果不配置的话，默认就是主机名。
 
 *minion_id 命名规则*   
-根据业务（生产环境的参考例子）：
+根据不同的业务来使用不同的规则（生产环境的参考例子）：
 
-* 游戏业务： 使用 IP
-* 电商业务： 使用 域名
+* 游戏业务： 使用 IP（游戏业务主要是区服域名，存在一台服务器多开情况，多个域名会对应一台服务器）
+* 电商业务： 使用域名
 
 # Minion 与 Master 的认证
 
 Minion 启动后和 Master 连接，相互交换公钥后就完成了认证过程。   
 注意 minion id 更改的影响，需要重新认证。
 
-salt-key 是 Master 上来执行管理用于认证的 Minion 公钥的命令。  
+>
+生产上碰到过的问题：游戏业务服务器变更比较频繁，我们会遇到服务器重装，原有 Minion 公钥失效的情况，
+这时需要定期删除重装服务器的之前的公钥，更智能的方式时，重装系统时，通知 Master 删除其公钥。
+
+salt-key 是 Master 上来执行管理用于认证的 Minion 公钥的命令。  
 具体用法请 man salt-key。
 
 关于 SaltStack 相关概念、架构及组件参考 Ref 中的官网文档，里面有不少图例说明不错。
