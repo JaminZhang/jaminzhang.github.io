@@ -50,7 +50,7 @@ sys.doc:
 
 使用 cmd.run
 
-cmd.run 直接好用，但 Salt 远程执行更强大的是执行函数，这样不用写复杂的脚本来实现功能，而且返回的结果是格式化的，便于进一步处理。下面列举一些 执行函数。
+cmd.run 直接好用，但 Salt 远程执行更强大的是执行函数，这样不用写复杂的脚本来实现功能，而且返回的结果是格式化的，便于进一步处理。下面列举一些执行函数。
 
 
 ## 检测 Minion 运行状态
@@ -78,7 +78,7 @@ Used to make sure the minion is up and responding. Not an ICMP ping.
 
 ## Targeting 目标
 
-用于指定哪些 Minion 来执行后面命令或模块函数
+用于指定哪些 Minion 来执行后面的命令或模块函数
 
 指定匹配 Minion 的方法可以分为两类：
 
