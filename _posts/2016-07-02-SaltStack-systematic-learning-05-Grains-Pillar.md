@@ -257,16 +257,9 @@ pillar_roots:
 
 ## 2 创建一个 pillar 的 sls: apache.sls
 
-```bash
-# /srv/pillar/web/apache.sls 文件内容如下：
+/srv/pillar/web/apache.sls 文件内容如下：
+http://jaminzhang.github.io/soft-conf/SaltStack/SLS/apache.sls
 
-{% if grains['os'] == 'CentOS' %}
-apache: httpd
-{% elif grains['os'] == 'Debian' %}
-apache: apache2
-{% endif %}
-
-```    
 
 
 ## 3 配置 pillar 的 top file
