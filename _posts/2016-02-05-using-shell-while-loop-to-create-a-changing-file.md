@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 使用Shell中的while loop模拟一个实时变化的日志文件
-description: "使用Shell中的while loop模拟一个实时变化的日志文件"
+title: 使用 Shell 中的 while loop 模拟一个实时变化的日志文件
+description: "使用 Shell 中的 while loop 模拟一个实时变化的日志文件"
 category: Linux
 avatarimg:
 tags: [Shell]
@@ -9,36 +9,46 @@ duoshuo: true
 ---
 
 # 引言
-要模拟一个实时变化的日志文件，就是一直不停地往一个文件中追加记录，我首先想的用Shell脚本中的while loop来做。
+要模拟一个实时变化的日志文件，就是一直不停地往一个文件中追加记录，我首先想的用 Shell 脚本中的 while loop 来做。
 
 # 模拟实时变化的日志文件 
-现在使用Shell中的while loop来写个生成实时变化的日志文件的脚本，首先复习下while loop的结构，如下：
+
+现在使用 Shell 中的 while loop 来写个生成实时变化的日志文件的脚本，首先复习下 while loop 的结构，如下：
+
 <pre>
+
 while [ condition ]
 do 
  command(s)... 
 done
+
 </pre>
 
 测试脚本如下：  
+
 <pre>
+
 while true
 do
 	date >> /tmp/test.log
 done
+
 </pre>
 
-然后运行2分钟后发现，CPU占用率达到100%，机器hang住了，原因可以看[这里的一个解释](http://www.lfyzjck.com/why-infinite-loop-increase-cpu-use/)。
+然后运行 2 分钟后发现，CPU 占用率达到 100%，机器 hang 住了，原因可以看[这里的一个解释](http://www.lfyzjck.com/why-infinite-loop-increase-cpu-use/)。
 
-避免CPU占用率100%可以增加一个usleep (微秒)。
+避免 CPU 占用率 100% 可以增加一个 usleep (微秒)。
 
 测试脚本如下：  
+
 <pre>
+
 while true
 do
 	date >> /tmp/test.log
 	usleep 1000
 done
+
 </pre>
 
 # Ref
