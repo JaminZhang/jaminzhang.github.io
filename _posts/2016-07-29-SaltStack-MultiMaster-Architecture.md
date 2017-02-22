@@ -22,13 +22,15 @@ Salt 支持一些高可用和容错特性。
 # Multimaster 简介
 
 <pre>
+
 Salt minions can connect to multiple masters at one time by configuring the master configuration parameter as
 a YAML list of all the available masters. By default, all masters are ``hot'', meaning that any master can direct
 commands to the Salt infrastructure.
 
 In a multimaster configuration, each master must have the same cryptographic keys, and minion keys must be
-accepted on all masters separately. The contents of file_roots and pillar_roots need to be kept in sync with processes
-external to Salt as well
+accepted on all masters separately. The contents of file_roots and pillar_roots need to be kept in sync 
+with processes external to Salt as well.
+
 </pre>
 
 多 Master 架构可以实现高可用，解决单点故障。  
