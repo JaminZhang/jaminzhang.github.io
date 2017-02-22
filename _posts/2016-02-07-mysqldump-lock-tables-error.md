@@ -10,16 +10,20 @@ duoshuo: true
 
 
 # 引言
-研发需要某个MySQL的表，需要运维这边导出来提供给他们。  
+
+研发需要某个 MySQL 表，需要运维这边导出来提供给他们。  
 
 # 问题
-一般使用mysqldump命令即可，但从生产环境直接导出表有报错，如下：
+
+一般使用 mysqldump 命令即可，但从生产环境直接导出表有报错，如下：
 > 
 mysqldump: Got error: 1044: Access denied for user 'xxx'@'xxx' to database 'xxx' when using LOCK TABLES
 
 # 分析
-从以下报错可以判断mysqldump使用的用户没锁表权限。  
-登录到mysql下可以确认。
+
+从以下报错可以判断 mysqldump 使用的用户没锁表权限。  
+登录到 mysql 下可以确认。
+
 <pre>
 *************************** 8. row ***************************
                   Host: 127.0.0.1
@@ -59,12 +63,13 @@ Create_tablespace_priv: N
 </pre>
 
 # 解决方法
+
 授予用户锁表权限即可。
 
-网上有人说使用--skip-lock-tables，这个会影响数据的一致性(可能比丢数据还要遭糕)，故不推荐使用这个方法。
---single-transaction用于Innodb引擎的数据库dump时，可以不锁表。
+网上有人说使用 --skip-lock-tables，这个会影响数据的一致性(可能比丢数据还要遭糕)，故不推荐使用这个方法。
+--single-transaction 用于 Innodb 引擎的数据库 dump 时，可以不锁表。
 
-mysql锁表原理深入下去还有很多细节可以学习，可以参考Ref相关资料。
+mysql 锁表原理深入下去还有很多细节可以学习，可以参考 Ref 相关资料。
 
 # Ref 
 [mysqldump备份数据库时出现when using LOCK TABLES的提示](http://mysqldba.blog.51cto.com/6728219/1329206)  
