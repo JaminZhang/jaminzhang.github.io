@@ -41,7 +41,7 @@ Overhead 高低取决于很多因素。例如，数据库的种类，数据库�
 使用 mysql_pconnect 打开一个到 MySQL 服务器的持久连接。  
 注意，此种连接仅能用于模块版本的 PHP。 即用于 Apache + php_module 模式，不支持 Nginx + PHP-FPM 模式。
 
-# 配置使用 PDO 方式 持久连接到 MySQL
+# 配置使用 PDO 方式持久连接到 MySQL
 
 ```php
 <?php
@@ -56,7 +56,8 @@ $dbh = new PDO('mysql:host=localhost;dbname=test', $user, $pass, array(
 
 如果使用 PDO ODBC 驱动且 ODBC 库支持 ODBC 连接池（有unixODBC 和 Windows 两种做法；可能会有更多），
 建议不要使用持久的 PDO 连接，而是把连接缓存留给 ODBC 连接池层处理。 
-ODBC 连接池在进程中与其他模块共享；如果要求 PDO 缓存连接，则此连接绝不会被返回到 ODBC 连接池，导致创建额外的连接来服务其他模块。
+ODBC 连接池在进程中与其他模块共享；
+如果要求 PDO 缓存连接，则此连接绝不会被返回到 ODBC 连接池，导致创建额外的连接来服务其他模块。
 </pre>
 
 
