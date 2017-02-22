@@ -17,7 +17,8 @@ duoshuo: true
 
 <pre>
 
-The gitfs backend allows Salt to serve files from git repositories. It can be enabled by adding git to the fileserver_backend list, 
+The gitfs backend allows Salt to serve files from git repositories. 
+It can be enabled by adding git to the fileserver_backend list, 
 and configuring one or more repositories in gitfs_remotes.
 Branches and tags become Salt fileserver environments.
 
