@@ -26,7 +26,8 @@ Branches and tags become Salt fileserver environments.
 Salt 支持 gitfs, 可以将 State Tree 放入 Git 远程仓库中, 进行版本控制, 易于管理  
 当提交更新至远程 Git 仓库后, 需要手动在 Master 执行如下操作:  
 salt-run fileserver.update  
-或者等待一段时间,由 Master 的 maintenance 进程进行更新(默认更新间隔为 60s, 可以通过 Master 配置文件 loop_interval 选项进行调整).
+或者等待一段时间,由 Master 的 maintenance 进程进行更新
+(默认更新间隔为 60s, 可以通过 Master 配置文件 loop_interval 选项进行调整).
 
 gitfs 使用 git 作为文件服务的源,这样一来,在开发环境中可以很方便的把修改同步到测试环境,  
 同时在生产环境中也可以对 SLS 这些比较重要的配置文件进行方便天然的版本管理。
