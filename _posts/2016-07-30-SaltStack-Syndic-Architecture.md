@@ -15,9 +15,9 @@ duoshuo: true
 
 一个基本的 Salt 配置方式是一个 Master 管理一群 Minion，这就是单一的拓扑结构。那么为了增加多种拓扑架构的支持，Salt 在 0.9.0 版本中加入了 Salt Syndic。Syndic 建立在中心 Master 和 Minions 之间，并允许多层分级 Syndic。  
 
-Syndic 运行在一个 Master 上，并且连接到另外一个 Master（比它更高级别，我们后面称之为“高级 Master ”），这里需要强调的是 Syndic 必须运行在一个 Master 上。  
+Syndic 运行在一个 Master 上，并且连接到另外一个 Master（比它更高级别，我们后面称之为“高级 Master”），这里需要强调的是 Syndic 必须运行在一个 Master 上。  
 
-然后 Syndic Minion 所连接的高级 Master 就可以控制连接到运行 Syndic 的 Master 上 的 Minion。这句话稍有点绕，如果一下子没明白，先加深点记忆“ Syndic 必须运行在一个 Master 上”，然后再回过头看就好理解了。  
+然后 Syndic Minion 所连接的高级 Master 就可以控制连接到运行 Syndic 的 Master 上 的 Minion。这句话稍有点绕，如果一下子没明白，先加深点记忆“Syndic 必须运行在一个 Master 上”，然后再回过头看就好理解了。  
 
 # 1 Syndic 配置
 
@@ -55,7 +55,7 @@ Rejected Keys:
 
 # 3 Syndic 测试
 
-高级 Master 可以控制一群同时运行着“ syndic 和 master ”的节点，通过 Syndic 将操作命令传输给受控 Master，受控 Master 来完成对自己旗下 Minion 的管理，并将结果传回高级 Master，从而实现高级 Master 对所有 Minion 的间接管理。  
+高级 Master 可以控制一群同时运行着“syndic 和 master”的节点，通过 Syndic 将操作命令传输给受控 Master，受控 Master 来完成对自己旗下 Minion 的管理，并将结果传回高级 Master，从而实现高级 Master 对所有 Minion 的间接管理。  
 
 高级 Master 同意 Syndic 节点的连接后，使用 test.ping 就可以看到，高级 Master 可以管理所有连接到 Syndic 上面的 Minion：
 
@@ -91,12 +91,12 @@ Syndic 需要在本地运行 Master，并将需要管理的 Minions 的 Master �
 
 * 需要保证 Syndic 上的 file_roots 及 pillar_roots 与高级 Master 是一致的。
 * 由于 Syndic 管理了旗下 Minions 的认证，这样高级 Master 并不知道有多少 Syndic 主机，Syndic 下边有多少 Minions。
-在高级 Master 上使用 Salt 命令行下发远程执行命令时，如果 Syndic 此时与高级 Master 网络之间有抖动，导致没有收到消息或延迟收到消息，
-高级 Master 并不知情。Syndic 并没有返回结果或延迟返回结果，高级 Master 并不能感知到，会导致结果不完整。
+在高级 Master 上使用 Salt 命令行下发远程执行命令时，**如果 Syndic 此时与高级 Master 网络之间有抖动，导致没有收到消息或延迟收到消息，
+高级 Master 并不知情。Syndic 并没有返回结果或延迟返回结果，高级 Master 并不能感知到，会导致结果不完整。**
 如果没有其他验证机制，结果将变得不可控。官方提供的解决方案是增大 syndic_wait 选项，但是只能缓解，并不能根治问题。
 
 ## 建议
-没有系统或工具是 100% 可靠的。基于这观点，无论是否使用 Salt 的架构扩展，对于运维使用 SaltStack 来说，
+没有系统或工具是 100% 可靠的。基于这一观点，无论是否使用 Salt 的架构扩展，对于运维使用 SaltStack 来说，
 如果能从流程上对每次 SaltStack 的执行结果进行检查和验证，是比较稳妥的方案，可能也算是比较保守吧。
 
 
@@ -106,7 +106,7 @@ Syndic 需要在本地运行 Master，并将需要管理的 Minions 的 Master �
 
 1.使用之前配置的环境，linux-node1 是无 Master 架构，还有其他报错。
 
-处理方法：最简化 Salt Master 和 Minion 的配置，排队其他原因。
+处理方法：最简化 Salt Master 和 Minion 的配置，排除其他原因。
 
 ```bash
 [root@linux-node1 ~]# cat /etc/salt/master
