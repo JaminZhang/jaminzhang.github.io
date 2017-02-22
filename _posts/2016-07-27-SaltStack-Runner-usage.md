@@ -8,7 +8,7 @@ tags: [SaltStack, Runner]
 duoshuo: true
 ---
 
-# Salt runner 简介
+# Salt Runner 简介
 
 Salt Runners 是使用 salt-run 命令执行的方便的应用。
 
