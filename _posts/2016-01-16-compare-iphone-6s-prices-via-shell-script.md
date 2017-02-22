@@ -70,6 +70,12 @@ The HK Version in CNY is:  6054.4524
 The CN Version in CNY is:  6888
 ```     
 
+# 通过 API 接口获取价格信息
+
+上面的方式比较笨，比较高级一点的做法是通过 API 接口获取价格信息。  
+下面是 iPhone 7 Plus 相关信息的地址，里面包含了价格。
+
+http://www.apple.com/shop/updateSummary?node=home/shop_iphone/family/iphone_7&step=select&product=MN482LL%2FA&cppart=UNLOCKED%2FUS&carrierPolicyType=UNLOCKED
 
 # Ref
 [调用YAHOO API监控外汇汇率](http://raynix.info/archives/2216)  
