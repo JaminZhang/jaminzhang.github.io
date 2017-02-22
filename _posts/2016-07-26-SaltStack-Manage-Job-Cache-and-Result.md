@@ -20,7 +20,7 @@ duoshuo: true
 
 # SaltStack 存储任务结果到一个外部系统
 
-## 外部任务缓存 - Minini 端 Returner
+## 外部任务缓存 - Minion 端 Returner
 
 ## Master 任务缓存 - Master 端
 
