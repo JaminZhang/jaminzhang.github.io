@@ -10,11 +10,11 @@ duoshuo: true
 
 # Salt runner 简介
 
-Salt runners 是使用 salt-run 命令执行的方便的应用。
+Salt Runners 是使用 salt-run 命令执行的方便的应用。
 
-Salt runners 工作类似于 Salt 执行模块，但它们是在 Salt master 上执行的，而不是在远程的 Salt minions 上。
+Salt Runners 工作类似于 Salt 执行模块，但它们是在 Salt Master 上执行的，而不是在远程的 Salt Minions 上。
 
-一个 Salt runner 可以是一个简单的客户端调用或者一个复杂的应用。
+一个 Salt Runner 可以是一个简单的客户端调用或者一个复杂的应用。
 
 ## RUNNER MODULES 
 
