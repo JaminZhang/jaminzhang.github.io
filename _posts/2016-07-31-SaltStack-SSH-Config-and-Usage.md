@@ -76,7 +76,7 @@ linux-node1.example.com:
     True
 ```    
 
-当部署过Key之后，后期再执行Salt SSH就会通过密钥认证，不需要用户再输入密码了：
+当部署过 Key 之后，后期再执行 Salt SSH 就会通过密钥认证，不需要用户再输入密码了：
 
 ```bash
 [root@linux-node1 ~]# salt-ssh '*' test.ping 
@@ -88,7 +88,7 @@ linux-node2.example.com:
 
 # 基本使用
 
-salt-ssh 命令的语法和 Salt命 令类似，下面看几个典型的使用场景。
+salt-ssh 命令的语法和 Salt 命令类似，下面看几个典型的使用场景。
 
 ## 1 Salt SSH Target
 
@@ -237,14 +237,14 @@ vim /srv/salt/base/salt/files/salt-sudo
 Defaults:salt !requiretty
 salt ALL=(ALL) NOPASSWD: ALL
 
-# 创建 roster 模板，在 jinja 中使用 salt-mine 获取主机的 Minion ID 和 IP 地址：
+# 创建 roster 模板，在 Jinja 中使用 salt-mine 获取主机的 Minion ID 和 IP 地址：
 vim /srv/salt/base/salt/files/roster
 [roster 文件](https://jaminzhang.github.io/soft-conf/SaltStack/salt-roster-template.yaml)
 ```    
 
 # 4 执行状态并测试
 
-下面我们就可以来执行状态，自动化部署 Salt SSH 的 key 和 自动造成 roster 文件。下面是我们之前配置的目录结构：
+下面我们就可以来执行状态，自动化部署 Salt SSH 的 key 和 自动生成 roster 文件。下面是我们之前配置的目录结构：
 
 ```bash
 [root@linux-node1 ~]# cd /srv/salt/base/salt/
