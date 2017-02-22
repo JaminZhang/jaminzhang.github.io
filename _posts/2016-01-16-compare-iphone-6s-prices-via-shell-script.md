@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 使用Shell Script比较换算iPhone价格
-description: "使用Shell Script比较换算iPhone价格"
+title: 使用 Shell Script 比较换算 iPhone 价格
+description: "使用 Shell Script 比较换算 iPhone 价格"
 category: Shell
 avatarimg:
 tags: [iPhone, Yahoo]
@@ -9,11 +9,11 @@ duoshuo: true
 ---
 
 # 引言
-最近在关注iPhone 6s Plus价格，每次去不同国家官网看了价格，然后换算成人民币，有点烦琐，于是写了个Shell脚本来做个这个事。
+最近在关注 iPhone 6s Plus 价格，每次去不同国家官网看了价格，然后换算成人民币，有点烦琐，于是写了个 Shell 脚本来做个这个事。
 
-# iPhone不同国家价格获取及转换成人民币
+# iPhone 不同国家价格获取及转换成人民币
+
 以下是脚本内容：
-
 
 ```bash
 #!/bin/bash
@@ -51,7 +51,9 @@ fi
 
 ```       
 
-以上只列了一个我关注的iPhone型号，脚本逻辑很简单，模拟人工的操作，首先指定iPhone型号的对应的URL，然后通过curl和grep/awk/sed等命令获取iPhone的价格，再就是获取当日汇率（使用yahoo提供的API），最后就是换算成人民币输出结果了。
+以上只列了一个我关注的 iPhone 型号，脚本逻辑很简单，模拟人工的操作，
+首先指定 iPhone 型号的对应的 URL，然后通过 curl 和 grep/awk/sed 等命令获取iPhone 的价格，  
+再就是获取当日汇率（使用 Yahoo 提供的 API），最后就是换算成人民币输出结果了。
 
 运行结果如下：
 
