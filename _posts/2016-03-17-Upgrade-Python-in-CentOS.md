@@ -10,7 +10,7 @@ duoshuo: true
 
 # 引言
 
-使用[wydomain](https://github.com/ring04h/wydomain)这个子域名查找工具时，要求 Python 版本为 2.7，我的这台 CentOS 6 默认是 Python 2.6，所以要升级下 Python 到 2.7。
+使用 [wydomain](https://github.com/ring04h/wydomain) 这个子域名查找工具时，要求 Python 版本为 2.7，我的这台 CentOS 6 默认是 Python 2.6，所以要升级下 Python 到 2.7。
 
 直接 Google 搜索 Python 版本升级教程，下面 2 篇写得比较好，我觉得我不用重新写了。
 
