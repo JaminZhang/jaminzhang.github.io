@@ -2,9 +2,9 @@
 layout: post
 title: 
 description: "关于工作上遇到的一些技术问题的回顾总结"
-category: Reading
+category: Ops
 avatarimg:
-tags: [Reading, Book]
+tags: [Ops]
 duoshuo: true
 ---
 
