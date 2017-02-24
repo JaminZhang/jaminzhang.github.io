@@ -2,7 +2,7 @@
 layout: post
 title: Shell 脚本自动化分区
 description: "Shell 脚本自动化分区"
-category: Linux
+category: Shell
 avatarimg:
 tags: [Linux, Shell, fdisk]
 duoshuo: true
