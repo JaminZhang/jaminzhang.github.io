@@ -2,7 +2,7 @@
 layout: post
 title: Nginx 优化总结
 description: "Nginx 优化总结"
-category: Web
+category: Nginx
 avatarimg:
 tags: [Web, Nginx, Optimization]
 duoshuo: true
@@ -12,6 +12,7 @@ Nginx 优化总结
 
 
 # 引言
+
 现在的业务虽然也使用 Nginx，但 Nginx 已经是做好内部的 RPM 包，直接通过内部 YUM 源安装使用的。  
 所以关于 Nginx 的优化之前有学习过，不过好久没有实际配置过，很多具体细节配置参数已经忘记了，现在查找相关资料，  
 重新总结学习下。  
@@ -31,7 +32,7 @@ Nginx 优化总结
 9. 开启高效的文件传输模式(sendfile/tcp_nopush/tcp_nodelay)
 10. 设置连接超时时间
 11. 上传文件大小设置（动态应用）
-12. fastcgi调优（配合PHP引擎动态服务）
+12. fastcgi 调优（配合 PHP 引擎动态服务）
 13. 配置 nginx gzip 压缩功能
 14. 配置 nginx expires 缓存功能
 15. nginx 日志相关优化与安全
