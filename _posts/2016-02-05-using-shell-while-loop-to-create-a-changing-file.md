@@ -2,9 +2,9 @@
 layout: post
 title: 使用 Shell 中的 while loop 模拟一个实时变化的日志文件
 description: "使用 Shell 中的 while loop 模拟一个实时变化的日志文件"
-category: Linux
+category: Shell
 avatarimg:
-tags: [Shell]
+tags: [Shell, CPU, Loop]
 duoshuo: true
 ---
 
