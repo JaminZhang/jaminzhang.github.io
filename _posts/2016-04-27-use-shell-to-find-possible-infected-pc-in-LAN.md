@@ -2,9 +2,9 @@
 layout: post
 title: 使用 Shell 命令找出局域网哪台机器最可能被蠕虫感染
 description: "使用 Shell 命令找出局域网哪台机器最可能被蠕虫感染"
-category: Linux
+category: Shell
 avatarimg:
-tags: [tcpdump, ARP]
+tags: [tcpdump, ARP, Linux]
 duoshuo: true
 ---
 
