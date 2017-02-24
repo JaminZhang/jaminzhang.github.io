@@ -2,9 +2,9 @@
 layout: post
 title: curl 提交 json 数据中引用 Shell 变量问题
 description: "curl 提交 json 数据中引用 Shell 变量问题"
-category: Programming
+category: Shell
 avatarimg:
-tags: [curl, json, POST, GET]
+tags: [curl, json, POST, GET, Shell]
 duoshuo: true
 ---
 
