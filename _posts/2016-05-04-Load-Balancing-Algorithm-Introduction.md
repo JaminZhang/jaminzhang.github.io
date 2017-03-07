@@ -2,14 +2,15 @@
 layout: post
 title: 负载均衡算法简介
 description: "负载均衡算法简介"
-category: Web
+category: LB
 avatarimg:
-tags: [LB, Algorithm]
+tags: [Web, LB, Algorithm]
 duoshuo: true
 ---
 
 # 引言
-前面讲了负载均衡的原理和类别，这篇对负载均衡的算法作个简介。
+
+前面讲了负载均衡的原理和类别，这篇对负载均衡的算法做个简介。
 
 # 负载均衡算法
 
@@ -17,7 +18,7 @@ duoshuo: true
 
 ## 1. 轮询
 
-将所有请求，依次分发到每台服务器上，适合服务器硬件相同的场景。  
+将所有请求，依次分发到每台服务器上，适合服务器硬件配置相同的场景。  
 
 * 优点：服务器请求数目相同；
 * 缺点：服务器压力不一样，不适合服务器配置不同的情况；
