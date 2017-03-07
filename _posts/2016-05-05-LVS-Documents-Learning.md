@@ -2,9 +2,9 @@
 layout: post
 title: LVS 文档学习
 description: "LVS 文档学习"
-category: Web
+category: LB
 avatarimg:
-tags: [LB, LVS]
+tags: [Web, LB, LVS]
 duoshuo: true
 ---
 
@@ -17,7 +17,7 @@ LVS(Linux Virtual Server)，由章文嵩博士于 1998 年 5 月创立，是中�
 
 # LVS 文档
 
-[LVS项目介绍](http://www.linuxvirtualserver.org/zh/lvs1.html)  
-[LVS集群的体系结构](http://www.linuxvirtualserver.org/zh/lvs2.html)  
-[LVS集群中的IP负载均衡技术](http://www.linuxvirtualserver.org/zh/lvs3.html)  
-[LVS集群的负载调度](http://www.linuxvirtualserver.org/zh/lvs4.html)  
+[LVS 项目介绍](http://www.linuxvirtualserver.org/zh/lvs1.html)  
+[LVS 集群的体系结构](http://www.linuxvirtualserver.org/zh/lvs2.html)  
+[LVS 集群中的 IP 负载均衡技术](http://www.linuxvirtualserver.org/zh/lvs3.html)  
+[LVS 集群的负载调度](http://www.linuxvirtualserver.org/zh/lvs4.html)  
