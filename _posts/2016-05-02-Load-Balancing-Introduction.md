@@ -144,6 +144,16 @@ IP 负载均衡中，真实物理服务器返回给负载均衡服务器，存�
 1. 价格昂贵；
 2. 扩展能力差；
 
+
+# 云计算负载均衡
+
+适用于中小公司，相关介绍文档如下：
+
+[阿里云负载均衡](https://www.aliyun.com/product/slb)  
+[阿里云 SLB 专题页](https://promotion.aliyun.com/ntms/act/slblearn.html)  
+[阿里云负载均衡文档](https://help.aliyun.com/product/27537.html)   
+
+
 ## 小结
 
 1. 一般硬件的负载均衡也要做双机高可用，因此成本会比较高。
