@@ -2,9 +2,9 @@
 layout: post
 title: HAProxy 入门
 description: "HAProxy 入门"
-category: Web
+category: LB
 avatarimg:
-tags: [LB, HAProxy, Nginx]
+tags: [Web, LB, HAProxy, Nginx]
 duoshuo: true
 ---
 
@@ -15,12 +15,13 @@ Nginx 和 HAProxy 对比有下面的不足：
 
 1. 默认不支持自定义 URL 检测（第三方模块可以）
 2. 会话保持默认只有 ip_hash（没有 URL Hash 算法）
-3. 负载均衡算法少(rr,wrr,lc,ip_hash)  
+3. 负载均衡算法少(rr, wrr, lc, ip_hash)  
 
 HAProxy 支持如下负载均衡算法:  
 rr/wrr/lc/wlc/sh/uri/hdr(Based on HTTP header)/first 等
 
 <pre>
+
 no less than 9 load balancing algorithms are supported, some of which apply
 to input data to offer an infinite list of possibilities. The most common
 ones are round-robin (for short connections, pick each server in turn),
@@ -32,6 +33,7 @@ directly depends on the contents of a specific HTTP header field), first
 (for short-lived virtual machines, all connections are packed on the
 smallest possible subset of servers so that unused ones can be powered
 down);
+
 </pre>
 
 
@@ -42,13 +44,14 @@ down);
 * Nginx + ATS
 
 >  
-因为HAProxy 中文资料较少，所以国内的 HAProxy 并没有像 Nginx 那样使用普遍。
+因为 HAProxy 中文资料较少，所以国内的 HAProxy 并没有像 Nginx 那样使用普遍。
 
 # HAProxy 安装
 
 HAProxy、Nginx 一般推荐使用最新稳定版本（一般需要编译安装）。
 
-本文为了演示方便，使用 yum 安装方式。  
+本文为了演示方便，使用 yum 安装方式。   
+
 `yum install haproxy -y`
 
 # HAProxy 配置文件
@@ -62,6 +65,7 @@ HAProxy 配置文件为 `/etc/haproxy/haproxy.cfg`，默认里面有比较详细
 * backend (后端配置段)
 
 ## 配置 HAProxy 日志记录到文件
+
 参考 Ref 中的资料，CentOS 7 下 rsyslog 配置，配置文件中注释没有说
 
 
@@ -290,6 +294,6 @@ Message from syslogd@localhost at Dec  1 14:33:26 ...
 # Ref
 [Using nginx as HTTP load balancer](http://nginx.org/en/docs/http/load_balancing.html)  
 [Basic features : Load balancing](http://cbonte.github.io/haproxy-dconv/1.6/intro.html#3.3.5)  
-[Centos7 Haproxy 日志配置](http://www.javacoder.cn/?p=840)  
-[centos下haproxy日志的配置](http://leboit.blog.51cto.com/1465210/1695516)  
+[Centos7 HAProxy 日志配置](http://www.javacoder.cn/?p=840)  
+[Centos 下 HAProxy 日志的配置](http://leboit.blog.51cto.com/1465210/1695516)  
 
