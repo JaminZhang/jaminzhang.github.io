@@ -2,9 +2,9 @@
 layout: post
 title: HAProxy 文档学习
 description: "HAProxy 文档学习"
-category: Web
+category: LB
 avatarimg:
-tags: [LB, HAProxy]
+tags: [Web, LB, HAProxy]
 duoshuo: true
 ---
 
@@ -15,5 +15,5 @@ duoshuo: true
 
 # HAProxy 文档学习
 
-[官网](http://www.haproxy.org/)  
+[HAProxy 官网](http://www.haproxy.org/)  
 
