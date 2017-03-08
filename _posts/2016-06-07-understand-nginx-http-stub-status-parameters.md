@@ -55,8 +55,10 @@ In above example, 10993/7368, 1.49 requests per connections.
 
 Reading – nginx reads request header
 Writing – nginx reads request body, processes request, or writes response to a client
-Waiting – keep-alive connections, actually it is active – (reading + writing).This value depends on keepalive-timeout. 
-Do not confuse non-zero waiting value for poor performance. It can be ignored. Although, you can force zero waiting by setting keepalive_timeout 0;
+Waiting – keep-alive connections, actually it is active – (reading + writing).
+This value depends on keepalive-timeout. 
+Do not confuse non-zero waiting value for poor performance. It can be ignored. 
+Although, you can force zero waiting by setting keepalive_timeout 0;
 
 </pre>
 
