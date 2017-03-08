@@ -1,8 +1,8 @@
 ---
 layout: post
-title: git push提示401 Unauthorized while accessing https的原因及解决方法
-description: "git push提示401 Unauthorized while accessing https的原因及解决方法"
-category: Linux
+title: git push 提示 401 Unauthorized while accessing https 的原因及解决方法
+description: "git push 提示 401 Unauthorized while accessing https 的原因及解决方法"
+category: Git
 avatarimg:
 tags: [Linux, Git]
 duoshuo: true
