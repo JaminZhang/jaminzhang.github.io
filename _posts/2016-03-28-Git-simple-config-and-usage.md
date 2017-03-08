@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Git简单配置使用
-description: "Git简单配置使用"
-category: Linux
+title: Git 简单配置使用
+description: "Git 简单配置使用"
+category: Git
 avatarimg:
 tags: [Git]
 duoshuo: true
