@@ -1,10 +1,10 @@
 ---
 layout: post
-title: GitLab中配置添加SSH密钥
-description: "GitLab中配置添加SSH密钥"
-category: Linux
+title: GitLab 中配置添加 SSH 密钥
+description: "GitLab 中配置添加 SSH 密钥"
+category: Git
 avatarimg:
-tags: [GitLab, SSH]
+tags: [GitLab, Git, SSH]
 duoshuo: true
 ---
 
