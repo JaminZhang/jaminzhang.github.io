@@ -15,6 +15,7 @@ NoSQL 数据库里面比较常见的有 Memcached, Redis, MongoDB 等等，今�
 # Memcached 简介
 
 <pre>
+
 What is Memcached?
 
 Free & open source, high-performance, distributed memory object caching system, generic in nature, 
@@ -25,6 +26,7 @@ results of database calls, API calls, or page rendering.
 
 Memcached is simple yet powerful. Its simple design promotes quick deployment, ease of development, and 
 solves many problems facing large data caches. Its API is available for most popular languages.
+
 </pre>
 
 
