@@ -61,3 +61,29 @@ curl -H "X-Auth-Token:${token}" http://xxx.xx:8332/api/monitor -d ip=${IP_ADDR}
 xargs sed -i "/\/etc\/init.d\/zabbix-agent restart/r /tmp/zabbix-api.txt"
 ```    
 
+# 实例 3
+
+统计一个文件中包含特定字符串的个数。
+
+```bash
+
+# 统计 test.txt 文件中 jamin 字符串的个数
+[root@VM_15_187_centos ~]# grep --color=auto jamin test.txt
+jamin jamin
+txt jamin
+abcd jamin
+[root@VM_15_187_centos ~]# grep  -o jamin test.txt 
+jamin
+jamin
+jamin
+jamin
+[root@VM_15_187_centos ~]# grep -o jamin test.txt  | wc -l
+4
+
+-o, --only-matching # 只打印一个匹配行的匹配部分
+Print only the matched (non-empty) parts of a matching line, with each such part on a separate output line.
+
+```    
+
+# Ref
+man grep
