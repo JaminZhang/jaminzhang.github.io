@@ -13,7 +13,7 @@ duoshuo: true
 
 一直比较关注斗鱼，
 之前曾写过一篇[斗鱼已公开的运维技术和架构分析](http://jaminzhang.github.io/architecture/Douyu-Public-Ops-Tech-and-Architecture-Analysis/)。  
-最近新看到一篇"斗鱼直播平台后端 RPC 架构浅析"。RPC 应该属于 SOA 层。  
+最近新看到一篇["斗鱼直播平台后端 RPC 架构浅析"](http://leeon.me/a/douyu-rpc-arch)。RPC 应该属于 SOA 层。  
 关于 RPC 相关概念和框架，没有怎么接触过，现在重新了解下。
 
 
@@ -65,5 +65,5 @@ RPC 的协议有很多，比如最早的 CORBA，Java RMI，Web Service 的 RPC 
 # Ref
 [远程过程调用(RPC)详解](https://waylau.com/remote-procedure-calls/)  
 [谁能用通俗的语言解释一下什么是 RPC 框架？](https://www.zhihu.com/question/25536695)  
-
+["斗鱼直播平台后端 RPC 架构浅析"](http://leeon.me/a/douyu-rpc-arch)  
 
