@@ -52,7 +52,8 @@ Linux 协议栈的 tw_reuse(time_wait 状态连接复用)无法生效，time_wai
 后端服务器 accept 队列满，导致后端服务器不回复 SYN_ACK 报文，客户端超时。
 
 解决方法：
-默认的 net.core.somaxconn 参数为 128，执行 sysctl -w net.core.somaxconn=1024 或者其它更大的值，并重启后端服务器上的应用。
+默认的 net.core.somaxconn 参数为 128，
+执行 sysctl -w net.core.somaxconn=1024 或者其它更大的值，并重启后端服务器上的应用。
 
 * CASE 4：从 4 层负载均衡后端服务器访问该 4 层负载均衡 VIP
 
