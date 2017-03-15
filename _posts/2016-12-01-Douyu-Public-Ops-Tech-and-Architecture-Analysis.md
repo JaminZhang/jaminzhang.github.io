@@ -83,7 +83,7 @@ https://whois.aliyun.com/whois/domain/dnsv4.com
 
 ## 2. 云计算
 
-包含公有云服务、混合云、运维外包服务、APM（应用性能管理）、第三方安全解决方案（防DDOS、WAF）
+包含公有云服务、混合云、运维外包服务、APM（应用性能管理）、第三方安全解决方案（防 DDOS、WAF）
 等相关内容。
 
 斗鱼在云计算方面暂未查到相关公开资料。
@@ -119,15 +119,15 @@ https://whois.aliyun.com/whois/domain/dnsv4.com
 
 ### 四层负载均衡
 
-**包含开源：LVS（IP 负载均衡）+ Keepalived、Haproxy 商业：F5、Netscaler 等内容。**
+**包含开源：LVS（IP 负载均衡）+ Keepalived、HAProxy 商业：F5、Netscaler 等内容。**
 
 ### 七层负载均衡
 
-**包含反向代理：Haproxy、Nginx、Apache（根据 HTTP 协议支持的属性进行 L7 分发）、A/B Test Gateway、WAF 等内容。**
+**包含反向代理：HAProxy、Nginx、Apache（根据 HTTP 协议支持的属性进行 L7 分发）、A/B Test Gateway、WAF 等内容。**
 
 ## 2. 反向代理缓存
 
-**包含ATS、Squid、Varnish、Nginx(缓存分级、预缓存、缓存刷新）等内容。**
+**包含 ATS、Squid、Varnish、Nginx(缓存分级、预缓存、缓存刷新）等内容。**
 
 斗鱼在接入层方面使用了 CDN、LVS、Nginx、Tomcat、PHP-FPM。
 
@@ -146,6 +146,7 @@ https://whois.aliyun.com/whois/domain/dnsv4.com
 [为什么要全站 HTTPS](http://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&mid=2650712733&idx=1&sn=681e7413eeff0d6189df9c0ef6190e46&chksm=bec064ce89b7edd8427d3eb9d578c314bc209603a5c3e9c0657d6908fc1baae91a9c7c64d9a9&mpshare=1&scene=23&srcid=1108FWOXmSN3tkJlm3K8JLLl#rd)  
 
 <pre>
+
 全站实施 HTTPS 并不是加了一个 S 那么简单，这里面需要投入巨大的技术研发成本、服务器和带宽成本等等。  
 
 HTTPS 会带来更多的网络握手和消耗，如何提升访问性能，如何优化证书链，如何增加高速连接，减少端口之间的跳转等等。
@@ -161,6 +162,7 @@ HTTPS 会带来更多的网络握手和消耗，如何提升访问性能，如�
 对观看直播造成恶劣的影响。
 在 HTTP 时代，我们甚至可以简单的写一段脚本就可以把直播间的所有弹幕信息抓下来，因为数据在网络上是明文传输的。
 有了 HTTPS 的保障，无论是客户端还是浏览器，都可以得到更好的用户体验。
+
 </pre>
 
 ## 2. 应用服务层
@@ -172,17 +174,20 @@ HTTPS 会带来更多的网络握手和消耗，如何提升访问性能，如�
 
 ### 3.1 业务实现
 
-**包含API 网关、302 调度、业务模块化（电商网站例子：用户、商品、购物车、结算中心、价格等服务）、微服务等内容。**
+**包含 API 网关、302 调度、业务模块化（电商网站例子：用户、商品、购物车、结算中心、价格等服务）、微服务等内容。**
 
 ### 3.2 SOA 层
 
-**包含 SOA框架（Java Dubbo）、协议（RPC、RESTful）、服务注册、服务发现、框架安全等内容。**
+**包含 SOA 框架（Java Dubbo）、协议（RPC、RESTful）、服务注册、服务发现、框架安全等内容。**
+
+[斗鱼直播平台后端 RPC 架构浅析](http://leeon.me/a/douyu-rpc-arch)  
 
 ## 4. 分布式层	
 
 ### 消息队列
 
-**包含ActiveMQ（成熟）、RabbitMQ（成熟、案例多）、RocketMQ（业务应用）、Kafka（日志传输）、ZeroMQ（快）等内容。**
+**包含 ActiveMQ（成熟）、RabbitMQ（成熟、案例多）、RocketMQ（业务应用）、Kafka（日志传输）、ZeroMQ（快）等内容。**
+
 
 # 基础服务层
 
@@ -196,7 +201,7 @@ HTTPS 会带来更多的网络握手和消耗，如何提升访问性能，如�
 
 ## 3. 应用相关
 
-**包含持续集成、日志收集平台（ELKStack）、自动化部署平台、Job管理（调度）平台、安全扫描平台等内容。**
+**包含持续集成、日志收集平台（ELKStack）、自动化部署平台、Job 管理（调度）平台、安全扫描平台等内容。**
 
 **ELK 相关**
 
@@ -270,5 +275,11 @@ HTTPS 会带来更多的网络握手和消耗，如何提升访问性能，如�
 **包含运维协助：性能测试（TCPCopy、日志转换）、单机监控（nmon）、环境规划（开发、测试、预生产、生产）、CI（持续集成）、自动化部署等内容。**
 
 
-# Ref
+# Ref  
+
+[Alexa douyu.com 排名信息](http://www.alexa.com/siteinfo/douyu.com)  
+[用户在斗鱼看直播时，斗鱼在看什么](http://www.thegitc.com/ppt2016bj/03%E8%BF%90%E7%BB%B4%E4%B8%93%E5%9C%BA_%E5%90%B4%E7%91%9E%E8%AF%9A_%E6%96%97%E9%B1%BC.pdf)  
 [爆炸式增长的斗鱼架构平台的演进](http://www.top100summit.com/think/12187)  
+[为什么要全站 HTTPS](http://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&mid=2650712733&idx=1&sn=681e7413eeff0d6189df9c0ef6190e46&chksm=bec064ce89b7edd8427d3eb9d578c314bc209603a5c3e9c0657d6908fc1baae91a9c7c64d9a9&mpshare=1&scene=23&srcid=1108FWOXmSN3tkJlm3K8JLLl#rd)  
+[斗鱼直播平台后端 RPC 架构浅析](http://leeon.me/a/douyu-rpc-arch)  
+[基于Elasticsearch的斗鱼搜索服务实现](http://conf.elasticsearch.cn/2016/beijing.html#speaker)  
