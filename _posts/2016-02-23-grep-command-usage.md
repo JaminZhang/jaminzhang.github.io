@@ -4,7 +4,7 @@ title: grep 命令用法总结
 description: "grep 命令用法总结"
 category: Linux
 avatarimg:
-tags: [bash, grep, sed]
+tags: [grep, sed]
 duoshuo: true
 ---
 
@@ -17,14 +17,31 @@ grep -r -l "test"  * | xargs sed -i "/test/d"
 
 上面使用 grep 递归搜索包含 test 字符串的文件名，然后传递给 sed 做删除操作
 
+```bash
+
+-r, --recursive # 递归读取目录下的所有文件
+Read all files under each directory, recursively, 
+following symbolic links only if they are on the command line.
+This is equivalent to the -d recurse option.
+
+-l, --files-with-matches  # 打印匹配的文件名
+Suppress normal output; instead print the name of each input file from which 
+output would normally have been printed.
+The scanning will stop on the first match.  (-l is specified by POSIX.)
+
+```    
+
+
 # 实例 2
 
 在某目录下（包含子目录，但排除 test 目录）的所有脚本中 “/etc/init.d/zabbix-agent restart” 这行的后面添加上如下几行：
 
 ```bash
+
 sleep 5
 IP_ADDR=`curl -s http://xxx.xx/getip.php`
 curl -H "X-Auth-Token:${token}" http://xxx.xx:8332/api/monitor -d ip=${IP_ADDR}
+
 ```    
 
 >
@@ -33,12 +50,14 @@ curl -H "X-Auth-Token:${token}" http://xxx.xx:8332/api/monitor -d ip=${IP_ADDR}
 实现方法：
 
 ```bash
+
 [root@xxx xx]# cat /tmp/zabbix-api.txt  # 将要添加的多行内容写在一个文件中
 sleep 5
 IP_ADDR=`curl -s http://xxx.xx/getip.php`
 curl -H "X-Auth-Token:${token}" http://xxx.xx:8332/api/monitor -d ip=${IP_ADDR}
 
 # grep 结合 sed 
-[root@xxx xxx]# grep -r -l --exclude-dir="test" "\/etc\/init.d\/zabbix-agent restart"  * | xargs sed -i "/\/etc\/init.d\/zabbix-agent restart/r /tmp/zabbix-api.txt"
+[root@xxx xxx]# grep -r -l --exclude-dir="test" "\/etc\/init.d\/zabbix-agent restart"  * | \
+xargs sed -i "/\/etc\/init.d\/zabbix-agent restart/r /tmp/zabbix-api.txt"
 ```    
 
