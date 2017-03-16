@@ -112,4 +112,4 @@ Timeout (tcp tcpfin udp): 900 120 300
 [lvs持久性工作原理和配置](http://xstarcd.github.io/wiki/sysadmin/lvs_persistence.html)  
 [LVS持久性工作原理和配置方法](http://www.3mu.me/lvs持久性工作原理和配置方法/)     
 [lvs配置persistence_timeout 参数导致数据库负载不均](http://www.yalasao.com/43/lvs-persistence-timeout)  
-
+[LVS会话超时引入对tcp keepalive与http keepalive的学习](http://www.ywnds.com/?p=7871)  
