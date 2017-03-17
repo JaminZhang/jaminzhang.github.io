@@ -24,7 +24,8 @@ ELK 快速安装
 
 20170317：
 
-今天更新下这篇文章，现在 ELK 官网将 ELKStack 官方称为 Elastic Stack，而且最新系列版本为 5.2。  关于 Elastic Stack 的快速安装最新文档请参考官网的安装文档[Installing the Elastic Stack](https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html)，总结得比较完整。
+今天更新下这篇文章，现在 ELK 官网将 ELKStack 官方称为 Elastic Stack，而且最新系列版本为 5.2。   
+关于 Elastic Stack 的快速安装最新文档请参考官网的安装文档[Installing the Elastic Stack](https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html)，总结得比较完整。
 
 # 安装 Elasticsearch
 
@@ -145,7 +146,7 @@ yum install kibana -y
 ```    
 
 # Ref
-[Installing the Elastic Stack](https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html)
+[Installing the Elastic Stack](https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html)  
 [Elasticsearch Repositories](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html)  
 [Installing Logstash](https://www.elastic.co/guide/en/logstash/current/installing-logstash.html)  
 [Kibana Repositories](https://www.elastic.co/guide/en/kibana/current/_upgrading_kibana.html)  
