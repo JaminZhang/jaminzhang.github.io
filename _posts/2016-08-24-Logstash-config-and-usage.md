@@ -11,11 +11,14 @@ duoshuo: true
 # Logstash 简介
 
 <pre>
+
 Logstash is an open source data collection engine with real-time pipelining capabilities. 
-Logstash can dynamically unify data from disparate sources and normalize the data into destinations of your choice.
+Logstash can dynamically unify data from disparate sources 
+and normalize the data into destinations of your choice.
 Cleanse and democratize all your data for diverse advanced downstream analytics and visualization use cases.
 
-While Logstash originally drove innovation in log collection, its capabilities extend well beyond that use case. 
+While Logstash originally drove innovation in log collection, 
+its capabilities extend well beyond that use case. 
 Any type of event can be enriched and transformed with a broad array of 
 input, filter, and output plugins, with many native codecs further simplifying the ingestion process. 
 Logstash accelerates your insights by harnessing a greater volume and variety of data.
@@ -35,6 +38,7 @@ Logstash accelerates your insights by harnessing a greater volume and variety of
 以下最基本的示例可以测试 Logstash 是否正常安装
 
 ```bash
+
 [root@linux-node2 ~]# rpm -ql logstash		# 查询 yum 安装的 logstash 目录及文件
 [root@linux-node2 ~]# cd /opt/logstash/
 [root@linux-node2 logstash]# bin/logstash -e 'input { stdin { } } output { stdout { } }'
@@ -51,9 +55,10 @@ stopping pipeline {:id=>"main"}
 # 配置一个高级 Logstash 管道
 
 在大多数用例中，一个 Logstash 管道有一个或多个 input, filter 和 output 插件。  
-Logstash 配置文件定义了你的 Logstash 管道。当你启动一个 Logstash 实例时，使用 -f 选项指定一个配置文件，它定义了这个实例的管道。  
+Logstash 配置文件定义了你的 Logstash 管道。
+当你启动一个 Logstash 实例时，使用 -f 选项指定一个配置文件，它定义了这个实例的管道。  
 一个 Logstash 管道有 2 个必需的元素，input 和 output，还有一个可选的 filter 元素。  
-input 插件消费来自一个源的数据，filter 插件按你的指定修改数据，output 插件写入数据到一个目的地。
+**input 插件消费来自一个源的数据，filter 插件按你的指定修改数据，output 插件写入数据到一个目的地。**
 
 ![basic_logstash_pipeline](https://www.elastic.co/guide/en/logstash/current/static/images/basic_logstash_pipeline.png)
 
@@ -78,23 +83,33 @@ output {
 ## Logstash 配置实例
 
 ```bash
-[root@linux-node2 logstash]# bin/logstash -e 'input { stdin { } } output { stdout { codec => rubydebug } elasticsearch { hosts => ["192.168.56.12:9200"] index => "logstash-%{+%YYYY.MM.dd}" } }'
+
+[root@linux-node2 logstash]# bin/logstash -e \
+'input { stdin { } } output { stdout { codec => rubydebug } \
+elasticsearch { hosts => ["192.168.56.12:9200"] index => "logstash-%{+%YYYY.MM.dd}" } }'
+
 ```    
 
-上面第一次看有些不易读，其实上面的功能是从标准输入读入数据，然后以 rubydebug 格式化后输出到标准输出，同时将数据写到 ES 中。  
+上面第一次看有些不易读，其实上面的功能是从标准输入读入数据，
+然后以 rubydebug 格式化后输出到标准输出，同时将数据写到 ES 中。  
 这个流程中使用到了 input/codec/output/ 插件。
 
 >
-技巧：当使用 Logstash 收集数据时，可先在前台运行 Logstash，可先在 stdin 和 stdout 进行数据输入输出的调试，调试正确后再写入配置文件后台运行 Logstash。
+技巧：
+当使用 Logstash 收集数据时，可先在前台运行 Logstash，可先在 stdin 和 stdout 进行数据输入输出的调试，
+调试正确后再写入配置文件后台运行 Logstash。
 
 # Logstash 插件
 
 经过上面的实例，我们再来总结一下，Logstash 的功能是由 input/filter/codec/output 四种类型的插件结合来实现的。  
 除了必需的 input 和 output 插件，上面给出的示例中，配置有 codec 插件。  
 
-Codec 插件  
-一个 codec 插件用于改变一个事件的数据表达方式。Codecs 本质上是流过滤器，  
+**Codec 插件**  
+
+一个 Codec 插件用于改变一个事件的数据表达方式。Codecs 本质上是流过滤器，  
 它们能够作为一个 input 或 output 的一部分来运作。
+
+**rubydebug 插件**  
 
 rubydebug 插件将使用 Ruby Awesome Print 库来输出你的 Logstash 事件数据。  
 这种输出是易读的 JSON 格式的。
