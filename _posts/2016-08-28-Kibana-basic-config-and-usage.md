@@ -18,11 +18,14 @@ duoshuo: true
 ## 配置
 
 ```bash
+
 # kibana 配置文件如下配置
+
 [root@linux-node2 ~]# grep "^[a-Z]" /opt/kibana/config/kibana.yml
 server.port: 5601
 server.host: "0.0.0.0"
 elasticsearch.url: "http://192.168.58.12:9200"
+
 ```    
 
 ## 启动 Kibana
@@ -32,10 +35,9 @@ systemctl start kibana
 
 ## 访问 Web 页面
 
-地址：http://Kibana服务器地址:5601/
+地址：http://Kibana 服务器地址:5601/
 
 第一次访问，提示没有默认索引模式，我们稍后进行配置。  
-
  
 
 ## 添加索引并搜索使用
