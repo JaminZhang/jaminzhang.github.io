@@ -14,18 +14,21 @@ ELK-使用消息队列进行扩展 Logstash
 
 当我们在大规模的场景下收集日志时，很有可能收集日志的速度比日志写入 ES 中的速度快很多。  
 这时我们可以使用一个消息队列作为缓冲。  
-Logstash 支持的消息队列插件有 kafka/redis/rabbitmq 等，可以用于 Input 或 Output 插件。
+Logstash 支持的消息队列插件有 kafka/Redis/rabbitmq 等，可以用于 Input 或 Output 插件。
 
-本文以 redis 作为消息队列演示收集 Apache 访问日志。
+本文以 Redis 作为消息队列演示收集 Apache 访问日志。
 
 
-# 1. redis 安装配置
+# 1. Redis 安装配置
 
 ```bash
+
 # 在 192.168.56.12 上安装 redis
+
 yum install -y redis
 
 # 配置 redis.conf 以下参数
+
 vim /etc/redis.conf
 daemonize yes
 bind 192.168.56.12
@@ -34,6 +37,7 @@ systemctl start redis
 netstat -lntp
 
 # 连接 redis 进行测试
+
 [root@linux-node2 ~]# redis-cli -h 192.168.56.12 -p 6379
 192.168.56.12:6379> info
 ...省略输出...
@@ -47,9 +51,10 @@ OK
 
 
 
-# 2. 在 192.168.56.11 前台运行 Logstash 测试收集数据并写入 redis
+# 2. 在 192.168.56.11 前台运行 Logstash 测试收集数据并写入 Redis
 
 ```bash
+
 [root@linux-node1 conf.d]# cat redis.conf
 input {
    stdin {}
@@ -64,6 +69,7 @@ output {
     key => "demo"
   }
 }
+
 # 以上 output 部分使用 redis 插件将标准输入的数据写到 redis 中的 db:6 key:"demo"，数据类型为 list
 
 [root@linux-node1 conf.d]# /opt/logstash/bin/logstash -f redis.conf
@@ -87,9 +93,10 @@ list
 "{\"message\":\"test3\",\"@version\":\"1\",\"@timestamp\":\"2016-10-11T08:21:58.531Z\",\"host\":\"linux-node1\"}"
 ```    
 
-# 3. 收集 Apache 访问日志写入到 redis
+# 3. 收集 Apache 访问日志写入到 Redis
 
 ```bash
+
 # 修改配置 apache.conf 如下：
 
 [root@linux-node1 conf.d]# cat apache.conf 
@@ -131,13 +138,16 @@ list
 
 ![ELK-MQ-redis](http://jaminzhang.github.io/images/ELK/ELK-MQ-redis.png)  
 
-下面我们继续来完成上面的架构
+下面我们继续来完成上面的架构。
 
-# 4. 读取消息队列 redis 中的日志数据并进行 grok 处理
+
+# 4. 读取消息队列 Redis 中的日志数据并进行 grok 处理
 
 ```bash
+
 # 在 192.168.56.12 上配置前台启动 logstash 测试
 # 先测试 output 到标准输出
+
 [root@linux-node2 conf.d]# cat indexer.conf 
 input {
   redis {
@@ -170,6 +180,7 @@ Pipeline main started
 # 从上面可以看到，Logstash 读取到了 redis 中的日志数据并输出到了标准输出
 
 # 下面继续修改 indexer.conf 增加 filter grok 插件来处理 Apache 访问日志
+
 [root@linux-node2 conf.d]# cat indexer.conf 
 input {
   redis {
@@ -194,6 +205,7 @@ output {
 }
 
 # 我们浏览器访问 192.168.56.11 再来产生一些日志
+
 [root@linux-node2 conf.d]# /opt/logstash/bin/logstash -f indexer.conf 
 Settings: Default pipeline workers: 1
 Pipeline main started
@@ -217,12 +229,15 @@ Pipeline main started
 ...省略其他输出...
 
 # 从上面可以看到，Logstash 读取到了 redis 中的日志数据，进行 grok 过滤处理后再输出到标准输出
+
 ```    
 
 # 5. 将 grok 过滤处理后的日志数据写入到 ES
 
-```bash    
+```bash
+
 # 下面继续修改 indexer.conf，修改 output 写入到 ES，最终如下：
+
 [root@linux-node2 conf.d]# cat indexer.conf 
 input {
   redis {
@@ -251,9 +266,11 @@ output {
 
 
 # 产生一些 HTTP 200 访问日志
+
 ab -n 1000 -c 10 http://192.168.56.11/
 
 # 然后去查看上篇文章已经配置过的 Apache 状态码饼图，确认数据是否更新
+
 ```    
 
 >
