@@ -23,13 +23,15 @@ KVM 虚拟化相关软件包
 下面我们来分别看看上面这几个软件的简介，使用 yum 查询一下，如下：
 
 ```bash
+
 qemu-kvm.x86_64 : Userspace component of KVM
 qemu-kvm-tools.x86_64 : KVM debugging and diagnostics tools
 libvirt.x86_64 : Library providing a simple virtualization API
 virt-manager.x86_64 : Virtual Machine Manager
+
 ```    
 
 当然 yum 安装上述几个软件包时，会有相关的依赖包也会被安装上，这里就不列出来了。
 
 # Ref
-[虚拟化之KVM](https://www.studylinux.net/?p=2678)  
+[虚拟化之 KVM](https://www.studylinux.net/?p=2678)  
