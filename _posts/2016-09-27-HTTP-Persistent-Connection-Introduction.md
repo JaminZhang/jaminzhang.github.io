@@ -2,9 +2,9 @@
 layout: post
 title: HTTP 持久连接简介
 description: "HTTP 持久连接简介"
-category: Web
+category: HTTP
 avatarimg:
-tags: [Website, HTTP, KeepAlive]
+tags: [Web, Website, HTTP, KeepAlive]
 duoshuo: true
 ---
 
@@ -15,7 +15,9 @@ HTTP 持久连接简介
 最近被问到 HTTP 持久连接的优点和缺点，之前没系统总结过，这次重新学习简单总结下。
 
 # HTTP 持久连接简介
+
 <pre>
+
 Web 客户端经常会打开到同一个站点的连接。
 比如，一个 Web 页面上的大部分内嵌图片通常都来自同一个 Web 站点，
 而且相当一部分指向其他对象的超链通常都指向同一个站点。
