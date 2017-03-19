@@ -22,8 +22,10 @@ duoshuo: true
 <pre>
 
 The CPU cannot do anything else while it's executing that loop (which never ends).
-Even if you're using a pre-emptive multi-tasking system (so that infinite loop will only clog forever its own process or thread), 
-the loop will "eat" its time slice each time the OS's pre-emptive scheduler hands it the CPU for the next slice -- doing nothing, 
+Even if you're using a pre-emptive multi-tasking system 
+(so that infinite loop will only clog forever its own process or thread), 
+the loop will "eat" its time slice each time 
+the OS's pre-emptive scheduler hands it the CPU for the next slice -- doing nothing, 
 but eating up one slice's worth of CPU time each and every time, 
 so that much CPU is lost to all other threads which could otherwise be doing useful work.
 
