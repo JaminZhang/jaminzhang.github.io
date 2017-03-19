@@ -20,6 +20,7 @@ Docker 的镜像构建算是 Docker 的一个重点，因为应用的交付就�
 前面进行测试，运行了很多容器，下面我们将这些容器全部删除（此命令生产环境上慎用）
 
 ```bash
+
 [root@linux-node1 ~]# docker kill $(docker ps -a -q)
 ed81da17ee16
 868a9e6b7aa0
@@ -44,7 +45,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 ## 手动构建镜像
 
-实质是运行一个容器后，进行相关处理，然后使用 docker commit 创建一个镜像。  
+实质是运行一个容器后，进行相关处理，然后使用`docker commit`创建一个镜像。  
 下面演示手动构建一个基于 centos 镜像的 nginx 镜像。  
 
 ```bash
@@ -89,7 +90,7 @@ jaminzhang/mynginx          v1                  370e352e4ed5        20 seconds a
 docker.io/nginx             latest              4a88d06e26f4        3 days ago          183.5 MB
 docker.io/centos            latest              980e0e4c79ec        12 days ago         196.7 MB
 
-# 以刚才创建的 nginx 镜像 运行一个容器
+# 以刚才创建的 nginx 镜像运行一个容器
 [root@linux-node1 ~]# docker run --name mynginxv1 -d -p 80:80 jaminzhang/mynginx:v1 nginx
 90714195490bf750007eb2a583679f03b94762c382276973b06c60f3f3c49368
 [root@linux-node1 ~]# docker ps
@@ -215,5 +216,5 @@ nginx in Docker.
 ```    
 
 # Ref
-[一张图就能学会Dockerfile你知道吗？](http://mp.weixin.qq.com/s?__biz=MzIxMDAwOTcwMA==&mid=2247483818&idx=1&sn=4a49793b166be681ce62857132dfdfbf&chksm=976a6aa1a01de3b72c3fa45c5d4fa4abb35bab99b7fd9e7ad640c2da83aef46d12ffedda64e6&scene=23&srcid=09202NJJspBHWhx3Ri1HjMUB#rd)  
+[一张图就能学会 Dockerfile 你知道吗？](http://mp.weixin.qq.com/s?__biz=MzIxMDAwOTcwMA==&mid=2247483818&idx=1&sn=4a49793b166be681ce62857132dfdfbf&chksm=976a6aa1a01de3b72c3fa45c5d4fa4abb35bab99b7fd9e7ad640c2da83aef46d12ffedda64e6&scene=23&srcid=09202NJJspBHWhx3Ri1HjMUB#rd)  
 [Dockerfile 指令](https://yeasy.gitbooks.io/docker_practice/content/dockerfile/instructions.html)  
