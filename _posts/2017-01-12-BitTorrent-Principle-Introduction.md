@@ -2,7 +2,7 @@
 layout: post
 title: BitTorrent 原理简介
 description: "BitTorrent 原理简介"
-category: Linux
+category: P2P
 avatarimg:
 tags: [P2P, BT, TCP, UDP, Tracker, DHT]
 duoshuo: true
@@ -10,8 +10,9 @@ duoshuo: true
 
 
 # 引言
-之前我这边在生产环境中使用 Murder 软件 BT 上传下载的方式来实现大文件的快速分发。  
-这属于 BT 软件的应用。最近看了下 BT 协议的分析与实现，那我们现在了解下 BT 协议原理。
+
+之前我这边在生产环境中使用 Murder 软件的 BT 上传下载的方式来实现大文件的快速分发。  
+这属于 BT 软件的应用。最近重新看了下 BT 协议的分析与实现，现在重新了解下 BT 协议原理。
 
 
 # BitTorrent 原理简述
