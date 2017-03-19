@@ -48,6 +48,6 @@ GSLB（Global Server Load Balance，全局负载均衡）作为 CDN 系统架构
 
 
 # Ref
-[浅析基于 DNS 解析方式的 GSLB](http://www.cnblog.me/2015/09/30/cdn-gslb-dns/)  
-[使用公共 DNS 可能会遇到的疑问](http://www.alidns.com/faqs/#dns-faqs)   
+[浅析基于 DNS 解析方式的 GSLB](http://www.cnblog.me/2015/09/30/cdn-gslb-dns/)   
+[使用公共 DNS 可能会遇到的疑问](http://www.alidns.com/faqs/#dns-faqs)   
 [获取访客本地域名解析服务器的方法 ](https://www.google.com/patents/CN102035905B?cl=zh)  
