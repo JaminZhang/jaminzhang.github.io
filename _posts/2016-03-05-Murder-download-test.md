@@ -86,7 +86,7 @@ Tracker 服务器回应下载者的请求，提供给下载者其他下载者（
 
 从上面 BT 下载原理可以看出，下载过程中是有下载块的检验的。所以 BT 软件应该要保证下载文件的完整性。
 在 Murder 中，[dist/BitTornado/download_bt1.py 文件中](https://github.com/lg/murder/blob/master/dist/BitTornado/download_bt1.py)
-self.errorfunc('piece %d failed hash check, re-downloading it' % index)，这里应该就是在下载块 hash 检查错误时，重新下载的提示。
+`self.errorfunc('piece %d failed hash check, re-downloading it' % index)`，这里应该就是在下载块 hash 检查错误时，重新下载的提示。
 
 所以，现在我们应该没有必要额外再对 BT 下载完成后的文件进行完整性校验。
 但如果不放心，我们是可以进行二次验证的。
