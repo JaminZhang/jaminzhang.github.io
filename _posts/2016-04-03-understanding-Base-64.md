@@ -39,7 +39,7 @@ Base-64 编码将一个 8 位字节序列拆散为 6 位的片段，并为每个
 这 64 个字符中包含大小写字母、数字、+ 和 /，还使用了特殊字符 =。表 E-1 显示了 Base-64 的字母表。
 注意，由于 Base-64 编码用了 8 位字符来表示信息中的 6 个位，所以 Base-64 编码字符串大约比原始值扩大了 33%。
 
-<pre>
+</pre>
 
 ![Base-64 字母表](https://raw.githubusercontent.com/JaminZhang/jaminzhang.github.io/master/images/Base64-table.png)
 
