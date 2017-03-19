@@ -14,7 +14,7 @@ duoshuo: true
 [FIDDLER 教程](http://www.cnphp6.com/archives/97865)  
 [【HTTP】Fiddler（一） - Fiddler 简介](http://blog.csdn.net/ohmygirl/article/details/17846199)  
 [【HTTP】Fiddler（二） - 使用 Fiddler 做抓包分析](http://blog.csdn.net/ohmygirl/article/details/17849983)  
-[【HTTP】Fiddler（三）- Fiddle r命令行和 HTTP 断点调试](http://blog.csdn.net/ohmygirl/article/details/17855031)  
+[【HTTP】Fiddler（三）- Fiddler 命令行和 HTTP 断点调试](http://blog.csdn.net/ohmygirl/article/details/17855031)  
 
 ## 2 视频教程
 
