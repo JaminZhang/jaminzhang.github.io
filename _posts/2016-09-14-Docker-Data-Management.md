@@ -36,6 +36,7 @@ Docker 可以做持久化的数据保存，在容器中管理数据主要有两�
 ## 直接指定容器中目标目录
 
 ```bash
+
 # 运行一个数据卷的测试容器，直接指定容器中目标目录
 [root@linux-node1 ~]# docker run -d --name nginx-volume-test1 -v /data/ nginx
 9e061b675f1a896101799d3426ab4e7f06add98c81425929e5d190e2d8a57b14
@@ -64,9 +65,11 @@ test1
 
 ## 指定本地主机源目录和容器中的目标目录
 
-注意：Dockerfile 中不支持这种用法，这是因为 Dockerfile 是为了移植和分享用的。然而，不同操作系统的路径格式不一样，所以目前还不能支持。
+注意：Dockerfile 中不支持这种用法，这是因为 Dockerfile 是为了移植和分享用的。  
+然而，不同操作系统的路径格式不一样，所以目前还不能支持。
 
 ```bash
+
 [root@linux-node1 ~]# mkdir -p /data/docker-volume-nginx
 [root@linux-node1 ~]# docker run -d --name nginx-volume-test2 -v /data/docker-volume-nginx/:/data nginx
 6d2046d642d7651aec99c5cc88c52966a7f017a51a53561297d0040eecb63071
@@ -94,8 +97,9 @@ touch: cannot touch 'test3': Read-only file system
 ## 挂载文件
 
 ```bash
+
 [root@linux-node1 ~]# docker run --rm -it -v /root/.bash_history:/.bash_history nginx /bin/bash
-# --rm 会自动删除容器当退出容器时，常用于测试目的
+# --rm 当退出容器时会自动删除容器，常用于测试目的
 root@b8aa1ce69bbc:/# cat /.bash_history 
 ...文件内容省略...
 
@@ -107,6 +111,7 @@ root@b8aa1ce69bbc:/# cat /.bash_history
 数据卷容器，其实就是一个正常的容器，专门用来提供数据卷供其它容器挂载的。
 
 ```bash
+
 # 运行一个容器，引用之前创建的 nginx-volume-test2 容器中挂载的卷
 [root@linux-node1 ~]# docker run -it --name volume-test --volumes-from nginx-volume-test2 centos /bin/bash
 [root@fa89f37d06f0 /]# ls /data/
@@ -130,6 +135,7 @@ docker run --rm -it --volumes-from nfs-test centos /bin/bash
 # 在本地文件系统对应目录中可以看到刚才创建的测试文件
 [root@linux-node1 ~]# ls /data/nfs-data/
 test
+
 ```    
 
 # Ref
