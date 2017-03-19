@@ -11,11 +11,11 @@ duoshuo: true
 # 引言
 
 之前一直在 Windows 下使用 Xshell 远程登录服务器的，通过 SSH 密钥认证方式登录，然后使用了 HTTP 的代理。  
-代理配置是在 Xshell 里面配置的。可是今天，我需要在一台 Linux 服务器上配置 SSH 通过 HTTP 代理连接到另一台服务器，
+代理配置是在 Xshell 里面配置的。可是今天，我需要在一台 Linux 服务器上配置 SSH 通过 HTTP 代理连接到另一台服务器，  
 因为我要通过 SSH 协议访问公司内部的 GitLab。
 
 
-# 什么是Corkkscrew
+# 什么是 Corkkscrew
 
 > 
 Corkscrew is a tool for tunneling SSH through HTTP proxies.  
