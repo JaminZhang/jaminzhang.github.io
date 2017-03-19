@@ -13,7 +13,7 @@ Docker Registry 构建私有镜像仓库
 
 # Docker Registry 简介
 
-docker registry 是官方提供的工具，可以用于构建私有的镜像仓库。  
+Docker Registry 是官方提供的工具，可以用于构建私有的镜像仓库。  
 私有镜像仓库的好处有很多，官方列举了如下几点：
 
 * tightly control where your images are being stored 
@@ -35,16 +35,19 @@ docker registry 是官方提供的工具，可以用于构建私有的镜像仓�
 参考沃通[官网文档](http://www.wosign.com/Docdownload/Nginx%20SSL%E8%AF%81%E4%B9%A6%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97.pdf)部署 Nginx SSL 证书  
 
 ```bash
+
 # 将 SSL 证书放置在 /etc/nginx/ssl/ 下
 [root@linux-node1 ~]# ll /etc/nginx/ssl/
 total 12
 -rw-r--r-- 1 root root 6664 Sep 21 18:41 domain.crt
 -rw-r--r-- 1 root root 1674 Sep 21 18:41 domain.key
+
 ```    
 
 ## 1.3 生成基本认证用户名密码文件
 
 ```bash
+
 [root@linux-node1 ~]# yum install httpd-tools -y
 [root@linux-node1 ~]# htpasswd -c /etc/nginx/conf.d/nginx.htpasswd admin
 New password: # 密码为 admin
@@ -52,13 +55,15 @@ Re-type new password:
 Adding password for user admin
 [root@linux-node1 ~]# cat /etc/nginx/conf.d/nginx.htpasswd
 admin:$apr1$i0szKFN2$0aiDnahUbl7EA4HK7wxwz.
+
 ```    
 
 ## 1.4 添加 Nginx 配置文件
 
-添加如下的 nginx 配置文件（根据上面的相关配置指定好 SSL 证书/ 基本认证） ：
+添加如下的 nginx 配置文件（根据上面的相关配置指定好 SSL 证书/基本认证） ：
 
 ```bash
+
 [root@linux-node1 ~]# cat /etc/nginx/conf.d/registry.jaminzhang.me.conf 
 server {
   listen 443 ssl;
@@ -107,12 +112,14 @@ server {
     proxy_read_timeout                  900;
   }
 }
+
 ```    
 
 
 # 2 安装运行 Docker Registry
 
 ```bash
+
 # 运行 docker registry 容器，镜像存储目录为 /opt/data/registry
 [root@linux-node1 ~]# docker run -d --name registry \
 -p 5000:5000 \
@@ -129,6 +136,7 @@ bdd0ef575a65        registry:2          "/entrypoint.sh /etc/"   11 seconds ago 
 # 3.1 连通性验证
 
 ```bash
+
 [root@linux-node1 ~]# curl -i -k -v https://admin:admin@registry.jaminzhang.me/v2/
 * About to connect() to registry.jaminzhang.me port 443 (#0)			# 如果域名没在公网解析，需要在 /etc/hosts 中添加解析
 *   Trying 192.168.56.11...
@@ -170,19 +178,23 @@ Docker-Distribution-Api-Version: registry/2.0
 
 < 
 * Connection #0 to host registry.jaminzhang.me left intact
+
 ```    
 
 ## 3.2 身份验证
 
 ```bash
+
 [root@linux-node1 ~]# docker login -u admin -p admin -e "zhangjamin@163.com" registry.jaminzhang.me
 WARNING: login credentials saved in /root/.docker/config.json
 Login Succeeded
+
 ```    
 
 ## 3.3 上传、查看镜像
 
 ```bash
+
 [root@linux-node1 ~]# docker tag centos registry.jaminzhang.me/centos
 [root@linux-node1 ~]# docker push registry.jaminzhang.me/centos
 The push refers to a repository [registry.jaminzhang.me/centos]
@@ -225,7 +237,6 @@ latest: Pulling from registry.jaminzhang.me/centos
 Digest: sha256:2ae0d2c881c7123870114fb9cc7afabd1e31f9888dac8286884f6cf59373ed9b
 Status: Image is up to date for registry.jaminzhang.me/centos:latest
 
-
 ```    
 
 
@@ -233,19 +244,21 @@ Status: Image is up to date for registry.jaminzhang.me/centos:latest
 
 这次 Docker Registry 遇到了太多的问题，弄了几天了，网上一搜索，也是各种吐槽坑太多，现在应该好好总结一下。  
 首先第一个感想是首先要明白 Docker Registry 是什么，先按照官方文档来理解熟悉它的安装配置及使用。  
-这次思路太乱，Docker Registry 本身没有按照官方文档来安装配置一遍，好多模棱两可，然后再结合 Nginx 前端代理 SSL、基本认证，
-把问题弄得更复杂了。
+这次思路太乱，Docker Registry 本身没有按照官方文档来安装配置一遍，好多模棱两可，
+然后再结合 Nginx 前端代理 SSL、基本认证，把问题弄得更复杂了。
 
-**总结：学习一项具体技术方案时要严格按照官方文档（或其他一份较好的文档，不能看太多，不然会混乱）来安装搭建一次，不要加任何自定义自以为正确的处理，
-搭建成功后再进行自定义操作，然后可以再看看其他的文档怎么做。**
+**总结：学习一项具体技术方案时要严格按照官方文档（或其他一份较好的文档，不能看太多，不然会混乱）来安装搭建一次，
+不要加任何自定义自以为正确的处理，搭建成功后再进行自定义操作，然后可以再看看其他的文档怎么做。**
 
 ## 1. 本地测试 docker login 出现 Service Unavailable，是由于使用了 HTTP 代理
 
 ```bash
+
 [root@linux-node1 ~]# docker login https://registry.jaminzhang.me
 Error response from daemon: invalid registry endpoint https://registry.jaminzhang.me/v0/: unable to ping registry endpoint https://registry.jaminzhang.me/v0/
 v2 ping attempt failed with error: Get https://registry.jaminzhang.me/v2/: Service Unavailable
  v1 ping attempt failed with error: Get https://registry.jaminzhang.me/v1/_ping: Service Unavailable. If this private registry supports only HTTP or HTTPS with an unknown CA certificate, please add `--insecure-registry registry.jaminzhang.me` to the daemon's arguments. In the case of HTTPS, if you have access to the registry's CA certificate, no need for the flag; simply place the CA certificate at /etc/docker/certs.d/registry.jaminzhang.me/ca.crt
+
 ```     
  
 这个坑是由于之前功夫网原因，下载官方镜像太慢，添加了公司代理，需要删除然后重启 Docker。
@@ -253,7 +266,7 @@ v2 ping attempt failed with error: Get https://registry.jaminzhang.me/v2/: Servi
 ## 2. nginx 配置文件问题
 
 Nginx 很久没接触（生产直接使用私有 yum 源上的 nginx），修改配置文件后，没有监听 443 端口，排错花了些时间。  
-配置文件检查有语法错误，然后使用独立的配置文件时，yum 安装的 nginx 配置文件 nginx.conf 中默认没有 `include    conf.d/*.conf;`，需要额外添加。
+配置文件检查有语法错误，然后使用独立的配置文件时，yum 安装的 nginx 配置文件 nginx.conf 中默认没有 `include conf.d/*.conf;`，需要额外添加。
 
 ## 3. Docker login fails with v2.1.1 registry because auth fails and calls v1 endpoints
 
@@ -266,5 +279,5 @@ Nginx 很久没接触（生产直接使用私有 yum 源上的 nginx），修改
 [Deploying a registry server](https://github.com/docker/distribution/blob/master/docs/deploying.md)  
 [Authenticating proxy with nginx](https://docs.docker.com/registry/recipes/nginx/)
 [Docker Registry V2(distribution) & Proxy(nginx) 的搭建经历](http://unixman.blog.51cto.com/10163040/1707423)  
-[部署私有Docker Registry](http://tonybai.com/2016/02/26/deploy-a-private-docker-registry/)  
+[部署私有 Docker Registry](http://tonybai.com/2016/02/26/deploy-a-private-docker-registry/)  
 
