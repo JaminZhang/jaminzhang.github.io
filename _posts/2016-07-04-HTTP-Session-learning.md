@@ -9,8 +9,9 @@ duoshuo: true
 ---
 
 # 引言
-Wikipedia 上并没有专门关于 HTTP Session的条目，有一个比较大的条目 Session (computer science)，里面谈到了 HTTP Session，
-HTTP 条目中也简单说到了。
+
+Wikipedia 上并没有专门关于 HTTP Session 的条目，有一个比较大的条目 Session (computer science)，  
+里面谈到了 HTTP Session，HTTP 条目中也简单说到了。
 
 # Ref
 [Session (computer science)](https://en.wikipedia.org/wiki/Session_(computer_science))  
