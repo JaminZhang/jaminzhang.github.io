@@ -16,13 +16,14 @@ duoshuo: true
 
 根据架构来进行镜像分层设计：
 
-* 应用服务层
-* 运行环境层
-* 操作系统层
+* 应用服务层(Application Level)
+* 运行环境层(Runtime Level)
+* 操作系统层(OS Level)
 
 创建如下目录结构
 
 ```bash
+
 [root@linux-node1 docker]# tree
 .
 ├── app
@@ -36,6 +37,7 @@ duoshuo: true
     ├── centos
     ├── centos-ssh
     └── ubuntu
+
 ```    
 
 ## 实施构建
@@ -43,8 +45,9 @@ duoshuo: true
 ### 构建 centos 基础系统镜像
 
 ```bash
+
 # 下载阿里的 EPEL repo 文件
-[root@linux-node1 centos]# wget  http://mirrors.aliyun.com/repo/epel-7.repo
+[root@linux-node1 centos]# wget http://mirrors.aliyun.com/repo/epel-7.repo
 
 # 编写 centos 基础系统镜像构建 Dockerfile
 [root@linux-node1 centos]# vim Dockerfile 
@@ -99,6 +102,7 @@ jaminzhang/centos           base                b0cfe8ee533b        47 seconds a
 基于上面的 Dockerfile，只需要 yum 安装上 openssh 相关软件包，还有加上 SSH 服务的配置
 
 ```bash
+
 [root@linux-node1 centos-ssh]# cat Dockerfile 
 # Dockerfile for CentOS
 
@@ -124,6 +128,7 @@ RUN echo "root:jaminzhang" | chpasswd
 ### 构建 Python 运行环境镜像
 
 ```bash
+
 [root@linux-node1 docker]# cd runtime/python/
 
 # 编写 Dockerfile
@@ -180,6 +185,7 @@ jaminzhang/centos           base                b0cfe8ee533b        20 minutes a
 ### 构建带 SSH 服务 的 Python 运行环境镜像
 
 ```bash
+
 # 基于 centos-ssh 镜像构建
 [root@linux-node1 runtime]# cd python-ssh
 [root@linux-node1 python-ssh]# vim Dockerfile
@@ -236,6 +242,7 @@ jaminzhang/centos           base                b0cfe8ee533b        2 hours ago 
 ### 构建基于 python-ssh 镜像的业务镜像
 
 ```bash
+
 # 创建一个 shop-api 演示项目
 [root@linux-node1 app]# mkdir shop-api
 [root@linux-node1 app]# cd shop-api/
