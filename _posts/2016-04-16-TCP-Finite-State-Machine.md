@@ -51,28 +51,32 @@ TIME_WAIT 状态是主动关闭 TCP 连接的一方在收到对方发送的对�
 网上很多资料说 TIME_WAIT 状态的连接过多，会占用过多资源。其实这个占用的资源主要是占用了端口资源，CPU/内存的资源占用是比较小的。  
 
 在高并发短连接的 TCP 服务器上，当服务器处理完请求后立刻主动正常关闭连接。  
-这个场景下，会出现大量 socket 处于 TIME_WAIT 状态。如果客户端的并发量持续很高，此时部分客户端就会显示连接不上。
+这个场景下，会出现大量 socket 处于 TIME_WAIT 状态。  
+如果客户端的并发量持续很高，此时部分客户端就会显示连接不上。
 
 ### 尽量处理 TIME_WAIT 过多
 
 在 Linux 系统开启如下参数：
 
 ```bash
-net.ipv4.tcp_timestamps = 1		# 时间戳必须要开启，否则下面的 TIME_WAIT 重用和快速回收无效
+
+net.ipv4.tcp_timestamps = 1	# 时间戳必须要开启，否则下面的 TIME_WAIT 重用和快速回收无效
 net.ipv4.tcp_tw_reuse = 1		# 非对外节点打开（如 LB 后方的内网 Web/DB 等服务可以打开）
-net.ipv4.tcp_tw_recycle = 1		# 对外提供服务时（如 LB 不能打开），用户在 NAT 环境下不能打开（因为不同用户时间不同） 
+net.ipv4.tcp_tw_recycle = 1	# 对外提供服务时（如 LB ）不能打开，用户在 NAT 环境下不能打开（因为不同用户时间不同） 
+
 ```   
 
 注意开启以上 TIME_WAIT 重用和快速回收适用的情况。
 
 <pre>
 
-应该在连接的发起方使用，而不能在被连接方使用。
+tcp_tw_reuse 应该在连接的发起方使用，而不能在被连接方使用。
 
 举例来说：
-客户端向服务端发起 HTTP 请求，服务端响应后主动关闭连接，
-于是 TIME_WAIT 便留在了服务端，此类情况使用「tcp_tw_reuse」是无效的，
-因为服务端是被连接方，所以不存在复用连接一说。
+
+客户端向服务器端发起 HTTP 请求，服务端响应后主动关闭连接，
+于是 TIME_WAIT 便留在了服务端，此类情况使用「tcp_tw_reuse」是无效的，因为服务端是被连接方，所以不存在复用连接一说。
+
 让我们延伸一点来看，比如说服务端是 PHP，它查询另一个 MySQL 服务端，然后主动断开连接，于是 TIME_WAIT 就落在了 PHP 一侧，
 此类情况下使用「tcp_tw_reuse」是有效的，因为此时 PHP 相对于 MySQL 而言是客户端，它是连接的发起方，所以可以复用连接。
 
@@ -82,6 +86,6 @@ net.ipv4.tcp_tw_recycle = 1		# 对外提供服务时（如 LB 不能打开），
 # Ref
 [有限状态机](https://zh.wikipedia.org/wiki/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA)  
 [深入浅出理解有限状态机](http://www.jianshu.com/p/5eb45c64f3e3#	)  
-[再叙TIME_WAIT](http://huoding.com/2013/12/31/316)  
-[TCP/IP详解--TCP连接中TIME_WAIT状态过多](http://blog.csdn.net/yusiguyuan/article/details/21445883)  
+[再叙 TIME_WAIT](http://huoding.com/2013/12/31/316)  
+[TCP/I P详解--TCP 连接中 TIME_WAIT 状态过多](http://blog.csdn.net/yusiguyuan/article/details/21445883)  
 
