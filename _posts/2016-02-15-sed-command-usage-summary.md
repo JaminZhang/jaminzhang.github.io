@@ -1,7 +1,7 @@
 ---
 layout: post
-title: grep 命令用法总结
-description: "grep 命令用法总结"
+title: sed 命令用法总结
+description: "sed 命令用法总结"
 category: Linux
 avatarimg:
 tags: [sed]
