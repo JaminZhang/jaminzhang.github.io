@@ -1,61 +1,64 @@
 ---
 layout: post
-title: Linux系统性能监测分析相关资料学习
-description: "Linux系统性能监测分析相关资料学习"
+title: Linux 系统性能监测分析相关资料学习
+description: "Linux 系统性能监测分析相关资料学习"
 category: Linux
 avatarimg: 
-tags: [Linux, Perfermance]
+tags: [Linux, OS, Perfermance]
 duoshuo: true
 ---
 
-作为一个Linux运维工程师，必须得清楚地了解Linux系统当前的运行状况和性能。
+作为一个 Linux 运维工程师，必须得清楚地了解 Linux 系统当前的运行状况和性能。
 如何了解呢？Linux系统本身就提供了各种查看系统性能的命令，当然还有很多其他开源的监控工具和软件。
 如何系统化学习这些相关的系统命令和工具？有没有一个好的学习路线？
-最近几天看了一些关于Linux系统性能监测学习的资料，个人觉得值得学习的资料整理如下：
+最近几天看了一些关于 Linux 系统性能监测学习的资料，个人觉得值得学习的资料整理如下：
 
 # 学习资料
 
-## 1.1 Brendan Gregg大神的Linux Perfermance相关资料与演讲
-可以去其个人网站学习，非常全面和深入
+## 1.1 Brendan Gregg 大神的 Linux Perfermance 相关资料与演讲
+
+可以去其个人网站学习，非常全面和深入  
 http://www.brendangregg.com/linuxperf.html
 
-谁是Brendan Gregg？类UNIX系统的性能分析大神，相信很多人都看过下面这张Linux Performance Observability Tools的图，就是出自于他
-![](http://www.brendangregg.com/Perf/linux_observability_tools.png)
+谁是 Brendan Gregg？类 UNIX 系统的性能分析大神，相信很多人都看过下面这张 Linux Performance Observability Tools 的图，就是出自于他
+![linux_observability_tools](http://www.brendangregg.com/Perf/linux_observability_tools.png)
 
 
-## 1.2 《高性能Linux服务器构建实战》第10章 基于Linux服务器的性能分析与优化
+## 1.2 《高性能 Linux 服务器构建实战》第 10 章 基于 Linux 服务器的性能分析与优化
+
 > 10.1　系统性能分析的目的 / 248  
 10.1.1　找到系统性能的瓶颈 / 248  
 10.1.2　提供性能优化方案 / 248  
 10.1.3　使系统硬件和软件资源的使用达到平衡 / 249  
 10.2　分析系统性能涉及的人员 / 249  
-10.2.1　Linux系统管理人员 / 249  
+10.2.1　Linux 系统管理人员 / 249  
 10.2.2　系统架构设计人员 / 249  
 10.2.3　软件开发人员 / 250  
-10.3　影响Linux性能的各种因素 / 250  
+10.3　影响 Linux 性能的各种因素 / 250  
 10.3.1　系统硬件资源 / 250  
 10.3.2　操作系统相关资源 / 252  
 10.3.3　应用程序软件资源 / 253   
 10.4　系统性能分析标准和优化原则 / 253  
 10.5　几种典型应用对系统资源使用的特点 / 254  
-10.5.1　以静态内容为主的Web应用 / 254  
-10.5.2　以动态内容为主的Web应用 / 254  
+10.5.1　以静态内容为主的 Web 应用 / 254  
+10.5.2　以动态内容为主的 Web 应用 / 254  
 10.5.3　数据库应用 / 255  
 10.5.4　软件下载应用 / 255   
 10.5.5　流媒体服务应用 / 256   
-10.6　Linux下常见的性能分析工具 / 256  
-10.6.1　vmstat命令 / 256  
-10.6.2　sar命令 / 258  
-10.6.3　iostat命令 / 260  
-10.6.4　free命令 / 262  
-10.6.5　uptime命令 / 263  
-10.6.6　netstat命令 / 263   
-10.6.7　top命令 / 265  
-10.7　基于Web应用的性能分析及优化案例 / 268  
+10.6　Linux 下常见的性能分析工具 / 256  
+10.6.1　vmstat 命令 / 256  
+10.6.2　sar 命令 / 258  
+10.6.3　iostat 命令 / 260  
+10.6.4　free 命令 / 262  
+10.6.5　uptime 命令 / 263  
+10.6.6　netstat 命令 / 263   
+10.6.7　top 命令 / 265  
+10.7　基于 Web 应用的性能分析及优化案例 / 268  
 10.7.1　基于动态内容为主的网站优化案例 / 268  
 10.7.2　基于动态、静态内容结合的网站优化案例 / 270  
 
 ## 1.3 《网站运维技术与实践》第1章 服务器监测
+
 > 1.1 理解监测的意义 1  
 1.2 通过命令了解系统的性能概况 2  
 1.2.1 ifconfig 2  
