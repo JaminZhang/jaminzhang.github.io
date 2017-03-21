@@ -2,7 +2,7 @@
 layout: post
 title:  网卡 offload 简介
 description: " 网卡 offload 简介"
-category: Linux
+category: Hardware
 avatarimg:
 tags: [NIC, Offload, MTU, LSO, LRO, GSO, GRO, TSO, UFO]
 duoshuo: true
@@ -70,7 +70,7 @@ TCP Segmentation Offload 和 UDP fragmentation offload，分别对应 TCP 报文
 # Ref
 [网络虚拟化中的 offload 技术：LSO/LRO、GSO/GRO、TSO/UFO、VXLAN](http://blog.csdn.net/yeasy/article/details/19204639)  
 [理解 Linux 网络栈（3）：QEMU/KVM + VxLAN 环境下的 Segmentation Offloading 技术（发送端）](http://www.cnblogs.com/sammyliu/p/5228581.html)  
-[ openstack的neutron:禁用GRO:TSO、UFO、GSO、LRO、GRO和RSS介绍 2](http://stupidpig.blog.chinaunix.net/uid-7374279-id-4751789.html)  
-[网卡TSO/GSO/LRO/GRO简要介绍](http://seitran.com/2015/04/13/01-gso-gro-lro/)  
-[ GSO/TSO/GRO等对VirtIO虚机的网络性能影响分析(by quqi99)](http://blog.csdn.net/quqi99/article/details/51066800)  
-[使用LVS，关闭网卡LRO/GRO功能](http://www.bo56.com/%E4%BD%BF%E7%94%A8lvs%EF%BC%8C%E5%85%B3%E9%97%AD%E7%BD%91%E5%8D%A1lrogro%E5%8A%9F%E8%83%BD/)　
+[ OpenStack 的 Neutron:禁用 GRO:TSO、UFO、GSO、LRO、GRO 和 RSS介绍 2](http://stupidpig.blog.chinaunix.net/uid-7374279-id-4751789.html)  
+[网卡 TSO/GSO/LRO/GRO 简要介绍](http://seitran.com/2015/04/13/01-gso-gro-lro/)  
+[ GSO/TSO/GRO 等对 VirtIO 虚机的网络性能影响分析(by quqi99)](http://blog.csdn.net/quqi99/article/details/51066800)  
+[使用 LVS，关闭网卡 LRO/GRO 功能](http://www.bo56.com/%E4%BD%BF%E7%94%A8lvs%EF%BC%8C%E5%85%B3%E9%97%AD%E7%BD%91%E5%8D%A1lrogro%E5%8A%9F%E8%83%BD/)　
