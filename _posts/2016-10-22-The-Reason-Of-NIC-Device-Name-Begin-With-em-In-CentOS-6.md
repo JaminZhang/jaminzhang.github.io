@@ -2,7 +2,7 @@
 layout: post
 title:  CentOS 6 下网卡名称以 em 开头原因
 description: "CentOS 6 下网卡名称以 em 开头原因"
-category: CentOS
+category: Linux
 avatarimg:
 tags: [Linux, CentOS, NIC, biosdevname, Dell]
 duoshuo: true
