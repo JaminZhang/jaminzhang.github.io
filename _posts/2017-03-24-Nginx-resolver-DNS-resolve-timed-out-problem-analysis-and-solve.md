@@ -20,7 +20,7 @@ Nginx resolver DNS 解析超时问题分析及解决
 
 # 问题原因分析及解决过程
 
-1. 没有合服脚本，是没有从对应服务器上下载下来，查看任务日志和下载服务器的日志，提示 HTTP 403 错误。
+1.没有合服脚本，是没有从对应服务器上下载下来，查看任务日志和下载服务器的日志，提示 HTTP 403 错误。
 
 ```bash
 
@@ -38,7 +38,7 @@ Nginx resolver DNS 解析超时问题分析及解决
 
 ```    
 
-2. 根据 Nginx Error Log 日志判断 Nginx DNS 解析 cmdb.xxxx.cn 超时
+2.根据 Nginx Error Log 日志判断 Nginx DNS 解析 cmdb.xxxx.cn 超时
 
 我当时第一反应是：既然是超时，先尝试调大超时时间看下。Nginx DNS 解析超时参数为 resolver_timeout。
 
@@ -58,7 +58,7 @@ resolver_timeout 5s;
 重新加载 Nginx，重新下载测试，还是报 `cmdb.xxxx.cn could not be resolved (110: Operation timed out)` 错误。
 那这样应该不是 DNS 超时时间的设置问题？其实一开始我就想更换一下 DNS 服务器看下。
 
-3. 更换 Nginx resolver DNS 服务器
+3.更换 Nginx resolver DNS 服务器
 
 Nginx 默认配置的 resolver DNS 服务器是 223.5.5.5，阿里的公共 DNS 服务器。如下：
 
