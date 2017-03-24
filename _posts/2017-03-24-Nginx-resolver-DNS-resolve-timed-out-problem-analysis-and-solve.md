@@ -67,10 +67,10 @@ Nginx 默认配置的 resolver DNS 服务器是 223.5.5.5，阿里的公共 DNS 
         location = /token {
             resolver 223.5.5.5;
             internal; proxy_pass http://cmdb.xxxx.cn:8334/token/$arg_query;
-        }                                    xxxx
-                                             xxxx
-        location = /mcode {                  xxxx
-            resolver 223.5.5.5;              xxxx
+        }                                    
+                                             
+        location = /mcode {                  
+            resolver 223.5.5.5;              
             internal; proxy_pass http://cmdb.xxxx.cn:8334/mcode/$arg_query;
         }
 
