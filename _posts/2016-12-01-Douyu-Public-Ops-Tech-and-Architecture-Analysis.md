@@ -282,7 +282,7 @@ HTTPS 会带来更多的网络握手和消耗，如何提升访问性能，如�
 
 
 # Ref  
-
+[斗鱼大数据的玩法](http://mp.weixin.qq.com/s?__biz=MzIwMTQwNTA3Nw==&mid=2650502253&idx=1&sn=a6a5b4c22dcc85bc17ce6fdbd9b13ec9&chksm=8ee1b397b9963a81b342fd1c403d34eb85d32b5c60879de6c04096abaa050cf0a8e1673073f3&mpshare=1&scene=23&srcid=0324G9tdqxPjer5qx53FmVTx#rd)  
 [Alexa douyu.com 排名信息](http://www.alexa.com/siteinfo/douyu.com)  
 [用户在斗鱼看直播时，斗鱼在看什么](http://www.thegitc.com/ppt2016bj/03%E8%BF%90%E7%BB%B4%E4%B8%93%E5%9C%BA_%E5%90%B4%E7%91%9E%E8%AF%9A_%E6%96%97%E9%B1%BC.pdf)  
 [爆炸式增长的斗鱼架构平台的演进](http://www.top100summit.com/think/12187)  
