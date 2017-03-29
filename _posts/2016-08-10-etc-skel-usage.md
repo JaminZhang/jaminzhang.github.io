@@ -12,16 +12,17 @@ duoshuo: true
 
 前 2 天进行自动化部署时，使用 www 用户，切换到 www 用户后，Shell 终端提示符显示 `-bash-4.2#`  
 这是 Linux 基础知识，这是 bash 环境变量丢失的原因，因为当时创建 www 用户并没有创建家目录。  
-家目录下的相关配置文件和 /etc/skel 有关，我们重新学习一下。
+家目录下的相关配置文件和`/etc/skel`有关，我们重新学习一下。
 
 # /etc/skel 目录作用
 
-/etc/skel 包含的文件和目录会被自动复制到一个新用户的家目录（当使用 useradd 程序创建用户时）。  
-/etc/skel 允许系统管理员给所有的新用户创建一个默认的家目录，这样所有的新用户都有一样的初始化配置或环境。  
+`/etc/skel`包含的文件和目录会被自动复制到一个新用户的家目录（当使用 useradd 程序创建用户时）。  
+`/etc/skel`允许系统管理员给所有的新用户创建一个默认的家目录，这样所有的新用户都有一样的初始化配置或环境。  
 
-# “-bash-4.2#” 显示正常的终端提示符处理方法
+# `-bash-4.2#` 显示不正常的终端提示符处理方法
 
 ```bash
+
 # 1. 查看 /etc/skel 相关文件
 
 [root@linux-node1 ~]# ll /etc/skel/ -a
@@ -49,4 +50,4 @@ drwxr-xr-x. 90 root root 8192 Aug  9 16:12 ..
 # Ref
 [The /etc/skel Directory](http://www.linfo.org/etc_skel.html)  
 [Using /etc/skel](http://www.linuxhowtos.org/Tips%20and%20Tricks/using_skel.htm)  
-[linux 命令终端提示符显示-bash-4.1#解决方法](http://blog.csdn.net/zouqingfang/article/details/13768661)  
+[Linux 命令终端提示符显示 -bash-4.1# 解决方法](http://blog.csdn.net/zouqingfang/article/details/13768661)  
