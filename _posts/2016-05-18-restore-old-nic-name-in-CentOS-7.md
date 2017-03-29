@@ -43,7 +43,8 @@ And what if I want the old naming back?
 These are the necessary steps:  
 1.Add "net.ifnames=0" and "biosdevname=0" as kernel arguments to grub  
 2.In '/etc/sysconfig/network-scripts/' Change your configured NIC config file to 'ifcfg-ethX'  
-3.If you have multiple interfaces and want to control naming of each device rather than letting the kernel do in its own way, 
+3.If you have multiple interfaces and want to control naming of each device 
+rather than letting the kernel do in its own way, 
 /etc/udev/rules.d/60-net.rules seems necessary to override /usr/lib/udev/rules.d/60-net.rules.
 
 </pre>
