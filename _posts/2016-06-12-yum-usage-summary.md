@@ -4,7 +4,7 @@ title: yum 用法总结
 description: "yum 用法总结"
 category: Linux
 avatarimg: 
-tags: [Linux, yum]
+tags: [Linux, Yum]
 duoshuo: true
 ---
 
