@@ -4,12 +4,13 @@ title: CentOS Bash 命令补全增强软件包 bash-completion
 description: "CentOS Bash 命令补全增强软件包 bash-completion"
 category: Linux
 avatarimg: 
-tags: [CentOS, Bash]
+tags: [Linux, CentOS, Bash]
 duoshuo: true
 ---
 
 
 # 引言
+
 之前安装的 CentOS 7 是最小化安装，在使用 systemctl 命令进行服务的管理时，经常手动输入相关服务名。  
 如果对一个服务名称不熟悉，这样可以迫使我们记住它，但如果对一个服务名已经很熟悉了，再手动输入就比较浪费时间了。  
 这时我们可以安装使用 Bash 命令补全增强软件包 bash-completion，这个包支持对 systemctl 命令服务名称的补全。
@@ -41,6 +42,7 @@ Description : bash-completion is a collection of shell functions that take advan
 yum install bash-completion 
 
 # 安装完成后，退出 bash，重新登录即可			
+
 ```    
 
 # Ref
