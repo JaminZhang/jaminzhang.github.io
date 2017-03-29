@@ -4,7 +4,7 @@ title: grep 命令用法总结
 description: "grep 命令用法总结"
 category: Linux
 avatarimg:
-tags: [grep, sed]
+tags: [Linux, grep, sed]
 duoshuo: true
 ---
 
