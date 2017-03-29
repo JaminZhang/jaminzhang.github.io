@@ -75,7 +75,8 @@ TIME 是累积的 CPU 时间（user+system），显示格式通常是"MMM:SS"。
 
 -e     Select all processes.  Identical to -A.
 
--f     Do full-format listing. This option can be combined with many other UNIX-style options to add additional columns.  
+-f     Do full-format listing. 
+This option can be combined with many other UNIX-style options to add additional columns.  
 It also causes the command arguments to be printed.  
 When used with -L, the NLWP (number of threads) and LWP (thread ID) columns will be added.  
 See the c option, the format keyword args, and the format keyword comm.
