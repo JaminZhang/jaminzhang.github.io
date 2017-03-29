@@ -22,8 +22,9 @@ Linux 进程后台运行的方法，之前曾介绍过几种，screen 也只稍�
 
 以下为一种常见的通过 screen 使程序后台运行用法的场景：
 
->
+```bash
 SCREENRC=/dev/null SYSSCREENRC=/dev/null screen -dmS murder_tracker python murder_tracker.py && sleep 0.2
+```    
 
 首先 screen 被调用时，会执行初始化命令（默认来自于用户家目录下的 .screenrc 文件和`/usr/local/etc/screenrc` ）
 这些默认配置可以被重写，对于全局的 screenrc 文件，查找全局系统环境变量 SYSSCREENRC 的值。
