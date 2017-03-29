@@ -4,17 +4,19 @@ title: CentOS 常见 YUM 源简介
 description: "CentOS 常见 YUM 源简介"
 category: Linux
 avatarimg:
-tags: [CentOS, YUM, EPEL, REMI, RPMForge]
+tags: [Linux, CentOS, YUM, EPEL, REMI, RPMForge]
 duoshuo: true
 ---
 
 # 引言
+
 我们生产一般都是使用 yum 安装各种相关软件包，但自带的源中的软件一般有很多并不是最新的稳定版，  
 还有一些软件包并没有。这时我们会使用一些第三方质量较高的软件源，比如 EPEL/REMI 等等。
 
 # EPEL 源
 
 <pre>
+
 What is Extra Packages for Enterprise Linux (or EPEL)?
 
 Extra Packages for Enterprise Linux (or EPEL) is a Fedora Special Interest Group that creates, maintains, 
@@ -28,6 +30,7 @@ mirror manager and more.
 EPEL, 即 Extra Packages for Enterprise Linux,是由 Fedora 社区创建维护，
 为 RHEL 及衍生发行版如 CentOS、Scientific Linux 等提供高质量软件包的项目。
 EPEL 中含有大量的软件，对官方标准源是一个很好的补充。
+
 </pre>
 
 国内用户推荐添加使用[阿里云的 EPEL 源](http://mirrors.aliyun.com/epel/)。
@@ -52,13 +55,15 @@ REMI 源大家或许很少听说，不过 REMI 源 GoFace 强烈推荐，尤其�
 # RPMForge 源
 
 <pre>
+
 RPMForge 是 CentOS 系统下的软件仓库，拥有 4000 多种的软件包，被 CentOS 社区认为是最安全也是最稳定的一个软件仓库。
+
 </pre>
 
 [RPMForge 官方网站](http://repoforge.org/)  
 
 # Ref
-[RHEL/CentOS/Fedora各种源(EPEL、Remi、RPMForge、RPMFusion)配置](http://www.cnblogs.com/mawanglin2008/p/3532247.html)  
-[RHEL/CentOS/OracleLinux 7.x使用EPEL和REMI第三方yum源](http://www.ha97.com/5649.html)  
+[RHEL/CentOS/Fedora 各种源(EPEL、Remi、RPMForge、RPMFusion)配置](http://www.cnblogs.com/mawanglin2008/p/3532247.html)  
+[RHEL/CentOS/OracleLinux 7.x使用 EPEL 和 REMI 第三方 yum 源](http://www.ha97.com/5649.html)  
 [EPEL wiki](http://fedoraproject.org/wiki/EPEL)  
 [Remi's RPM repository](http://rpms.famillecollet.com/)  
