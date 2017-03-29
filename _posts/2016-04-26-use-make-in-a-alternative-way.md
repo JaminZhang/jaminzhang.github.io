@@ -79,7 +79,7 @@ foo.c 和 defs.h 是目标所依赖的源文件，而只有一个命令cc -c -g 
 </pre>
 
 # Ref
-[《时间管理：给系统管理员》 第十三章 自动化 make 简介 P183] (http://item.jd.com/10042434.html)  
+[《时间管理：给系统管理员》 第十三章 自动化 make 简介 P183](http://item.jd.com/10042434.html)  
 [跟我一起写 Makefile (PDF 重制版)](http://seisman.info/how-to-write-makefile.html)  
 
 
