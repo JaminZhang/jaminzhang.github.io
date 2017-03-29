@@ -4,27 +4,34 @@ title: Linux pmap
 description: "Linux pmap"
 category: Linux
 avatarimg:
-tags: [pmap]
+tags: [Linux, pmap]
 duoshuo: true
 ---
 
 # 引言
-前一篇提到的扩展文章中有使用pmap的例子。
+
+前一篇提到的扩展文章中有使用 pmap 的例子。
 这个命令我之前没有使用过，所以现在来学习下。  
 
-# pmap是什么
+# pmap 是什么
 man pmap，描述很简单：
-> 
-The pmap command reports the memory map of a process or processes.
+`The pmap command reports the memory map of a process or processes.`
 
-> 
-Pmap 提供了进程的内存映射，pmap命令用于显示一个或多个进程的内存状态。其报告进程的地址空间和内存状态信息。Pmap实际上是一个Sun OS上的命令，linux仅支持其有限的功能。但是它还是对查看完整的进程地址空间很有帮助。我们需要PID或者运行的进程的唯一进程ID来查看进程内存状态，我们可以通过/proc或者常规命令比如top或ps得到它。
+<pre>
 
-# pmap使用
+pmap 提供了进程的内存映射，pmap 命令用于显示一个或多个进程的内存状态。
+其报告进程的地址空间和内存状态信息。pmap 实际上是一个 Sun OS 上的命令，Linux 仅支持其有限的功能。
+但是它还是对查看完整的进程地址空间很有帮助。
+我们需要 PID 或者运行的进程的唯一进程 ID 来查看进程内存状态，我们可以通过 /proc 或者常规命令比如 top 或 ps 得到它。
+
+</pre>
+
+# pmap 使用
 
 ## 扩展模式使用
 
 ```bash
+
 [root@iZ25p102vo3Z ~]# pmap -x 9173
 9173:   /usr/bin/python /usr/bin/ssserver -c /etc/shadowsocks.json -d start
 Address           Kbytes     RSS   Dirty Mode  Mapping
@@ -55,9 +62,10 @@ Address           Kbytes     RSS   Dirty Mode  Mapping
 
 ```    
 
-以上输出部分截取，这里的Address，Kbyte，Dirty，RSS，mode还有mapping的说明如下：
+以上输出部分截取，这里的 Address，Kbyte，Dirty，RSS，mode 还有 mapping 的说明如下：
 
 ```bash
+
 Address: 内存开始地址
 Kbytes: 占用内存的字节数（KB）
 RSS: 保留内存的字节数（KB）
@@ -66,7 +74,8 @@ Mode: 内存的权限：read、write、execute、shared、private (写时复制)
 Mapping: 占用内存的文件、或[anon]（分配的内存）、或[stack]（堆栈）
 Offset: 文件偏移
 Device: 设备名 (major:minor)
+
 ```    
 
 # Ref
-[Linux Pmap 命令 - 查看进程用了多少内存](https://linux.cn/article-2217-1.html)  
+[Linux pmap 命令 - 查看进程用了多少内存](https://linux.cn/article-2217-1.html)  
