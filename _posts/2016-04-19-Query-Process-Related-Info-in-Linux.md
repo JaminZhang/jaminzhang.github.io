@@ -4,7 +4,7 @@ title: Linux 查看进程相关信息
 description: "Linux 查看进程相关信息"
 category: Linux
 avatarimg:
-tags: [Linux, Python]
+tags: [Linux, Process, Python]
 duoshuo: true
 ---
 
@@ -15,16 +15,16 @@ Linux 查看进程相关信息
 
 研发需要知道某 Python 程序脚本所在目录，这研发，还好他不是后端研发。  
 不过当我们使用 ps 或 top 命令查看时，并不能查看到 Python 程序脚本的绝对路径。  
-我模糊地记得可以在 /proc/${PID} 下可以查到相关信息，但是很久没用过，忘记了，  
+我模糊地记得可以在`/proc/${PID}`下可以查到相关信息，但是很久没用过，忘记了，  
 现在我来重新学习记录下。  
 
 # Linux 查看进程的详细信息
 
-Linux 在启动一个进程时，系统会在 /proc 下创建一个以 PID 命名的文件夹，在该文件夹下会有我们的进程的信息，
-其中包括一个名为 exe 的文件即记录了绝对路径，通过 ll 或 ls –l 命令即可查看。
+Linux 在启动一个进程时，系统会在`/proc`下创建一个以 PID 命名的文件夹，在该文件夹下会有我们的进程的信息，
+其中包括一个名为 exe 的文件即记录了绝对路径，通过 ll 或 `ls –l`命令即可查看。
 
 * cwd 符号链接的是进程运行目录；
-* exe 符号连接就是执行程序的绝对路径；
+* exe 符号链接就是执行程序的绝对路径；
 * cmdline 就是程序运行时输入的命令行命令；
 * environ 记录了进程运行时的环境变量；
 * fd 目录下是进程打开或使用的文件的符号连接。
@@ -32,6 +32,7 @@ Linux 在启动一个进程时，系统会在 /proc 下创建一个以 PID 命�
 如下演示：
 
 ```bash
+
 [root@xxxx_log ~]# ps aux | grep log_daemon
 root     24664  1.0  0.0 280804 28432 ?        S    Dec08  14:18 python log_daemon.py start
 root     32493  0.0  0.0 103256   844 pts/0    S+   17:12   0:00 grep log_daemon
