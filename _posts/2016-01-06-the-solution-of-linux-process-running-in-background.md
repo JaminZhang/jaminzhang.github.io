@@ -76,10 +76,12 @@ screen 是在大批量操作时不二的选择了。
 <pre>
 
 场景：  
-我们已经知道了如何让进程免受 HUP 信号的影响，但是如果有大量这种命令需要在稳定的后台里运行，如何避免对每条命令都做这样的操作呢？  
+我们已经知道了如何让进程免受 HUP 信号的影响，
+但是如果有大量这种命令需要在稳定的后台里运行，如何避免对每条命令都做这样的操作呢？  
 
 解决方法：  
-此时最方便的方法就是 screen 了。简单的说，screen 提供了 ANSI/VT100 的终端模拟器，使它能够在一个真实终端下运行多个全屏的伪终端。
+此时最方便的方法就是 screen 了。
+简单的说，screen 提供了 ANSI/VT100 的终端模拟器，使它能够在一个真实终端下运行多个全屏的伪终端。
 screen 的参数很多，具有很强大的功能。  
 
 </pre>
@@ -100,4 +102,4 @@ nohup/setsid 无疑是临时需要时最方便的方法，disown 能帮助我们
 
 # Ref
 [Linux 技巧：让进程在后台可靠运行的几种方法](http://www.ibm.com/developerworks/cn/linux/l-cn-nohup/)  
-[Linux Shell的 & 、&& 、 ||](http://my.oschina.net/hanzhankang/blog/202754)  
+[Linux Shell 的 & 、&& 、 ||](http://my.oschina.net/hanzhankang/blog/202754)  
