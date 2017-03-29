@@ -17,12 +17,15 @@ duoshuo: true
 
 # 什么是 Corkkscrew
 
-> 
+<pre>
+
 Corkscrew is a tool for tunneling SSH through HTTP proxies.  
 Corkscrew has been tested against several proxies requiring HTTP authentication.  
 Several flaws exist as only basic authentication is currently supported.   
 Digest authentication may be supported in the future.  
 NTLM authentication will most likely never be supported. 
+
+</pre>
 
 Corkscrew 是一个用于通过 HTTP 代理访问 SSH 的工具。它已经在一些需要 HTTP 认证的代理上测试过。  
 但现在只支持 basic 认证。Digest 认证可能在将来支持。NTLM 认证最可能永远不支持。
