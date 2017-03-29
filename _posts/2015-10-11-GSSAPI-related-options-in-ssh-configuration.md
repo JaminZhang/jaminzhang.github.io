@@ -36,5 +36,5 @@ GSSAPI 主要是基于 Kerberos 的，因此要解决这个问题也就变成要
 
 # Ref  
 [sshd_config 中文手册](http://www.jinbuguo.com/openssh/sshd_config.html)  
-[SSH 远程登录 Linux 非常慢的解决方法](http://blog.useasp.net/archive/2014/05/19/solved-the-problem-of-ssh-client-such-as-putty-remote-login-linux-very-slowly.aspx)   
+[SSH 远程登录 Linux 非常慢的解决方法](http://blog.useasp.net/archive/2014/05/19/solved-the-problem-of-ssh-client-such-as-putty-remote-login-linux-very-slowly.aspx)  
 [SSH 登录慢的问题](http://m.oschina.net/blog/137432)
