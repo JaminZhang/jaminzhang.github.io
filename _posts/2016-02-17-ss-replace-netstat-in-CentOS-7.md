@@ -16,7 +16,7 @@ duoshuo: true
 
 原因是什么？简单来说，在有大量 sockets 时，ss 更加高效快速。
 下面这篇文章对此进行了详细说明。我这就不再多说了。  
-[《篡权的ss》](http://roclinux.cn/?p=2420)  
+[《篡权的 ss》](http://roclinux.cn/?p=2420)  
 
 # ss 输出格式有缺憾
 
@@ -24,6 +24,7 @@ duoshuo: true
 我使用 netstat 最常用的选项是 `netstat -lntp`，转换到 ss 时，几个选项都还继承了 netstat 的意义。
 
 ```bash
+
 [root@linux-node2 ~]# ss -ltnp
 State      Recv-Q Send-Q                                                            Local Address:Port                                                                           Peer Address:Port              
 LISTEN     0      50                                                                            *:3306                                                                                      *:*                   users:(("mysqld",pid=3310,fd=14))
@@ -45,17 +46,19 @@ tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      
 tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      2048/master         
 tcp        0      0 0.0.0.0:5601            0.0.0.0:*               LISTEN      32500/node          
 tcp6       0      0 ::1:25                  :::*                    LISTEN      2048/master  
+
 ```    
 
 看了上面 ss 和 netstat 的输出结果（这里显示得很长，实际在日常使用的终端连接软件上，一般最后一列会换行），  
 真让我不太想用 ss 了，有没有办法格式化下输出呢？  
-不止我一人这样想，[ss - linux socket statistics utility output format](http://unix.stackexchange.com/questions/252744/ss-linux-socket-statistics-utility-output-format) 里面的这位和我一样的想法。回答里面具体说了 ss 输出格式不太美观的原因，也推荐了几种方法稍微格式化一下输出。  
+不止我一人这样想，[ss - linux socket statistics utility output format](http://unix.stackexchange.com/questions/252744/ss-linux-socket-statistics-utility-output-format) 里面的这位和我一样的想法。  
+回答里面具体说了 ss 输出格式不太美观的原因，也推荐了几种方法稍微格式化一下输出。  
 如 `ss -lntp | cat`。  
 
 现在我还是 2 个命令都使用，因为还是看不太惯 ss 的程序信息列输出。
 
 
 # Ref
-[《篡权的ss》](http://roclinux.cn/?p=2420)  
+[《篡权的 ss》](http://roclinux.cn/?p=2420)  
 [ss - linux socket statistics utility output format](http://unix.stackexchange.com/questions/252744/ss-linux-socket-statistics-utility-output-format) 
 [Commands not found: netstat, nmap on CentOS 7](http://unix.stackexchange.com/questions/146190/commands-not-found-netstat-nmap-on-centos-7)  
