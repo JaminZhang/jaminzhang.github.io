@@ -8,10 +8,12 @@ tags: [Linux, OS, Perfermance]
 duoshuo: true
 ---
 
-作为一个 Linux 运维工程师，必须得清楚地了解 Linux 系统当前的运行状况和性能。
-如何了解呢？Linux系统本身就提供了各种查看系统性能的命令，当然还有很多其他开源的监控工具和软件。
+# 引言
+
+作为一个 Linux 运维工程师，必须得清楚地了解 Linux 系统当前的运行状况和性能。如何了解呢？  
+Linux 系统本身就提供了各种查看系统性能的命令，当然还有很多其他开源的监控工具和软件。  
 如何系统化学习这些相关的系统命令和工具？有没有一个好的学习路线？
-最近几天看了一些关于 Linux 系统性能监测学习的资料，个人觉得值得学习的资料整理如下：
+最近几天看了一些关于 Linux 系统性能监测学习的资料，个人觉得值得学习的资料整理如下。
 
 # 学习资料
 
@@ -23,6 +25,14 @@ http://www.brendangregg.com/linuxperf.html
 谁是 Brendan Gregg？类 UNIX 系统的性能分析大神，相信很多人都看过下面这张 Linux Performance Observability Tools 的图，就是出自于他
 ![linux_observability_tools](http://www.brendangregg.com/Perf/linux_observability_tools.png)
 
+下面将上图的相关命令及工具进行如下分类（不定期总结）：
+
+**OS Scheduler 与 CPU 相关命令及工具**  
+
+* top - display Linux tasks.
+* ps - report a snapshot of the current processes.
+* mpstat - Report processors related statistics.
+* 
 
 ## 1.2 《高性能 Linux 服务器构建实战》第 10 章 基于 Linux 服务器的性能分析与优化
 
