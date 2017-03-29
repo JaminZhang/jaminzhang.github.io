@@ -4,16 +4,18 @@ title: rpm 命令用法总结
 description: "rpm 命令用法总结"
 category: Linux
 avatarimg: 
-tags: [rpm]
+tags: [Linux, rpm]
 duoshuo: true
 ---
 
 # 引言
+
 继之前一篇写到要总结在工作学习中常用的 yum 命令的文章，这次来写写 rpm 命令的常见用法总结（不定期更新到此篇中）。  
 
 # 1 对已安装软件包信息的查询
 
 ```bash
+
 # 查询所有已安装的软件包      
        -a, --all
               Query all installed packages.
@@ -25,11 +27,12 @@ duoshuo: true
               List files in package.
 # 显示软件包信息              
        -i, --info
-              Display package information, including name, version, and description.  This uses the --queryformat if one was specified.
-# 只列出配置文件（和-l起使用）
+              Display package information, including name, version, and description.  
+              This uses the --queryformat if one was specified.
+# 只列出配置文件（和 -l 起使用）
        -c, --configfiles
               List only configuration files (implies -l).
-# 只列出文档文件（和-l起使用）
+# 只列出文档文件（和 -l 起使用）
        -d, --docfiles
               List only documentation files (implies -l).     
 # 列出该软件包依赖的包和文件
@@ -41,6 +44,7 @@ duoshuo: true
 实例说明：
 
 ```bash
+
 [root@linux-node1 ~]# rpm -qf /etc/zabbix/zabbix_java_gateway.conf
 zabbix-java-gateway-3.0.3-1.el7.x86_64
 [root@linux-node1 ~]# rpm -ql zabbix-java-gateway 
@@ -113,4 +117,4 @@ rpmlib(PayloadIsXz) <= 5.2-1
 
 # Ref
 man yum  
-[CentOS7中rpm,yum软件安装命令](http://www.centoscn.com/CentOS/help/2015/0827/6073.html)  
+[CentOS 7 中 rpm,yum 软件安装命令](http://www.centoscn.com/CentOS/help/2015/0827/6073.html)  
