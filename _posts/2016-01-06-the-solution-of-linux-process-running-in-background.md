@@ -4,7 +4,7 @@ title: Linux 进程后台运行实现方法
 description: "Linux 进程后台运行实现方法"
 category: Linux
 avatarimg:
-tags: [Linux, Process, Background]
+tags: [Linux, Process, Background, nohup, screen, Shell]
 duoshuo: true
 ---
 
