@@ -51,6 +51,6 @@ LC_ALL=
 
 
 # Ref
-[10.2.4 影響顯示結果的語系變數 (locale)](http://linux.vbird.org/linux_basic/0320bash.php#variable_locale)
-[在 Linux 和 UNIX 系统中更改您的语言环境](http://www.ibm.com/support/knowledgecenter/zh/SSMKHH_9.0.0/com.ibm.etools.mft.doc/ae19494_.htm)
-[Linux下 LC_ALL=C 的含义](http://blog.csdn.net/ict2014/article/details/23946471)  
+[10.2.4 影響顯示結果的語系變數 (locale)](http://linux.vbird.org/linux_basic/0320bash.php#variable_locale)  
+[在 Linux 和 UNIX 系统中更改您的语言环境](http://www.ibm.com/support/knowledgecenter/zh/SSMKHH_9.0.0/com.ibm.etools.mft.doc/ae19494_.htm)  
+[Linux下 LC_ALL=C 的含义](http://blog.csdn.net/ict2014/article/details/23946471)    
