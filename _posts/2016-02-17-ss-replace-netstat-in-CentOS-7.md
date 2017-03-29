@@ -60,5 +60,5 @@ tcp6       0      0 ::1:25                  :::*                    LISTEN      
 
 # Ref
 [《篡权的 ss》](http://roclinux.cn/?p=2420)  
-[ss - linux socket statistics utility output format](http://unix.stackexchange.com/questions/252744/ss-linux-socket-statistics-utility-output-format) 
+[ss - linux socket statistics utility output format](http://unix.stackexchange.com/questions/252744/ss-linux-socket-statistics-utility-output-format)  
 [Commands not found: netstat, nmap on CentOS 7](http://unix.stackexchange.com/questions/146190/commands-not-found-netstat-nmap-on-centos-7)  
