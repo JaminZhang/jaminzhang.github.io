@@ -15,7 +15,7 @@ duoshuo: true
 如果要更换备份机的 IP，那么其他服务器上的 rsyncd.conf 配置文件就需要修改 hosts allow 的 IP 参数，批量修改和重启还是很简单的。  
 但当时，我多想了一下，IP 标识备份机还是比较繁琐，hosts allow 是否可以指定主机名或域名？这样可以避免备份机 IP 改变的情况。
 
-# rsync 的 hosts allow参数
+# rsync 的 `hosts allow` 参数
 
 通过 man 可得知如下 hosts allow 支持的形式：
 
