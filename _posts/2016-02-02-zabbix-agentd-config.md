@@ -33,7 +33,7 @@ Timeout=30
 
 <pre>
 
-Server	no			List of comma delimited IP addresses (or hostnames) of Zabbix servers. 
+Server	no	List of comma delimited IP addresses (or hostnames) of Zabbix servers. 
 Spaces are allowed since the Zabbix 2.2 version.
 Incoming connections will be accepted only from the hosts listed here.
 Note that hostnames must resolve hostname→IP address and IP address→hostname.
@@ -43,7 +43,7 @@ StartAgents	no	0-100	3	Number of pre-forked instances of zabbix_agentd that proc
 If set to 0, disables passive checks and the agent will not listen on any TCP port.
 The upper limit used to be 16 before version 1.8.5.
 
-Include	no			You may include individual files or all files in a directory in the configuration file.
+Include	no	You may include individual files or all files in a directory in the configuration file.
 To only include relevant files in the specified directory, 
 the asterisk wildcard character is supported for pattern matching. 
 For example: /absolute/path/to/config/files/*.conf. Pattern matching is supported since Zabbix 2.4.0.
