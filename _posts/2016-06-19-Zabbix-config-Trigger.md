@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Zabbbix Trigger 配置实例
+title: Zabbix Trigger 配置实例
 description: "Zabbbix Trigger 配置实例"
 category: Monitoring
 avatarimg: 
@@ -9,10 +9,11 @@ duoshuo: true
 ---
 
 # Zabbbix 告警的配置步骤
-## 1 设置 Trigger
-## 2 配置用户
-## 3 配置告警介质
-## 4 设置 Action
+
+## 1. 设置 Trigger
+## 2. 配置用户
+## 3. 配置告警介质
+## 4. 设置 Action
 
 如下介绍如何设置 Trigger
 
