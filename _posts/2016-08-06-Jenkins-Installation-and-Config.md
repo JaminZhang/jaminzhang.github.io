@@ -34,10 +34,12 @@ systemctl start jenkins
 使用浏览器访问 http://192.168.56.11:8080/ （主机名修改成你自己的）
 等待自动刷新一会儿，提示解锁 Jenkins，查看 `/var/lib/jenkins/secrets/initialAdminPassword` 中的初始密码
 
-`
+```bash
+
 [root@linux-node1 ~]# cat /var/lib/jenkins/secrets/initialAdminPassword  
 8d80e09b60984fefa68c5d4551a0719f
-`
+
+```    
 
 ## 安装 Jenkins 插件
 
