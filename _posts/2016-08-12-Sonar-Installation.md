@@ -13,6 +13,7 @@ duoshuo: true
 新版本 Sonar 需要 JDK 的版本为 1.8 及以上。
 
 ```bash
+
 [root@linux-node1 ~]# yum install java-1.8.0 -y
 
 # 官网下载 SonarQube 5.6 (LTS *)
@@ -30,6 +31,7 @@ duoshuo: true
 创建 Sonar 使用的数据库和用户，如下：
 
 ```bash
+
 MariaDB [(none)]> create database sonar character set utf8 collate utf8_general_ci;
 Query OK, 1 row affected (0.02 sec)
 
@@ -46,9 +48,10 @@ Query OK, 0 rows affected (0.00 sec)
 
 # 配置 Sonar
 
-配置 Sonar 数据库连接
+## 配置 Sonar 数据库连接
 
 ```bash
+
 [root@linux-node1 ~]# cd /usr/local/sonarqube/conf/
 [root@linux-node1 conf]# ls
 sonar.properties  wrapper.conf
@@ -56,11 +59,14 @@ sonar.properties  wrapper.conf
 sonar.jdbc.username=sonar
 sonar.jdbc.password=sonae@pw
 sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance
+
 ```    
 
-配置 Java 访问数据库驱动(可选)  
+## 配置 Java 访问数据库驱动(可选)  
 
-默认情况 Sonar 有自带的嵌入的数据库，那么你如果使用 Oracle 数据库，必须手动复制驱动类到${SONAR_HOME}/extensions/jdbc-driver/oracle/目录下，其它支持的数据库默认提供了驱动。其它数据库的配置可以参考官方文档：
+默认情况 Sonar 有自带的嵌入的数据库，那么你如果使用 Oracle 数据库，
+必须手动复制驱动类到`${SONAR_HOME}/extensions/jdbc-driver/oracle/`目录下，其它支持的数据库默认提供了驱动。  
+其它数据库的配置可以参考官方文档：
 http://docs.sonarqube.org/display/HOME/SonarQube+Platform
 
 
@@ -69,6 +75,7 @@ http://docs.sonarqube.org/display/HOME/SonarQube+Platform
 可以在 Sonar 的配置文件来配置 Sonar Web Server 监听的 IP 地址和端口，默认是 9000 端口。如下：
 
 ```bash
+
 [root@linx-node1 conf]# vim sonar.properties
 sonar.web.host=0.0.0.0
 sonar.web.port=9000
@@ -83,6 +90,7 @@ Started SonarQube.
 # 遇到的问题
 
 ```bash
+
 2016.08.12 15:55:13 INFO  web[o.s.s.p.ServerImpl] SonarQube Server / 5.6.1 / 07c82b2477ac69126115671fe56d53c2ff47d5f5
 2016.08.12 15:55:13 INFO  web[o.sonar.db.Database] Create JDBC data source for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance
 2016.08.12 15:55:13 ERROR web[o.a.c.c.C.[.[.[/]] Exception sending context initialized event to listener instance of class org.sonar.server.platform.PlatformServletContextListener
@@ -90,12 +98,15 @@ org.sonar.api.utils.MessageException: Unsupported mysql version: 5.5. Minimal su
 2016.08.12 15:55:13 ERROR web[o.a.c.c.StandardContext] One or more listeners failed to start. Full details will be found in the appropriate container log file
 2016.08.12 15:55:44 INFO  web[o.a.c.u.SessionIdGeneratorBase] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [31,150] milliseconds.
 2016.08.12 15:55:44 ERROR web[o.a.c.c.StandardContext] Context [] startup failed due to previous errors
+
 ```    
 
 使用 SonarQube 5.6.1 报错提示不支持 mysql 5.5，最低版本为 mysql 5.6。官方回答不支持 mysql 5.5 原因如下：
 
 [MySQL 5.6 required](https://groups.google.com/forum/#!topic/sonarqube/GmbtZ_qf1ME)    
+
 <pre>
+
 Hi guys,
 
 The upgrade guide does not mention this point. It was forgotten and it's going to be fixed. Thanks for the feedback.
@@ -116,6 +127,7 @@ or mysql 5.7, usually comes with the removal of old versions.
 Regards
 
 Simon BRANDHOF | SonarSource
+
 </pre>
 
 由于本文演示 SonarQube 部署，使用 SonarQube 5.6 是可以支持 mysql 5.5 的。所以本次就使用 SonarQube 5.6。  
@@ -123,6 +135,6 @@ Simon BRANDHOF | SonarSource
 
 # Ref
 [Installing the Server](http://docs.sonarqube.org/display/SONAR/Installing+the+Server)  
-[持续代码质量管理-Sonar部署](https://www.unixhot.com/article/56)  
+[持续代码质量管理-Sonar 部署](https://www.unixhot.com/article/56)  
 [MySQL 5.6 required](https://groups.google.com/forum/#!topic/sonarqube/GmbtZ_qf1ME)    
 
