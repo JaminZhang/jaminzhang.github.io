@@ -32,6 +32,7 @@ duoshuo: true
 
 
 ```bash
+
 # 在部署机创建部署目录放置代码、配置文件、压缩包等
 mkdir -p /deploy/code/web-demo		
 mkdir -p /deploy/config/web-demo/base
@@ -40,11 +41,12 @@ mkdir -p /deploy/tar
 mkdir -p /deploy/tmp
 chown -R www:www /deploy
 
-# 在目标机上创建代码、配置等的放置目录，
+# 在目标机上创建代码、配置等的放置目录
 mkdir -p /opt/webroot
 mkdir /webroot
 chown -R www:www /opt/webroot
 chown -R www:www /webroot
+
 ```   
 
 # 自动化部署及回滚脚本
@@ -52,6 +54,7 @@ chown -R www:www /webroot
 内容如下：
 
 ```bash
+
 #!/bin/bash
 
 # Node List
@@ -99,7 +102,7 @@ shell_unlock(){
 url_test(){
 	URL=$1
 	curl -s --head $URL | grep '200 OK'
-	if [ $? -ne 0 ];then
+	if [ $? -ne 0 ]; then
 		shell_unlock;
 		echo "test error" && exit;
 	fi
@@ -131,7 +134,6 @@ code_tar(){
 	writelog "${PKG_NAME}.tar.gz"
 }
 
-
 code_scp(){
 	writelog "code_scp"
 	for node in $PRE_LIST;do
@@ -154,7 +156,6 @@ pre_test(){
 	echo "add to cluster"
 }
 
-
 group1_deploy(){
 	writelog "remove from cluster"
 	for node in $GROUP1_LIST;do
@@ -165,7 +166,7 @@ group1_deploy(){
 }
 
 group1_test(){
-	url_test "http://192.168.56.12:8081/index.html"		# 192.168.56.12 80 端口被 GitLab nginx 占用
+	url_test "http://192.168.56.12:8081/index.html"		# 192.168.56.12 80 端口被 GitLab Nginx 占用
 	echo "add to cluster"
 }
 
@@ -261,12 +262,17 @@ add to cluster
 
 # 总结
 
-<pre> 在IT管理里面有三大核心要素是PPT，也就是人员/组织架构（People）、流程（Process）、技术/工具（Tech/Tool）。
+<pre> 
+
+在 IT 管理里面有三大核心要素是 PPT，也就是人员/组织架构（People）、流程（Process）、技术/工具（Tech/Tool）。
 所以说设计一个自动化部署系统，并不是上线几个工具，写几个自动化脚本这么简单。
 设计一个流程，除了流程本身要和我们的组织架构、人员和技术挂钩，而且还要根据企业的实际情况来做，不能好高骛远，
 一上来就设计一个庞大的自动化部署平台，可能并不符合企业现状，又浪费了资源。
-其次，所有架构和流程的设计都是基于业务需求的，那么不同的业务场景，不同的需求可能出现不同的自动化部署的流程和步骤，所以本文仅供大家参考。
-最后，还有一点就是流程和思路很重要，具体的实现方法很多，看团队的技术水平，可以使用Python、Shell、PHP等来实现，不要被某些工具所束缚就行。
+其次，所有架构和流程的设计都是基于业务需求的，那么不同的业务场景，不同的需求可能出现不同的自动化部署的流程和步骤，
+所以本文仅供大家参考。
+最后，还有一点就是流程和思路很重要，具体的实现方法很多，
+看团队的技术水平，可以使用 Python、Shell、PHP 等来实现，不要被某些工具所束缚就行。
+
 </pre>
 
 # Ref
