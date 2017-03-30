@@ -33,7 +33,7 @@ duoshuo: true
 如流量黑洞和清洗，WAF 防护（WAF 的特点是建立连接后向 Client 和 LVS 双向发送 RST 报文）
 
 扩展: 
-使用复位（RST）而不是 FIN 来异常终止一个连接， RST 报文段中包含一个序号和确认序号。
+使用复位（RST）而不是 FIN 来异常终止一个 TCP 连接， RST 报文段中包含一个序号和确认序号。
 需要注意的是 RST 报文段不会导致另一端产生任何响应，另一端根本不进行确认。
 收到 RST 的一方将终止该连接，并通知应用层连接复位。
 
@@ -44,7 +44,7 @@ duoshuo: true
 Linux 协议栈的 tw_reuse(time_wait 状态连接复用)无法生效，time_wait 状态连接堆积导致客户端端口不足
 
 解决方法：
-客户端端使用长连接代替短连接。
+客户端使用长连接代替短连接。  
 使用 RST 报文断开连接（socket 设置 SO_LINGER 属性） ，而不是发 FIN 包这种方式断开。
 
 * CASE 3：后端服务器 accept 队列满
@@ -76,19 +76,18 @@ Linux 协议栈的 tw_reuse(time_wait 状态连接复用)无法生效，time_wai
 
 LVS 的持久时间有 2 个
 
-1. 把同一个 CIP 发来的请求转发到同一台 RS 的持久超时时间。
-
-2.一个连接创建后空闲的超时时间，这个超时时间分为 3 种。
-
-01. TCP 的空闲超时时间
-02. LVS 收到客户端 TCP FIN 的超时时间
-03. UDP 的超时时间
+1. 把同一个 CIP 发来的请求转发到同一台 RS 的持久超时时间。  
+2.一个连接创建后空闲的超时时间，这个超时时间分为 3 种。  
+  1. TCP 的空闲超时时间
+  2. LVS 收到客户端 TCP FIN 的超时时间
+  3. UDP 的超时时间
 
 </pre>
 
 下面我来看看默认的 LVS 持久时间：
 
 ```bash
+
 [root@VM_15_187_centos ~]# rpm -qa | grep keepalived
 keepalived-1.2.13-5.el6_6.x86_64
 [root@VM_15_187_centos ~]# grep persis /etc/keepalived/keepalived.conf 
@@ -99,6 +98,7 @@ keepalived-1.2.13-5.el6_6.x86_64
 ipvsadm-1.26-4.el6.x86_64
 [root@VM_15_187_centos ~]# ipvsadm -Ln --timeout
 Timeout (tcp tcpfin udp): 900 120 300
+
 ```    
 
 因为最近 2 年没有实际负责过线上 LVS 相关业务维护经验，所以这个时间具体设置成多少我也不知道，  
@@ -107,9 +107,9 @@ Timeout (tcp tcpfin udp): 900 120 300
 
 # Ref
 [负载均衡超时问题](https://help.aliyun.com/document_detail/27659.html)  
-[LVS连接的持久时间](http://lavafree.iteye.com/blog/1125906)  
-[lvs & keepalived的tcp 长连接的问题解决办法](http://tangay.iteye.com/blog/1135586)  
-[lvs持久性工作原理和配置](http://xstarcd.github.io/wiki/sysadmin/lvs_persistence.html)  
-[LVS持久性工作原理和配置方法](http://www.3mu.me/lvs持久性工作原理和配置方法/)     
-[lvs配置persistence_timeout 参数导致数据库负载不均](http://www.yalasao.com/43/lvs-persistence-timeout)  
-[LVS会话超时引入对tcp keepalive与http keepalive的学习](http://www.ywnds.com/?p=7871)  
+[LVS 连接的持久时间](http://lavafree.iteye.com/blog/1125906)  
+[LVS & Keepalived的 TCP 长连接的问题解决办法](http://tangay.iteye.com/blog/1135586)  
+[LVS 持久性工作原理和配置](http://xstarcd.github.io/wiki/sysadmin/lvs_persistence.html)  
+[LVS 持久性工作原理和配置方法](http://www.3mu.me/lvs持久性工作原理和配置方法/)     
+[LVS 配置 persistence_timeout 参数导致数据库负载不均](http://www.yalasao.com/43/lvs-persistence-timeout)  
+[LVS 会话超时引入对 tcp keepalive 与 http keepalive 的学习](http://www.ywnds.com/?p=7871)  
