@@ -10,31 +10,39 @@ duoshuo: true
 
 # 引言
 
-为什么要使用 HAProxy？因为一般有些功能 Nginx 实现不了，而 HAProxy 可以。   
+为什么要使用 HAProxy？因为有一些功能 Nginx 实现不了，而 HAProxy 可以。   
 Nginx 和 HAProxy 对比有下面的不足：
 
 1. 默认不支持自定义 URL 检测（第三方模块可以）
 2. 会话保持默认只有 ip_hash（没有 URL Hash 算法）
 3. 负载均衡算法少(rr, wrr, lc, ip_hash)  
 
-HAProxy 支持如下负载均衡算法:  
-rr/wrr/lc/wlc/sh/uri/hdr(Based on HTTP header)/first 等
+HAProxy 支持如下负载均衡算法：
+`rr/wrr/lc/wlc/sh/uri/hdr(Based on HTTP header)/first` 等
 
 <pre>
 
-no less than 9 load balancing algorithms are supported, some of which apply
-to input data to offer an infinite list of possibilities. The most common
-ones are round-robin (for short connections, pick each server in turn),
-leastconn (for long connections, pick the least recently used of the servers
-with the lowest connection count), source (for SSL farms or terminal server
-farms, the server directly depends on the client's source address), uri (for
-HTTP caches, the server directly depends on the HTTP URI), hdr (the server
-directly depends on the contents of a specific HTTP header field), first
-(for short-lived virtual machines, all connections are packed on the
-smallest possible subset of servers so that unused ones can be powered
-down);
+no less than 9 load balancing algorithms are supported, 
+some of which apply to input data to offer an infinite list of possibilities. 
+The most common ones are round-robin (for short connections, pick each server in turn),
+leastconn (for long connections, pick the least recently used of the servers with the lowest connection count),
+source (for SSL farms or terminal server farms, the server directly depends on the client's source address), 
+uri (for HTTP caches, the server directly depends on the HTTP URI), 
+hdr (the server directly depends on the contents of a specific HTTP header field), 
+first (for short-lived virtual machines, all connections are packed on the smallest possible subset of servers 
+so that unused ones can be powered down)
 
 </pre>
+
+HAProxy 支持不少于 9 种的负载均衡算法。  
+最常见的算法有：
+
+* rr 轮询算法（用于短连接，轮流选取每台服务器） 
+* lc 最少连接数算法（用于长连接，选择含有最少连接数的最近最少使用的服务器） 
+* source 源地址算法（用于 SSL 集群或者终端服务器集群，直接依据客户端的源 IP 地址来选择对应服务器）  
+* uri 算法（用于 HTTP 缓存，直接依据 HTTP URI 地址来选择对应服务器）
+* hdr 算法（直接依据指定的 HTTP heder 内容来选择对应服务器）  
+* first 算法（用于短生命周期的虚拟机，所有的连接集合到一个最小的服务器子网，没使用的服务器因此可以关机）  
 
 
 现在的缓存集群架构有的会在前端配置使用 Nginx 作为负载均衡器：
@@ -43,8 +51,9 @@ down);
 * Nginx + Varnish
 * Nginx + ATS
 
->  
+`
 因为 HAProxy 中文资料较少，所以国内的 HAProxy 并没有像 Nginx 那样使用普遍。
+`
 
 # HAProxy 安装
 
@@ -69,14 +78,13 @@ HAProxy 配置文件为 `/etc/haproxy/haproxy.cfg`，默认里面有比较详细
 参考 Ref 中的资料，CentOS 7 下 rsyslog 配置，配置文件中注释没有说
 
 
->
-一般不推荐在 LB 上记录访问日志。
+`一般不推荐在 LB 上记录访问日志。`
 
 ## HAProxy 状态页面的配置
 
 详细看下面的配置文件内容。
 
-下面我们自己重新配置一下 /etc/haproxy/haproxy.cfg，内容如下：
+下面我们自己重新配置一下`/etc/haproxy/haproxy.cfg`，内容如下：
 
 ```bash
 #---------------------------------------------------------------------
@@ -161,6 +169,7 @@ backend backend_www_example_com
 	# 上面这段配置后端服务器及相关检查，表示每 2 秒检查一次，如果连续失败了 15 次（也就是 30s），
 	# 就把这台服务器移除集群，如果连续成功了 30 次（也就是 60s），就把这台服务器加入集群，一般加入集群检查时间要长些
 	# 具体检查次数及时间根据实际需求配置
+
 ```    
 
 然后启动 HAProxy `systemctl start haproxy`，启动成功后，便可以通过以下 URL 访问 HAProxy Web 状态页面：  
@@ -169,8 +178,7 @@ http://192.168.56.11:8888/haproxy-status
 ![HAProxy-Status](http://jaminzhang.github.io/images/HAProxy/HAProxy-Status.png)
 
 
->
-对比 Nginx，只有 Nginx Plus（Nginx 企业版）才有类似 HAProxy Web 状态页面的 Dashboard
+`对比 Nginx，只有 Nginx Plus（Nginx 企业版）才有类似 HAProxy 的 Web 状态页面的 Dashboard`
 
 # HAProxy 在线维护
 
@@ -181,6 +189,7 @@ http://192.168.56.11:8888/haproxy-status
 然后重启 HAProxy `systemctl restart haproxy`  
 
 ```bash
+
 # 需要安装 socat 传递信息给 socket 
 [root@linux-node1 ~]# yum install socat -y
 
