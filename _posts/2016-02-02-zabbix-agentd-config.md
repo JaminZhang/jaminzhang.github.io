@@ -39,7 +39,7 @@ Incoming connections will be accepted only from the hosts listed here.
 Note that hostnames must resolve hostname→IP address and IP address→hostname.
 If IPv6 support is enabled then '127.0.0.1', '::127.0.0.1', '::ffff:127.0.0.1' are treated equally.
 
-StartAgents	no	0-100	3	Number of pre-forked instances of zabbix_agentd that process passive checks.
+StartAgents	no 0-100	3	Number of pre-forked instances of zabbix_agentd that process passive checks.
 If set to 0, disables passive checks and the agent will not listen on any TCP port.
 The upper limit used to be 16 before version 1.8.5.
 
