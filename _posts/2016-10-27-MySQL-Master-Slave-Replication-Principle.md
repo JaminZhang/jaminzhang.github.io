@@ -38,7 +38,7 @@ MySQL 的主从复制是一个异步的复制过程（但一般情况下感觉�
    读取指定 binlog 日志文件指定位置之后的 binlog 日志信息，然后返回给 Slave 端的 IO 线程。  
    返回的信息中除了 binlog 日志内容外，  
    还有本次返回日志内容后在 Master 服务器端的新的 binlog 文件名以及在 binlog 中的下一个指定更新位置。  
-4. 当 Slave 服务器的 IO 线程获取来自 Master 服务器上 IO 线程发送的日志内容及日志文件和位置点后，
+4. 当 Slave 服务器的 IO 线程获取来自 Master 服务器上 IO 线程发送的日志内容及日志文件和位置点后，  
    将 binlog 日志内容依次写入到 Slave 端自身的 relay log（即中继日志）文件（mysql-relay-bin.xxxxxx）的最末端，  
    并将新的 binlog 文件名和位置记录到 `master-info` 文件中，  
    以便下一次读取 Master 端新 binlog 日志时，  
