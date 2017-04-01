@@ -4,7 +4,7 @@ title: 了解 JVM 性能调优
 description: "了解 JVM 性能调优"
 category: Web
 avatarimg:
-tags: [Java, JVM, Tunning]
+tags: [Java, JVM, GC, Tunning]
 duoshuo: true
 ---
 
@@ -25,8 +25,8 @@ Ref 中是看的相关资料。
 
 # Ref
 
-[Java系列笔记(3) - Java 内存区域和GC机制](http://www.cnblogs.com/zhguang/p/3257367.html)  
-[Java系列笔记(4) - JVM监控与调优](http://www.cnblogs.com/zhguang/p/Java-JVM-GC.html)  
-[JVM性能调优入门](http://www.jianshu.com/p/c6a04c88900a)  
-[JVM性能调优](http://blog.csdn.net/chen77716/article/details/5695893)  
-[【JVM调优】----内存溢出和内存泄漏](http://blog.csdn.net/zlts000/article/details/53046620)  
+[Java 系列笔记(3) - Java 内存区域和 GC 机制](http://www.cnblogs.com/zhguang/p/3257367.html)  
+[Java 系列笔记(4) - JVM 监控与调优](http://www.cnblogs.com/zhguang/p/Java-JVM-GC.html)  
+[JVM 性能调优入门](http://www.jianshu.com/p/c6a04c88900a)  
+[JVM 性能调优](http://blog.csdn.net/chen77716/article/details/5695893)  
+[【JVM 调优】----内存溢出和内存泄漏](http://blog.csdn.net/zlts000/article/details/53046620)  
