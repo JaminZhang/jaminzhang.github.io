@@ -34,6 +34,23 @@ duoshuo: true
 
 # 实例 2
 
+`man find` 中的例子
+
+```bash
+
+find . -type f -exec file '{}' \;
+
+Runs ‘file’ on every file in or below the current directory. 
+Notice that the braces are enclosed in single quote marks to 
+protect them from interpretation as shell script punctuation.  
+The semicolon is similarly protected by the use of a backslash, 
+though single quotes could have been used in that case also.
+
+```    
+
+
+# 实例 3
+
 称动当前目录的 test.log 文件 到 /tmp 目录下
 
 ```bash
