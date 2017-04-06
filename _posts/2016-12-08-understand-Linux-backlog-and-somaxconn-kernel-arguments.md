@@ -8,11 +8,7 @@ tags: [Linux, TCP, Socket, backlog, somaxconn, ]
 duoshuo: true
 ---
 
-
-
-
 理解 Linux backlog/somaxconn 内核参数 
-
 
 # 引言
 
@@ -90,5 +86,5 @@ backlog 只是应用层传入的参数，不可能超过内核参数，所以 ba
 
 # Ref
 [关于 backlog 和相关内核参数](http://www.jameswxx.com/%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/%E5%85%B3%E4%BA%8Ebacklog/)  
-[随手记之Linux内核 backlog 笔记](http://www.blogjava.net/yongboy/archive/2014/07/30/416373.html)  
-[关于somaxconn参数](https://www.4os.org/index.php/2010/10/15/%E5%85%B3%E4%BA%8Enet-core-somaxconn%E5%8F%82%E6%95%B0/)  
+[随手记之 Linux 内核 backlog 笔记](http://www.blogjava.net/yongboy/archive/2014/07/30/416373.html)  
+[关于 somaxconn 参数](https://www.4os.org/index.php/2010/10/15/%E5%85%B3%E4%BA%8Enet-core-somaxconn%E5%8F%82%E6%95%B0/)  
