@@ -50,5 +50,21 @@ Nginx 支持正则表达式以区分静态资源或者动态资源，其中动�
 
 ![Nginx 使用模型](http://dl2.iteye.com/upload/attachment/0110/3954/bca4ce00-451d-35bf-ad5a-43005b5a6006.png)
 
+**Nginx 工作进程介绍**
+
+<pre>
+
+Nginx 会启动一个 master 进程，和“worker_processes”个 worker 进程，
+其中 Master 进程主要的作用就是“加载、评定配置信息”、“维护 worker 进程”，
+worker 进程用于处理实际的 Request，Nginx 基于平台的 event 模型，向 worker 进程分发 Request。    
+ 
+当 master 进程收到 reload 信号时，首先检测配置文件的合法性，然后尝试使用新的配置信息；
+如果成功，master 将启动新的 worker 进程，并向原来的 worker 进程发消息请求它们 shutdown，
+此后 Request 将会被分发给新的 worker 进程，对于原来的 worker 将自己已经 accept 的请求处理完之后即关闭；
+如果配置文件有问题，master 将会回滚配置的更改，而 worker 进程不受任何影响。
+
+</pre>
+
+
 # Ref
 [Nginx 学习总结概述(一)](http://shift-alt-ctrl.iteye.com/blog/2229578)  
