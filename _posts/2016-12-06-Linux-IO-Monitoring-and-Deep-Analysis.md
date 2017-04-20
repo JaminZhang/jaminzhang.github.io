@@ -4,7 +4,7 @@ title: Linux IO 监控与深入分析
 description: "Linux IO 监控与深入分析"
 category: OS
 avatarimg: 
-tags: [Linux, IO, iostat, iotop, pidstat, lsof ]
+tags: [Linux, IO, iostat, iotop, pidstat, lsof]
 duoshuo: true
 ---
 
@@ -13,8 +13,14 @@ Linux IO 监控与深入分析
 
 
 # 引言
-接昨天电话面试，面试官问了系统 IO 怎么分析，当时第一反应是使用 iotop 看系统上各进程的 IO 读写速度，然后使用 iostat 看 CPU 的 %iowait 时间占比，（%iowait：CPU等待输入输出完成时间的百分比，%iowait的值过高，表示硬盘存在I/O瓶颈）但回答并是不很全面，确实，比较久之前写过一篇 [Linux iostat使用](http://jaminzhang.github.io/linux/Linux-iostat/)，很久没有在系统上分析 IO 状态了，
-所以有好几个分析工具和参数忘记了（说明要熟悉一个知识和技能是需要不断应用和重复学习，熟能生巧很有道理，扯远了，接着说 IO 监控与分析），然后面试官提示还要看 %util 参数（表示磁盘的繁忙程度），他一说，我确实了也记起来了。这个也是常用要看的参数。。。    
+
+接昨天电话面试，面试官问了系统 IO 怎么分析，
+当时第一反应是使用 iotop 看系统上各进程的 IO 读写速度，
+然后使用 iostat 看 CPU 的 %iowait 时间占比，（%iowait：CPU等待输入输出完成时间的百分比，%iowait的值过高，表示硬盘存在I/O瓶颈）  
+但回答并是不很全面，确实，比较久之前写过一篇 [Linux iostat 使用](http://jaminzhang.github.io/linux/Linux-iostat/)，
+很久没有在系统上分析 IO 状态了，
+所以有好几个分析工具和参数忘记了（说明要熟悉一个知识和技能是需要不断应用和重复学习，熟能生巧很有道理，扯远了，接着说 IO 监控与分析），
+然后面试官提示还要看 %util 参数（表示磁盘的繁忙程度），他一说，我确实了也记起来了。这个也是常用要看的参数。    
 下面我重新查找相关资料并再次学习一下吧，还是要经常在实际工作中多应用才能熟练。
 
 
@@ -23,6 +29,7 @@ Linux IO 监控与深入分析
 ## iostat
 
 ```bash
+
 [root@xxxx_wan360_game ~]# iostat -xdm 1
 Linux 2.6.32-358.el6.x86_64 (xxxx_wan360_game) 	12/06/2016 	_x86_64_	(8 CPU)
 
@@ -38,31 +45,111 @@ xvdep1            0.00     0.00    0.00    0.00     0.00     0.00     0.00     0
 Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
 xvdep1            0.00     0.00    0.00    3.00     0.00     0.01     8.00     0.00    0.00   0.00   0.00
 
+
+# iostat 选项
+
+-x     Display extended statistics.  
+This option works with post 2.5 kernels since it needs /proc/diskstats file or a mounted sysfs to get the statistics. 
+This option may also work with older kernels (e.g. 2.4) only if extended statistics are available in /proc/partitions
+(the kernel needs to be patched for that).
+
+-d     Display the device utilization report.
+
+-m     Display statistics in megabytes per second instead of blocks or kilobytes per second.  
+Data displayed are valid only with kernels 2.4 and later.
+
 ```    
 
 <pre>
-%util	代表磁盘繁忙程度。100% 表示磁盘繁忙，0% 表示磁盘空闲。但是注意，磁盘繁忙不代表磁盘(带宽)利用率高  
 
-argrq-sz	提交给驱动层的 IO 请求大小，一般不小于 4K，不大于 max(readahead_kb, max_sectors_kb)
-			可用于判断当前的IO模式,一般情况下,尤其是磁盘繁忙时, 越大代表顺序,越小代表随机
+rrqm/s
+       The number of read requests merged per second that were queued to the device.
+	 排队到设备时，每秒合并的读请求数量
 
-svctm	一次 IO 请求的服务时间，对于单块盘，完全随机读时，基本在 7ms 左右，即寻道 + 旋转延迟时间
+wrqm/s
+       The number of write requests merged per second that were queued to the device.
+         排队到设备时，每秒合并的写请求数量
+
+r/s
+       The number of read requests that were issued to the device per second.
+	 每秒发送给设备的读请求数量
+
+w/s
+       The number of write requests that were issued to the device per second.
+	 每秒发送给设备的的写请求数量
+
+rMB/s
+       The number of megabytes read from the device per second.
+	 每秒从设备中读取多少 MBs 
+
+wMB/s
+       The number of megabytes written to the device per second.
+	 每秒往设备中写入多少 MBs
+
+
+avgrq-sz
+	The average size (in sectors) of the requests that were issued to the device.
+	分发给设备的请求的平均大小（以扇区为单位）
+	磁盘扇区是磁盘的物理属性，它是磁盘设备寻址的最小单元，磁盘扇区大小可以用 fdisk -l 命令查看
+	另外，常说的“块”（Block）是文件系统的抽象，不是磁盘本身的属性。
+	另外一种说明：
+	提交给驱动层的 IO 请求大小，一般不小于 4K，不大于 max(readahead_kb, max_sectors_kb)
+	可用于判断当前的 IO 模式，一般情况下，尤其是磁盘繁忙时，越大代表顺序，越小代表随机
+	 
+avgqu-sz
+	The average queue length of the requests that were issued to the device.
+	分发给设备的请求的平均队列长度
+
+await
+	The average time (in milliseconds) for I/O requests issued to the device to be served. 
+	This includes the time spent by the requests in queue and the time spent servicing them.
+	分发给设备的 I/O 请求的平均响应时间（单位是毫秒）
+	这个时间包含了花在请求在队列中的时间和服务于请求的时间
+	另外一种说明：
+	每一个 I/O 请求的处理的平均时间（单位是毫秒）。这里可以理解为 I/O 的响应时间。
+	一般地，系统 I/O 响应时间应该低于 5ms，如果大于 10ms 就比较大了。
+
+svctm
+	The average service time (in milliseconds) for I/O requests that were issued to the device. 
+	Warning! Do not trust this field any more. This field will be removed in a future sysstat version.
+	分发给设备的 I/O 请求的平均服务时间。（单位是毫秒）
+	警告！不要再相信这列值了。这一列将会在一个将来的 sysstat 版本中移除。
+	另外一种说明：
+	一次 IO 请求的服务时间，对于单块盘，完全随机读时，基本在 7ms 左右，即寻道 + 旋转延迟时间
+	
+%util
+	Percentage of elapsed time during which I/O requests were issued to the device 
+	(bandwidth utilization for the device). Device saturation occurs when this value is close to 100%.
+	 分发给设备的 I/O 请求的运行时间所占的百分比。（设备的带宽利用率）
+	 设备饱和会发生在这个值接近 100%。
+	 另外一种说明：
+	 代表磁盘繁忙程度。100% 表示磁盘繁忙，0% 表示磁盘空闲。但是注意，磁盘繁忙不代表磁盘(带宽)利用率高。
+	 在统计时间内所有处理 I/O 时间，除以总共统计时间。
+	 例如，如果统计间隔 1 秒，该设备有 0.8 秒在处理 I/O，而 0.2 秒闲置，那么该设备的 %util = 0.8/1 = 80%，
+	 所以该参数暗示了设备的繁忙程度。一般地，如果该参数是 100% 表示设备已经接近满负荷运行了
+	 （当然如果是多磁盘，即使 %util 是 100%，因为磁盘的并发能力，所以磁盘使用未必就到了瓶颈）。
+
+%iowait
+	Show the percentage of time that the CPU or CPUs were idle during 
+	which the system had an outstanding disk I/O request.
+	 显示当系统有一个显著的磁盘 I/O 请求期间，CPU 空闲时间的百分比。
 
 总结：
 iostat 统计的是通用块层经过合并(rrqm/s, wrqm/s)后，直接向设备提交的 IO 数据，可以反映系统整体的 IO 状况，
 但是有以下 2 个缺点:
 
 1. 距离业务层比较遥远，跟代码中的 write，read 不对应(由于系统预读 + PageCache + IO 调度算法等因素，也很难对应)
-2. 是系统级，没办法精确到进程，比如只能告诉你现在磁盘很忙,但是没办法告诉你是谁在忙,在忙什么
+2. 是系统级，没办法精确到进程，比如只能告诉你现在磁盘很忙，但是没办法告诉你是谁在忙，在忙什么
+
 </pre>
 
 另一资料的总结：
 
-* 如果 %iowait 的值过高，表示硬盘存在 I/O 瓶颈。
+* 如果 %iowait 的值过高，表示磁盘存在 I/O 瓶颈。
 * 如果 %util 接近 100%，说明产生的 I/O 请求太多，I/O 系统已经满负荷，该磁盘可能存在瓶颈。
 * 如果 svctm 比较接近 await，说明 I/O 几乎没有等待时间；
-* 如果 await 远大于 svctm，说明 I/O 队列太长，IO 响应太慢，则需要进行必要优化。
-* 如果 avgqu-sz比较大，也表示有大量 IO 在等待。
+* 如果 await 远大于 svctm，说明 I/O 队列太长，I/O 响应太慢，则需要进行必要优化。
+* 如果 avgqu-sz 比较大，也表示有大量 IO 在等待。
 
 
 # 2 进程级 IO 监控
@@ -70,7 +157,7 @@ iostat 统计的是通用块层经过合并(rrqm/s, wrqm/s)后，直接向设备
 ## iotop 和 pidstat
 
 * iotop	顾名思义, IO 版的 top
-* pidstat	顾名思义, 统计进程(pid)的 stat，进程的 stat 自然包括进程的 IO 状况 
+* pidstat 顾名思义, 统计进程(pid)的 stat，进程的 stat 自然包括进程的 IO 状况 
 
 这两个命令，都可以按进程统计 IO 状况，因此可以回答你以下二个问题：
 
@@ -80,7 +167,8 @@ iostat 统计的是通用块层经过合并(rrqm/s, wrqm/s)后，直接向设备
 pidstat 参数很多，根据需要使用  
 
 ```bash
-[root@xxxx_wan360_game ~]# pidstat -d 1			# 只显示IO
+
+[root@xxxx_wan360_game ~]# pidstat -d 1		# 只显示 IO
 Linux 2.6.32-358.el6.x86_64 (xxxx_wan360_game) 	12/06/2016 	_x86_64_	(8 CPU)
 
 05:28:57 PM       PID   kB_rd/s   kB_wr/s kB_ccwr/s  Command
@@ -100,11 +188,12 @@ Linux 2.6.32-358.el6.x86_64 (xxxx_wan360_game) 	12/06/2016 	_x86_64_	(8 CPU)
 
 
 # pidstat -u -r -d -t 1        
-# -d IO 信息
-# -r 缺页及内存信息
 # -u CPU 使用率
+# -r 缺页及内存信息
+# -d IO 信息
 # -t 以线程为统计单位
 # 1  1 秒统计一次
+
 [root@xxxx_wan360_game ~]# pidstat -u -r -d -t 1
 Linux 2.6.32-358.el6.x86_64 (xxxx_wan360_game) 	12/06/2016 	_x86_64_	(8 CPU)
 
@@ -155,7 +244,7 @@ ioprofile 可以回答你以下三个问题:
 注: ioprofile 仅支持多线程程序,对单线程程序不支持. 对于单线程程序的 IO 业务级分析，strace 足以。
 
 总结：
-ioprofile 本质上是 strace，因此可以看到 read，write 的调用轨迹,可以做业务层的 IO 分析(mmap 方式无能为力)
+ioprofile 本质上是 strace，因此可以看到 read，write 的调用轨迹，可以做业务层的 IO 分析(mmap 方式无能为力)
 
 # 4. 文件级 IO 监控
 
@@ -168,6 +257,7 @@ ioprofile 本质上是 strace，因此可以看到 read，write 的调用轨迹,
 lsof 告诉你当前文件由哪些进程打开
 
 ```bash
+
 [root@xxxx_wan360_game ~]# lsof ./		# 当前目录当前由 bash 和 lsof 进程打开
 COMMAND   PID USER   FD   TYPE DEVICE SIZE/OFF     NODE NAME
 lsof     8932 root  cwd    DIR 202,65     4096 33652737 .
@@ -176,13 +266,14 @@ bash    16678 root  cwd    DIR 202,65     4096 33652737 .
 
 ```
 
-lsof 命令只能回答静态的信息，并且“打开”并不一定“读取”，对于 cat，echo 这样的命令，打开和读取都是瞬间的，lsof 很难捕捉  
-可以用 inodewatch.stp 来弥补    
+lsof 命令只能回答静态的信息，并且“打开”并不一定“读取”，  
+对于 cat，echo 这样的命令，打开和读取都是瞬间的，lsof 很难捕捉
+可以用 inodewatch.stp 来弥补    
 
 
 # Ref
-[Linux下的IO监控与分析](http://www.cnblogs.com/quixotic/p/3258730.html)  
-[使用iostat分析IO性能](http://www.cnblogs.com/bangerlee/articles/2547161.html)  
-[性能优化-分析IO瓶颈](http://linuxtools-rst.readthedocs.io/zh_CN/latest/advance/03_optimization.html#io)  
+[Linux 下的 IO 监控与分析](http://www.cnblogs.com/quixotic/p/3258730.html)  
+[使用 iostat 分析 IO 性能](http://www.cnblogs.com/bangerlee/articles/2547161.html)  
+[性能优化-分析 IO 瓶颈](http://linuxtools-rst.readthedocs.io/zh_CN/latest/advance/03_optimization.html#io)  
 
 
