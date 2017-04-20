@@ -29,4 +29,5 @@ DMA 控制器通过系统总线来传输数据，传送完毕再通知 CPU，这
 可以肯定的是，PIO 模式的计算机我们现在已经很少见到了。
 
 # Ref
-[摘自《构建高性能Web站点》第3章 服务器并发处理能力 3.6 I/O 模型](https://book.douban.com/subject/3924175/)  
+
+[摘自《构建高性能 Web站点》第 3 章 服务器并发处理能力 3.6 I/O 模型](https://book.douban.com/subject/3924175/)  
