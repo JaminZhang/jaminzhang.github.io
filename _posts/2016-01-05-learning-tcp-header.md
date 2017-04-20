@@ -16,8 +16,8 @@ duoshuo: true
 
 # TCP 首部字段详解参考资料
 
-书中有个 TCP 报文首部的图解，但我自己用 Google 搜索一下，看到很多类似的图解，  
-个人偏爱多种色彩，所以就找出一个我感觉比较好的彩色图解，链接是 PDF。  
+书中有个 TCP 报文首部的图解，用 Google 搜索一下，可以看到很多类似的图解，  
+个人偏爱多种色彩，所以就找了一个我感觉比较好的彩色图解，链接是 PDF。  
 
 [TCP-header-Colour](https://www.securitywizardry.com/packets/pdf/TCP-header-Colour.pdf)  
 
@@ -28,4 +28,5 @@ duoshuo: true
 [IPv4 Header 和 TCP Header 简介](http://yumaojun03.gotoip55.com/?p=1064)
 
 # Ref
+
 《TCP/IP 详解 卷 1：协议》第17章 TCP：传输控制协议
