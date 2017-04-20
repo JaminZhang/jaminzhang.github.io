@@ -11,7 +11,7 @@ duoshuo: true
 # 引言
 
 我们在进行系统监控时，首先就是监控 CPU，所以我们就必须理解 CPU 的工作原理和相关概念。  
-现在我重新学习下 CPU 的上下文切换这个概念。
+现在重新学习下 CPU 的上下文切换这个概念。
 
 # CPU 的上下文切换
 
@@ -44,4 +44,4 @@ is the switching of the CPU (central processing unit) from one process or thread
 # Ref
 [Context switch - Wiki](https://en.wikipedia.org/wiki/Context_switch)  
 [Context Switch Definition](http://www.linfo.org/context_switch.html)  
-[理解Linux操作系统——Process和Memory](http://yangxikun.github.io/linux%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/2015/04/20/linux-understanding.html)  
+[理解 Linux 操作系统——Process 和 Memory](http://yangxikun.github.io/linux%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/2015/04/20/linux-understanding.html)  
