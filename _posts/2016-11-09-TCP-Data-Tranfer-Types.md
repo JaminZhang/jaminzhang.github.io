@@ -2,7 +2,7 @@
 layout: post
 title: TCP 数据传输分类
 description: "TCP 数据传输分类"
-category: Network
+category: TCP/IP
 avatarimg:
 tags: [TCP]
 duoshuo: true
