@@ -53,5 +53,14 @@ but different algorithms come into play for each.
 1. TCP 交互式数据流（TCP Interactive Data Flow）举例：Telnet/Rlogin
 2. TCP 成块数据流（TCP Bulk Data Flow）举例：FTP/Email/Usenet
 
+<pre>
+
+对于交互性要求比较高的应用，TCP 给出两个策略来提高发送效率和减低网络负担：
+(1) 捎带 ACK。
+(2) Nagle 算法（一次尽量多的发数据）。
+
+</pre>
+
 # Ref
 《TCP/IP 详解 卷 1：协议》第 19 章 TCP 的交互数据流 19.1 引言
+[【TCP/IP 详解 卷一：协议】第十九章 TCP 的交互数据流](http://www.cnblogs.com/qq952693358/p/5771307.html)    
