@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 使用 tcpdump 分析查看 DNS 通信过程
-description: "使用 tcpdump 分析查看 DNS 通信过程"
+title: 使用 Tcpdump 分析查看 DNS 通信过程
+description: "使用 Tcpdump 分析查看 DNS 通信过程"
 category: DNS
 avatarimg:
-tags: [Network, DNS, tcpdump]
+tags: [Network, DNS, Tcpdump]
 duoshuo: true
 ---
 
