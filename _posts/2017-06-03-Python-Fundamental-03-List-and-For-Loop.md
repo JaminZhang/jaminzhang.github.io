@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Python 基础 03-列表
-description: "Python 基础 03-列表"
+title: Python 基础 03-列表与 For 循环
+description: "Python 基础 03-列表与 For 循环"
 category: Python
 avatarimg:
 tags: [Python]
