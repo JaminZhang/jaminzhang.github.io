@@ -81,7 +81,7 @@ Item values:
 3. *UNKNOWN* (*UNKNOWN*:*UNKNOWN*): *UNKNOWN*
 
 Original event ID: 248
-Send to: 779432631 
+Send to: 779432xxx 
 Subject: PROBLEM: User login number gt 4 on linux-node2.example.com
 Body: Trigger: User login number gt 4 on linux-node2.example.com
 Trigger status: PROBLEM
@@ -95,7 +95,7 @@ Item values:
 3. *UNKNOWN* (*UNKNOWN*:*UNKNOWN*): *UNKNOWN*
 
 Original event ID: 248
-Send to: 779432631 
+Send to: 779432xxx 
 Subject: OK: User login number gt 4 on linux-node2.example.com
 Body: Trigger: User login number gt 4 on linux-node2.example.com
 Trigger status: OK
