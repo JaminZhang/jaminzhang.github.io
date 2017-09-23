@@ -88,7 +88,7 @@ Jekins 项目主页上有 Sonar 快捷方式，可以点击查看代码扫描的
 ## 配置系统管理员邮箱地址  
 
 定位到 `"Manage Jenkins"->"Configure System"->"Jenkins Location"  
-System Admin e-mail address: 779432631@qq.com `(以 QQ 邮箱演示)
+System Admin e-mail address: 779432xxx@qq.com `(以 QQ 邮箱演示)
 
 ## 配置 E-mail Notification
 
