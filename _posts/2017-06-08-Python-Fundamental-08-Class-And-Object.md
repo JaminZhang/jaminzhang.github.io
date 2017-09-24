@@ -71,4 +71,5 @@ jack.climb()                        # jack 爬树
 ```    
 
 # Ref
+[Python 面向对象](http://www.runoob.com/python/python-object.html)  
 [Python 笔记——类定义](http://blog.csdn.net/wklken/article/details/6313265)     
