@@ -14,6 +14,13 @@ duoshuo: true
 这里我就想看看他人的运维生涯是怎样的，这样可以从中获取部分经验供自己参考。  
 所以这里我会不时收集其他人的运维生涯给自己以参考。
 
+
+
+# 运维发展前景
+
+[Linux 运维发展前景如何？](https://www.zhihu.com/question/19855673)  
+
+
 # 运维生涯收集
 
 [【运维专家大讲堂】51CTO专访腾讯高级运维工程师刘天斯](http://mp.weixin.qq.com/s?scene=23&mid=2675503914&sn=51e3a13f03a0d9f3bb8b2c6eea3a59b7&idx=1&__biz=MzAwMDM2NzUxMg%3D%3D&srcid=103103IPtAyXM7DapIUcbyg7&mpshare=1#rd)    
