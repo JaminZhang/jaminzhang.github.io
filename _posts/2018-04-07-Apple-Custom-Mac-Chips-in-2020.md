@@ -34,3 +34,4 @@ duoshuo: true
 [Intel's New Core i9 and Coffee Lake Chips Pave Way for Quad-Core 13" MacBook Pro, Mac Mini Refresh, and More](https://www.macrumors.com/2018/04/03/intel-debuts-core-i9-coffee-lake-eighth-gen/)  
 [苹果新 MacBook Pro 曝光：搭载 Intel 最新 6 核 i9 处理器](http://tech.sina.com.cn/n/k/2018-04-04/doc-ifysuuya3112999.shtml)  
 [Intel® Core™ i9-8950HK Processor](https://ark.intel.com/products/134903/Intel-Core-i9-8950HK-Processor-12M-Cache-up-to-4_60-GHz)  
+[苹果弃用英特尔：想说分手不容易](https://www.cnbeta.com/articles/tech/714081.htm)  
