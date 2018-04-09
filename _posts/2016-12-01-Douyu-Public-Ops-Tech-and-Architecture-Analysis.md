@@ -14,6 +14,8 @@ duoshuo: true
 # 更新记录
 
 20170323 [斗鱼大数据的玩法](http://mp.weixin.qq.com/s?__biz=MzIwMTQwNTA3Nw==&mid=2650502253&idx=1&sn=a6a5b4c22dcc85bc17ce6fdbd9b13ec9&chksm=8ee1b397b9963a81b342fd1c403d34eb85d32b5c60879de6c04096abaa050cf0a8e1673073f3&mpshare=1&scene=23&srcid=0324G9tdqxPjer5qx53FmVTx#rd)  
+[斗鱼直播大数据的玩法-交流实录](http://gitbook.cn/books/58f8d1b07624530e1545fb7a/index.html)  
+
 
 # 引言
 
