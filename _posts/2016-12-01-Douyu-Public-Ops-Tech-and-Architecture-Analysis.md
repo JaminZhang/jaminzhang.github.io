@@ -14,8 +14,8 @@ duoshuo: true
 # 更新记录
 
 20171114 [GITC 2017全球互联网技术大会 北京站 斗鱼吴瑞诚——用户在斗鱼看直播时，斗鱼在看什么](https://myslide.cn/slides/1748#)  
-
-[斗鱼直播大数据的玩法-交流实录](http://gitbook.cn/books/58eee94d23bb8c646f93b892/index.html)  
+20171020 [TOP100summit：【分享实录】爆炸式增长的斗鱼架构平台的演进](https://segmentfault.com/a/1190000011650413)  
+[斗鱼直播大数据的玩法-交流实录](http://gitbook.cn/books/58eee94d23bb8c646f93b892/index.html)  
 
 20170323 [斗鱼大数据的玩法](http://mp.weixin.qq.com/s?__biz=MzIwMTQwNTA3Nw==&mid=2650502253&idx=1&sn=a6a5b4c22dcc85bc17ce6fdbd9b13ec9&chksm=8ee1b397b9963a81b342fd1c403d34eb85d32b5c60879de6c04096abaa050cf0a8e1673073f3&mpshare=1&scene=23&srcid=0324G9tdqxPjer5qx53FmVTx#rd)  
 
