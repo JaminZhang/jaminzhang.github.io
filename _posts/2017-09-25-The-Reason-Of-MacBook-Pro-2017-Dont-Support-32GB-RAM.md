@@ -17,7 +17,8 @@ duoshuo: true
 
 # 原因
 
-## 用于笔记本电脑的 LPDDR3 单颗容量现在最大只有 32Gb(4GB)
+## 1.用于笔记本电脑的 LPDDR3 单颗容量现在最大只有 32Gb(4GB)
+## 2. Intel Core 系列 CPU 现在还不支持 LPDDR4 内存
 
 MacBook Pro 2017 上配置板载内存是 4 颗 32Gb(4GB) 的 LPDDR3 内存芯片，
 现在 LPDDR3 单颗容量最大为 48Gb(8GB)，三星家出的，但它是用于智能手机的，不能用于笔记本电脑，  
